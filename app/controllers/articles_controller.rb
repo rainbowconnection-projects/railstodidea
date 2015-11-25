@@ -1,4 +1,6 @@
 class ArticlesController < ApplicationController
+  before_action :set_article
+
   def create
     @article = Article.create(article_params)
     if @article.save
@@ -8,12 +10,15 @@ class ArticlesController < ApplicationController
 
   end
   def update
-    if Article.update(article_params)
+    if @article.update(article_params)
       redirect_to controller: 'admin', action: 'articles'
     end
   end
 
   private
+  def set_article
+    @article = Article.find_by(:id => params[:id]);
+  end
   def article_params
     params.require(:article).permit(:title,:text,:photo,:category)
   end

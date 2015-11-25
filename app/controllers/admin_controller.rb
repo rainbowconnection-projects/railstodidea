@@ -40,6 +40,22 @@ class AdminController < ApplicationController
     render :template => 'admin/testimonials/edit'
   end
 
+
+  def projects
+    @projects = Project.all
+    render :template => 'admin/projects/index'
+  end
+
+  def new_project
+    @project = Project.new
+    render :template => 'admin/projects/create'
+  end
+
+  def edit_project
+    @project = Project.find_by(:id => params[:id])
+    render :template => 'admin/projects/edit'
+  end
+
   def events
     @events = Event.all.order(created_at: :desc)
     render :template => 'admin/events/index'
@@ -60,7 +76,7 @@ class AdminController < ApplicationController
   end
 
   def articles
-    @articles = Article.all.joins(:category).order(created_at: :desc)
+    @articles = Article.all
     render :template => 'admin/articles/index'
   end
 

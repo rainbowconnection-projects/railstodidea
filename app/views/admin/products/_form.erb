@@ -1,6 +1,6 @@
 <%= simple_form_for @product do |f| %>
     <%= f.input :name, label: 'Title' %>
-    <%= f.input :description, label: 'Event Description', as: :text %>
+    <%= f.input :description, label: 'Description', as: :text %>
     <%= f.input :photo, as: :file %>
     <%= f.button :submit, @product.new_record? ? 'Add Product' : 'Update Product', class: 'btn btn-success btn-block btn-medium' %>
 <% end %>

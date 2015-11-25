@@ -8,7 +8,7 @@
   </div>
   <div data-u="slides" style="cursor: default; position: relative; top: 0px; left: 0px; width: 1300px; height: 500px; overflow: hidden;">
     <div data-p="225.00" style="display: none;">
-      <%= image_tag('2015-02-20 16.43.36.jpg',) %>
+      <%= image_tag('purple.jpg', class: 'img-responsive') %>
       <div style="position: absolute; top: 30px; left: 30px; width: 480px; height: 120px; font-size: 50px; color: #ffffff; line-height: 60px;">TOUCH
         SWIPE SLIDER
       </div>
@@ -20,7 +20,7 @@
       <%= image_tag('blue.jpg', class: 'img-responsive') %>
     </div>
     <div data-p="225.00" style="display: none;">
-      <%= image_tag('slide-2.jpg', class: 'img-responsive') %>
+      <%= image_tag('red.jpg', class: 'img-responsive') %>
     </div>
   </div>
   <!-- Bullet Navigator -->
@@ -43,17 +43,20 @@
 
 <!--features-->
 <div class="container">
-
+  <div class="row">
+    <div class="col-sm-8 col-sm-offset-2">
+      <h3 class="center-heading">Products</h3>
+      <hr>
+    </div>
+  </div>
   <div class="row margin-bottom-50">
     <% @products.each do |product| %>
         <div class="col-md-4 col-sm-6 margin-bottom-30">
           <div class="features wow animated fadeIn" data-wow-duration="700ms" data-wow-delay="100ms">
-            <%= image_tag(product.photo, class: 'img-responsive product-logo') %>
-            <h4><%= link_to product.name, controller: 'products', action: 'show', id: product.id %></h4>
+            <%= link_to controller: 'products', action: 'show', id: product.id do %>
+                <%= image_tag(product.photo, class: 'img-responsive') %>
+            <% end %>
 
-            <p>
-              <%= product.description %>
-            </p>
           </div>
 
           <!--features end-->
@@ -79,7 +82,7 @@
         <div class="row margin-bottom-20">
           <div class="col-sm-12 section-title">
             <h4>
-              Ntamba Shyaka
+              Mbanda Shyaka
             </h4>
           </div>
         </div>
@@ -92,7 +95,7 @@
         <div class="divided-20"></div>
         <div class="row margin-bottom-30">
           <div class="col-xs-4">
-            <%= image_tag 'user.gif', class: 'img-rounded img-responsive' %>
+            <%= image_tag 'mbanda.jpg', class: 'img-rounded', height: '150px', width: '150px' %>
           </div>
           <div class="col-xs-8">
             <div class="team-info">
@@ -130,7 +133,7 @@
         <div class="divided-20"></div>
         <div class="row margin-bottom-30">
           <div class="col-xs-4">
-            <%= image_tag 'user.gif', class: 'img-rounded img-responsive' %>
+            <%= image_tag 'alex.jpg', class: 'img-rounded', height: '150px', width: '150px' %>
           </div>
           <div class="col-xs-8">
             <div class="team-info">
@@ -174,45 +177,17 @@
   <div class=" project-full-width-row">
     <div class="container-fluid no-paddding">
       <div class="row no-margin">
-        <div class="col-sm-3 no-paddding">
-          <div class="img"><img src="images/img-1.jpg" alt="" class="img-responsive">
-            <a href="portfolio-single.html" class="over">
-              <div class="img-desc">
-                <h2>piple Template<span> Web Design</span></h2>
+        <% @projects.each do |project| %>
+            <div class="col-sm-3 no-paddding">
+              <div class="img"><%= image_tag project.photo, class: 'img img-responsive' %>
+                <%= link_to project,{class: 'over'} do %>
+                    <div class="img-desc">
+                      <h2><%= project.name %></h2>
+                    </div>
+                <% end %>
               </div>
-            </a>
-          </div>
-        </div>
-        <!--full width col end-->
-        <div class="col-sm-3 no-paddding">
-          <div class="img"><img src="images/img-2.jpg" alt="" class="img-responsive">
-            <a href="portfolio-single.html" class="over">
-              <div class="img-desc">
-                <h2>piple Template<span> Web Design</span></h2>
-              </div>
-            </a>
-          </div>
-        </div>
-        <!--full width col end-->
-        <div class="col-sm-3 no-paddding">
-          <div class="img"><img src="images/img-3.jpg" alt="" class="img-responsive">
-            <a href="portfolio-single.html" class="over">
-              <div class="img-desc">
-                <h2>piple Template<span> Web Design</span></h2>
-              </div>
-            </a>
-          </div>
-        </div>
-        <!--full width col end-->
-        <div class="col-sm-3 no-paddding">
-          <div class="img"><img src="images/img-5.jpg" alt="" class="img-responsive">
-            <a href="portfolio-single.html" class="over">
-              <div class="img-desc">
-                <h2>piple Template<span> Web Design</span></h2>
-              </div>
-            </a>
-          </div>
-        </div>
+            </div>
+        <% end %>
         <!--full width col end-->
       </div>
     </div>
@@ -245,17 +220,17 @@
       </div>
     </div>
     <!--fact col end-->
-    <!--<div class="col-sm-4 margin-bottom-30">
-      <div class="fact-column wow animated fadeIn" data-wow-duration="700ms" data-wow-delay="600ms">
-        <i class="ion-coffee"></i>
+<!--<div class="col-sm-4 margin-bottom-30">
+  <div class="fact-column wow animated fadeIn" data-wow-duration="700ms" data-wow-delay="600ms">
+    <i class="ion-coffee"></i>
 
-        <h1>65456</h1>
-        <h5></h5>
-      </div>
-    </div>-->
-    <!--fact col end
-
+    <h1>65456</h1>
+    <h5></h5>
   </div>
+</div>-->
+<!--fact col end
+
+</div>
 
 </div>fun facts-->
 

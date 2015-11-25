@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  resources :projects
   resources :testimonials
   resources :testimonials
   devise_for :admin
@@ -49,6 +50,10 @@ Rails.application.routes.draw do
   get 'admin/testimonials' => 'admin#testimonials'
   get 'admin/testimonials/new' => 'admin#new_testimonial'
   get 'admin/testimonials/:id/edit' => 'admin#edit_testimonial'
+
+  get 'admin/projects' => 'admin#projects'
+  get 'admin/projects/new' => 'admin#new_project'
+  get 'admin/projects/:id/edit' => 'admin#edit_project'
 
   get 'admin/photos' => 'admin#photos'
 
