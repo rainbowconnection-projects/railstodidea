@@ -1,0 +1,8 @@
+<%= simple_form_for(@testimonial) do |f| %>
+    <%= f.error_notification %>
+      <%= f.input :designation %>
+      <%= f.input :text %>
+      <%= f.input :name %>
+      <%= f.input :photo, as: :file %>
+      <%= f.button :submit,@testimonial.new_record? ? 'Add Testimonial' : 'Update Testimonial', class: 'btn btn-success btn-block btn-medium' %>
+<% end %>

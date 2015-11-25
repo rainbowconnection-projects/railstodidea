@@ -1,0 +1,77 @@
+<div id="sidebar-collapse" class="col-sm-3 col-lg-2 sidebar">
+  <!--<form role="search">
+    <div class="form-group">
+      <input type="text" class="form-control" placeholder="Search">
+    </div>
+  </form>-->
+  <ul class="nav menu">
+    <li class=""><%= link_to :controller => 'admin', :action => 'products' do %>
+          <span class="fa fa-dashboard"></span>&nbsp;&nbsp; Products
+      <% end %>
+    </li>
+    <li class=""><%= link_to :controller => 'admin', :action => 'events' do %>
+          <span class="fa fa-newspaper-o"></span>&nbsp;&nbsp; Events
+      <% end %>
+    </li>
+    <li class=""><%= link_to :controller => 'admin', :action => 'photos' do %>
+          <span class="fa fa-file-image-o "></span>&nbsp;&nbsp; Photos
+      <% end %>
+    </li>
+    <li class=""><%= link_to :controller => 'admin', :action => 'articles' do %>
+          <span class="fa fa-file-text"></span>&nbsp;&nbsp; Articles
+      <% end %>
+    </li>
+    <li class=""><%= link_to :controller => 'admin', :action => 'testimonials' do %>
+          <span class="fa fa-file-text"></span>&nbsp;&nbsp;Testimonials
+      <% end %>
+    </li>
+
+  </ul>
+</div><!--/.sidebar-->
+
+<div class="col-sm-9 col-sm-offset-3 col-lg-10 col-lg-offset-2 main">
+  <div class="row">
+    <ol class="breadcrumb">
+      <li><a href="#"><span class="fa fa-home"></span></a></li>
+      <li class="active">Articles</li>
+    </ol>
+  </div>
+
+  <div style="padding: 10px">
+    <div class="row">
+      <%= link_to 'New Article', {:controller => 'admin', :action => 'new_article'}, :class => 'btn btn-medium btn-primary pull-right' %>
+    </div>
+    <div class="margin-bottom-20"></div>
+    <div class="row">
+      <div class="col-lg-12">
+        <table data-toggle="table" data-classes="table table-hover table-condensed"
+               data-striped="true">
+          <thead>
+          <tr>
+            <th data-field="title" data-sortable="true">Title</th>
+            <th data-field="article" data-sortable="true">Article</th>
+            <th data-field="category" data-sortable="true">Category</th>
+            <th></th>
+          </tr>
+          </thead>
+          <tbody>
+          <% @articles.each do |article| %>
+              <tr>
+                <td><%= article.title %></td>
+                <td>
+
+                  <p id="text-wrapper" class="text-wrapper-admin">
+                    <%= article.text %>
+                  </p>
+
+                </td>
+                <td><%= article.category %></td>
+                <td><%= link_to 'Edit', {controller: 'admin', action: 'edit_article', id: article.id}, class: 'btn btn-primary btn-small' %> <%= link_to 'View', {controller: 'blog', action: 'show', id: article.id}, class: 'btn btn-success btn-small' %> <%= link_to 'Delete', {controller: 'admin', action: 'edit_article', id: article.id}, class: 'btn btn-danger btn-sm' %></td>
+              </tr>
+          <% end %>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+</div>    <!--/.main-->

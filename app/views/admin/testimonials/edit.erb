@@ -1,0 +1,54 @@
+<div id="sidebar-collapse" class="col-sm-3 col-lg-2 sidebar">
+  <!--<form role="search">
+    <div class="form-group">
+      <input type="text" class="form-control" placeholder="Search">
+    </div>
+  </form>-->
+  <ul class="nav menu">
+    <li class=""><%= link_to :controller => 'admin', :action => 'testimonials' do %>
+          <span class="fa fa-dashboard"></span>&nbsp;&nbsp; Products
+      <% end %>
+    </li>
+    <li class=""><%= link_to :controller => 'admin', :action => 'events' do %>
+          <span class="fa fa-newspaper-o"></span>&nbsp;&nbsp; Events
+      <% end %>
+    </li>
+    <li class=""><%= link_to :controller => 'admin', :action => 'photos' do %>
+          <span class="fa fa-file-image-o "></span>&nbsp;&nbsp; Photos
+      <% end %>
+    </li>
+    <li class=""><%= link_to :controller => 'admin', :action => 'articles' do %>
+          <span class="fa fa-file-text"></span>&nbsp;&nbsp; Articles
+      <% end %>
+    </li>
+    <li class=""><%= link_to :controller => 'admin', :action => 'testimonials' do %>
+          <span class="fa fa-file-text"></span>&nbsp;&nbsp;Testimonials
+      <% end %>
+    </li>
+
+
+  </ul>
+</div><!--/.sidebar-->
+
+<div class="col-sm-9 col-sm-offset-3 col-lg-10 col-lg-offset-2 main">
+  <div class="row">
+    <ol class="breadcrumb">
+      <li><a href="#"><span class="fa fa-home"></span></a></li>
+      <li>Testimonials</li>
+      <li class="active">New Testimonial</li>
+    </ol>
+  </div>
+
+  <div style="padding: 10px">
+    <div style="padding: 10px;">
+      <div class="row">
+        <div class=" col-lg-6 col-lg-offset-0">
+          <%= render 'admin/testimonials/form' %>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+
+</div>    <!--/.main-->

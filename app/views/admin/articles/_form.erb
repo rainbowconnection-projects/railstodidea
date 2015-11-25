@@ -1,0 +1,7 @@
+<%= simple_form_for @article do |f| %>
+    <%= f.input :title, label: 'Title' %>
+    <%= f.input :text, label: 'Article', as: :text %>
+    <%= f.association :category, label: 'Category' %>
+    <%= f.input :photo, as: :file %>
+    <%= f.button :submit, @article.new_record? ? 'Post Article' : 'Update Article', class: 'btn btn-success btn-block btn-medium' %>
+<% end %>
