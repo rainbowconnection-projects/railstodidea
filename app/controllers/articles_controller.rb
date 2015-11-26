@@ -10,8 +10,14 @@ class ArticlesController < ApplicationController
 
   end
   def update
-    if @article.update(article_params)
-      redirect_to controller: 'admin', action: 'articles'
+    respond_to do |format|
+      if @article.update(article_params)
+        format.html { redirect_to @article, notice: 'Project was successfully updated.' }
+        format.json { render :show, status: :ok, location: @article }
+      else
+        format.html { render :edit }
+        format.json { render json: @article.errors, status: :unprocessable_entity }
+      end
     end
   end
 

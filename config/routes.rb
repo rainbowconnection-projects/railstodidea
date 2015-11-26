@@ -1,13 +1,5 @@
 Rails.application.routes.draw do
-  resources :projects
-  resources :testimonials
-  resources :testimonials
-  devise_for :admin
 
-  resources :categories
-  resources :products
-  resources :events
-  resources :articles
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
@@ -15,6 +7,14 @@ Rails.application.routes.draw do
   # You can have the root of your site routed with "root"
   root 'home#index'
 
+  devise_for :admin
+  resources :projects
+  resources :testimonials
+  resources :categories
+  resources :products
+  resources :events
+  resources :articles
+  resources :jobs
   get 'products' => 'products#index'
 
   get 'hour_of_code' => 'hoc#index'
@@ -26,8 +26,6 @@ Rails.application.routes.draw do
   get 'blog/new' => 'blog#new'
 
   get 'our_story' => 'story#index'
-
-  resources :jobs
 
   get 'contact' => 'contact#index'
 
@@ -56,7 +54,6 @@ Rails.application.routes.draw do
   get 'admin/projects/:id/edit' => 'admin#edit_project'
 
   get 'admin/photos' => 'admin#photos'
-
 
 
 =begin

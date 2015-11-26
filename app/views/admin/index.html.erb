@@ -5,24 +5,7 @@
     </div>
   </form>-->
   <ul class="nav menu">
-    <li class=""><%= link_to :controller => 'admin', :action => 'products' do %>
-          <span class="fa fa-dashboard"></span>&nbsp;&nbsp; Products
-      <% end %>
-    </li>
-    <li class=""><%= link_to :controller => 'admin', :action => 'events' do %>
-          <span class="fa fa-newspaper-o"></span>&nbsp;&nbsp; Events
-      <% end %>
-    </li>
-    <li class=""><%= link_to :controller => 'admin', :action => 'photos' do %>
-          <span class="fa fa-file-image-o "></span>&nbsp;&nbsp; Photos
-      <% end %>
-    </li>
-    <li class=""><%= link_to :controller => 'admin', :action => 'articles' do %>
-          <span class="fa fa-file-text"></span>&nbsp;&nbsp; Articles
-      <% end %>
-    </li>
-
-
+    <%= render 'admin/shared/links' %>
   </ul>
 </div><!--/.sidebar-->
 
