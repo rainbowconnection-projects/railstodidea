@@ -133,6 +133,9 @@ Devise.setup do |config|
   # Invalidates all the remember me tokens when the user signs out.
   config.expire_all_remember_me_on_sign_out = true
 
+  # The default HTTP method used to sign out a resource. Default is :delete.
+  config.sign_out_via = :get
+
   # If true, extends the user's remember period when remembered via cookie.
   # config.extend_remember_period = false
 
