@@ -17,14 +17,14 @@
     </ol>
   </div>
 
-  <div style="padding: 10px">
+  <div style="padding: 10px; margin-bottom: 20px">
     <div class="row">
-      <%= link_to 'New Product', {:controller => 'admin', :action => 'new_product'}, :class => 'btn btn-medium btn-primary pull-right' %>
+      <%= link_to 'New Product', new_admin_product_path, :class => 'btn btn-medium btn-primary' %>
     </div>
-    <div class="margin-bottom-20"></div>
     <div class="row">
       <div class="col-lg-12">
-        <table class="table table-condensed">
+        <table data-toggle="table" data-classes="table table-hover table-condensed"
+               data-striped="true">
           <thead>
           <tr>
             <th data-field="id" data-sortable="true">Id</th>
@@ -46,7 +46,10 @@
                   </p>
                 </td>
 
-                <td><%= link_to 'Edit', {controller: 'admin', action: 'edit_product', id: product.id}, class: 'btn btn-primary btn-small' %> <%= link_to 'View', {controller: 'products', action: 'show', id: product.id}, class: 'btn btn-success btn-small' %> <%= link_to 'Delete', {controller: 'admin', action: 'edit_product', id: product.id}, class: 'btn btn-danger btn-sm' %></td>
+                <td>
+                  <%= link_to 'Edit', edit_admin_product_path(product), class: 'btn btn-primary btn-small' %>
+                  <%= link_to 'View', product, class: 'btn btn-success btn-small' %>
+                  <%= link_to 'Delete', admin_product_path(product), class: 'btn btn-danger btn-sm', method: :delete, data: {confirm: 'Are you sure?'} %>
               </tr>
           <% end %>
           </tbody>

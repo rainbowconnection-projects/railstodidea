@@ -19,7 +19,7 @@
 
   <div style="padding: 10px">
     <div class="row">
-      <%= link_to 'New Article', {:controller => 'admin', :action => 'new_article'}, :class => 'btn btn-medium btn-primary pull-right' %>
+      <%= link_to 'New Article', new_admin_article_path, :class => 'btn btn-medium btn-primary pull-right' %>
     </div>
     <div class="margin-bottom-20"></div>
     <div class="row">
@@ -46,7 +46,11 @@
 
                 </td>
                 <td><%= article.category %></td>
-                <td><%= link_to 'Edit', {controller: 'admin', action: 'edit_article', id: article.id}, class: 'btn btn-primary btn-small' %> <%= link_to 'View', {controller: 'blog', action: 'show', id: article.id}, class: 'btn btn-success btn-small' %> <%= link_to 'Delete', {controller: 'admin', action: 'edit_article', id: article.id}, class: 'btn btn-danger btn-sm' %></td>
+                <td>
+                  <%= link_to 'Edit', edit_admin_article_path, class: 'btn btn-primary btn-small' %>
+                  <%= link_to 'View', admin_article_path, class: 'btn btn-success btn-small' %>
+                  <%= link_to 'Delete', admin_article_path,class: 'btn btn-danger btn-sm', method: :delete, data: { confirm: 'Are you sure?' } %>
+                </td>
               </tr>
           <% end %>
           </tbody>

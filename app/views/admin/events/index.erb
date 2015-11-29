@@ -47,7 +47,10 @@
                   </p>
 
                 </td>
-                <td><%= link_to 'Edit', {controller: 'admin', action: 'edit_event', id: event.id}, class: 'btn btn-primary btn-small' %> <%= link_to 'View', {controller: 'events', action: 'show', id: event.id}, class: 'btn btn-success btn-small' %> <%= link_to 'Delete', {controller: 'admin', action: 'edit_event', id: event.id}, class: 'btn btn-danger btn-sm' %></td>
+                <td>
+                  <%= link_to 'Edit', {controller: 'admin', action: 'edit_event', id: event.id}, class: 'btn btn-primary btn-small' %>
+                  <%= link_to 'View', {controller: 'events', action: 'show', id: event.id}, class: 'btn btn-success btn-small' %>
+                  <%= link_to 'Delete', {controller: 'admin', action: 'destroy_event', id: event.id},class: 'btn btn-danger btn-sm', method: :delete, data: { confirm: 'Are you sure?' } %>
               </tr>
           <% end %>
           </tbody>

@@ -1,0 +1,40 @@
+/* line 1, C:/TODIdea-master/TODIdea-master/app/assets/stylesheets/home.css.scss */
+.team-info {
+  font-size: 18px;
+}
+
+/* line 7, C:/TODIdea-master/TODIdea-master/app/assets/stylesheets/home.css.scss */
+.product-logo {
+  max-height: 100px;
+}
+
+/* line 10, C:/TODIdea-master/TODIdea-master/app/assets/stylesheets/home.css.scss */
+.product {
+  text-align: center;
+}
+
+/* line 14, C:/TODIdea-master/TODIdea-master/app/assets/stylesheets/home.css.scss */
+nav.navbar-fixed-top li a {
+  color: #FFF;
+  text-shadow: none;
+}
+
+/* line 18, C:/TODIdea-master/TODIdea-master/app/assets/stylesheets/home.css.scss */
+nav.navbar-fixed-top {
+  background: transparent;
+  border-bottom: 0px !important;
+}
+
+/* line 23, C:/TODIdea-master/TODIdea-master/app/assets/stylesheets/home.css.scss */
+nav.navbar-fixed-top .logo {
+  color: #FFF;
+}
+
+/* line 27, C:/TODIdea-master/TODIdea-master/app/assets/stylesheets/home.css.scss */
+nav,
+nav.navbar-fixed-top,
+nav.navbar-fixed-top li a,
+nav.navbar-fixed-top .logo {
+  -webkit-transition: all 0.5s ease;
+  transition: all 0.5s ease;
+}

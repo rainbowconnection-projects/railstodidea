@@ -19,7 +19,7 @@
 
   <div style="padding: 10px">
     <div class="row">
-      <%= link_to 'New Testimonial', {:controller => 'admin', :action => 'new_testimonial'}, :class => 'btn btn-medium btn-primary pull-right' %>
+      <%= link_to 'New Testimonial', new_admin_testimonial_path, :class => 'btn btn-medium btn-primary pull-right' %>
     </div>
     <div class="margin-bottom-20"></div>
     <div class="row">
@@ -45,7 +45,10 @@
                     <%= testimonial.text %>
                   </p>
                 </td>
-                <td><%= link_to 'Edit', {controller: 'admin', action: 'edit_testimonial', id: testimonial.id}, class: 'btn btn-primary btn-small' %> <%= link_to 'View', {controller: 'testimonials', action: 'show', id: testimonial.id}, class: 'btn btn-success btn-small' %> <%= link_to 'Delete', {controller: 'admin', action: 'edit_product', id: testimonial.id}, class: 'btn btn-danger btn-sm' %></td>
+                <td>
+                  <%= link_to 'Edit', {controller: 'admin', action: 'edit_testimonial', id: testimonial.id}, class: 'btn btn-primary btn-small' %>
+                  <%= link_to 'View', {controller: 'testimonials', action: 'show', id: testimonial.id}, class: 'btn btn-success btn-small' %>
+                  <%= link_to 'Delete', {controller: 'admin', action: 'destroy_testimonial', id: testimonial.id},class: 'btn btn-danger btn-sm', method: :delete, data: { confirm: 'Are you sure?' } %>
               </tr>
           <% end %>
           </tbody>

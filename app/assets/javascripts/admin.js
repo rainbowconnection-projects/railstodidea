@@ -1,12 +1,14 @@
 /**
  * Created by christoandrew on 11/16/2015.
  */
+//= require jquery
+//= require jquery_ujs
+//= require turbolinks
+//= require bootstrap-sprockets
+//= require jquery.turbolinks
 //= require bootstrap-table
 //= require bootstrap-datepicker
-//= require chart.min
-//= require chart-data
-//= require easypiechart
-//= require easypiechart-data
+
 
 
 

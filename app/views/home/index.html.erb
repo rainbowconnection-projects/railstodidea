@@ -9,11 +9,14 @@
   <div data-u="slides" style="cursor: default; position: relative; top: 0px; left: 0px; width: 1300px; height: 500px; overflow: hidden;">
     <div data-p="225.00" style="display: none;">
       <%= image_tag('purple.jpg', class: 'img-responsive') %>
-      <div style="position: absolute; top: 30px; left: 30px; width: 480px; height: 120px; font-size: 50px; color: #ffffff; line-height: 60px;">TOUCH
-        SWIPE SLIDER
+      <div style="position: absolute; top: 30px; left: 30px; width: 480px; height: 120px; font-size: 50px; color: #ffffff; line-height: 60px;" class="animated fadeInLeft">
+        <%= image_tag('edutab.png', class: 'img-responsive') %>
       </div>
-      <div style="position: absolute; top: 300px; left: 30px; width: 480px; height: 120px; font-size: 30px; color: #ffffff; line-height: 38px;">Build
-        your slider with anything, includes image, content, text, html, photo, picture
+      <div style="text-align: center">
+        <div class="animated fadeInUp" style="position: absolute; top: 300px; left: 30px; width: 480px; height: 120px; font-size: 30px; color: #ffffff; line-height: 38px;">The
+          revolutionary tablet built to inspire and motivate
+          <%= link_to 'More About EduTab ', {controller: 'products', action: 'show', id: 3, name: 'edutab'}, {class: 'btn btn-lg btn-radius btn-theme-border wow animated bounceIn', data: {'wow-duration' => '700ms', 'wow-delay' => '200ms'}} %>
+        </div>
       </div>
     </div>
     <div data-p="225.00" style="display: none;">
@@ -35,37 +38,10 @@
 </div>
 
 <!--end-->
+<!--
+<div class="divided-50"></div>-->
 
-<div class="divided-50"></div>
-
-
-
-
-<!--features-->
-<div class="container">
-  <div class="row">
-    <div class="col-sm-8 col-sm-offset-2">
-      <h3 class="center-heading">Products</h3>
-      <hr>
-    </div>
-  </div>
-  <div class="row margin-bottom-50">
-    <% @products.each do |product| %>
-        <div class="col-md-4 col-sm-6 margin-bottom-30">
-          <div class="features wow animated fadeIn" data-wow-duration="700ms" data-wow-delay="100ms">
-            <%= link_to controller: 'products', action: 'show', id: product.id do %>
-                <%= image_tag(product.photo, class: 'img-responsive') %>
-            <% end %>
-
-          </div>
-
-          <!--features end-->
-        </div>
-    <% end %>
-
-    <!--features col end-->
-  </div>
-  <!--features row end-->
+<!--features row end-->
 
 
 </div><!--features container end-->
@@ -74,34 +50,40 @@
     <div class="row">
       <div class="row">
         <div class="col-sm-8 col-sm-offset-2">
-          <h3 class="center-heading">Meet the Founders</h3>
+          <h1 class="center-heading">Meet the Founders</h1>
           <hr>
         </div>
       </div>
       <div class="col-sm-6 wow animated fadeInLeft" data-wow-duration="700ms" data-wow-delay="200ms">
         <div class="row margin-bottom-20">
           <div class="col-sm-12 section-title">
-            <h4>
+            <h2>
               Mbanda Shyaka
-            </h4>
+
+            </h2><em>Managing Director</em>
+
           </div>
         </div>
         <!--section title row-->
-        <p>
-          Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's
-          standard dummy text ever since the 1500s
+        <p class="team-info">
+          Mbanda Shyaka is a graduate of Food Science and Technology, MUK(2000). He is passionate about how digitisation
+          can improve our education as well as our health, areas in which he is pursuing business interests.
+
         </p>
 
         <div class="divided-20"></div>
         <div class="row margin-bottom-30">
           <div class="col-xs-4">
-            <%= image_tag 'mbanda.jpg', class: 'img-rounded', height: '150px', width: '150px' %>
+            <%= image_tag 'mbanda.jpg', class: 'img-circle', height: '150px', width: '150px' %>
           </div>
           <div class="col-xs-8">
             <div class="team-info">
               <p>
-                making it look like readable English. Many desktop publishing packages and web page editors now use
-                Lorem Ipsum as their default model text
+                He is currently serving on the executive of Akright City as the Honourable Minister of ICT entrusted
+                with the
+                responsibility of getting government approval making Akright City a Cyber City.
+                He is a founding member and board member of the Silas Shyaka Education Fund dedicated to providing
+                educational opportunities to children in areas recovering from war in Uganda.
               </p>
 
               <p>
@@ -119,28 +101,35 @@
       <div class="col-sm-6 wow animated fadeInRight" data-wow-duration="700ms" data-wow-delay="200ms">
         <div class="row margin-bottom-20">
           <div class="col-sm-12 section-title">
-            <h4>
-              Alex Shyaka
-            </h4>
+            <h2>
+              Nkusi Shyaka
+            </h2>
+            <em>Director Operations</em>
           </div>
         </div>
         <!--section title row-->
-        <p>
-          Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's
-          standard dummy text ever since the 1500s
+        <p class="team-info">
+          A graduate of Software development and Engineering from Aptech , India, Mr. Nkusi has worked in software
+          companies in America and Uganda. Currently, Nkusi runs "The Railsshop" , a first of a kind web development
+          skills school that uses the Ruby on
+          Rails platform.
+
         </p>
 
         <div class="divided-20"></div>
         <div class="row margin-bottom-30">
           <div class="col-xs-4">
-            <%= image_tag 'alex.jpg', class: 'img-rounded', height: '150px', width: '150px' %>
+            <%= image_tag 'alex.jpg', class: 'img-circle', height: '150px', width: '150px' %>
           </div>
           <div class="col-xs-8">
             <div class="team-info">
               <p>
-                Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the
-                industry's
-                standard dummy text ever since the 1500s
+
+                Nkusi Shyaka is also the founded "TheRailsShop" and is a founding member of the Silas Shyaka Education
+                Fund dedicated to providing
+                school fees and guidance to disadvantaged children from areas recovering from war in Uganda. He is a
+                board member and a committed cadre of the cause.
+                Nkusi is married to Lyn Shyaka and together have 2 children.
               </p>
 
               <p>
@@ -167,8 +156,8 @@
     <div class="row margin-bottom-40">
       <div class="col-sm-12 section-title">
         <h1>
-          <small>Recent</small>
-          <br>Projects.
+          <small>Schools</small>
+          <br>Reached.
         </h1>
       </div>
     </div>
@@ -180,7 +169,7 @@
         <% @projects.each do |project| %>
             <div class="col-sm-3 no-paddding">
               <div class="img"><%= image_tag project.photo, class: 'img img-responsive' %>
-                <%= link_to project,{class: 'over'} do %>
+                <%= link_to project, {class: 'over'} do %>
                     <div class="img-desc">
                       <h2><%= project.name %></h2>
                     </div>
@@ -194,8 +183,7 @@
   </div>
   <div class="clearfix"></div>
   <div class="more-works">
-    <a href="portfolio.html" class="btn btn-lg btn-radius btn-theme-border wow animated bounceIn" data-wow-duration="700ms" data-wow-delay="200ms">See
-      all Work</a>
+    <%= link_to 'See all our Work', projects_path, {class: 'btn btn-lg btn-radius btn-theme-border wow animated bounceIn', data: {'wow-duration' => '700ms', 'wow-delay' => '200ms'}} %>
   </div>
 </div><!--recent-work-->
 
@@ -234,7 +222,7 @@
 
 </div>fun facts-->
 
-<div class="cta-dark padding-80">
+<!--<div class="cta-dark padding-80">
   <div class="container">
     <div class="row">
       <div class="col-sm-8">
@@ -249,7 +237,7 @@
       </div>
     </div>
   </div>
-</div>
+</div>-->
 
 <div class="why-choose">
   <div class="container">

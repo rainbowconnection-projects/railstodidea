@@ -1,16 +1,18 @@
-<div class="page-title" data-stellar-background-ratio="0.2" style="background-position: 0% 8px;">
-  <div class="container">
+<div class="divided-20"></div>
+<div class="container">
+  <div class="col-lg-8 col-lg-offset-2">
+    <% @products.each do |product| %>
     <div class="row">
-      <div class="col-sm-6">
-        <h1>Our Products</h1>
+      <div class="col-md-6">
+        <%= link_to product  do %>
+            <%= image_tag product.photo, class: 'img-responsive', width: '400px', height: '300px' %>
+        <% end %>
       </div>
-      <div class="col-sm-6">
-        <ol class="breadcrumb">
-          <li><a href="#"><i class="ion-home"></i></a></li>
-          <li class="active">Products</li>
-        </ol>
+      <div class="col-md-6">
+        <h2 class="media-heading" style="font-weight: 600;"><%= product.name %></h2>
+        <p><%= product.description %></p>
       </div>
     </div>
+    <% end %>
   </div>
 </div>
-<div class="divided-30"></div>

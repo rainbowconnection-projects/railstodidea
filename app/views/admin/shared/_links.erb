@@ -1,24 +1,20 @@
-<li class=""><%= link_to :controller => 'admin', :action => 'products' do %>
+<li class=""><%= link_to admin_products_path do %>
       <span class="fa fa-dashboard"></span>&nbsp;&nbsp; Products
   <% end %>
 </li>
-<li class=""><%= link_to :controller => 'admin', :action => 'events' do %>
+<li class=""><%= link_to admin_events_path do %>
       <span class="fa fa-newspaper-o"></span>&nbsp;&nbsp; Events
   <% end %>
 </li>
-<li class=""><%= link_to :controller => 'admin', :action => 'photos' do %>
-      <span class="fa fa-file-image-o "></span>&nbsp;&nbsp; Photos
-  <% end %>
-</li>
-<li class=""><%= link_to :controller => 'admin', :action => 'articles' do %>
+<li class=""><%= link_to admin_articles_path do %>
       <span class="fa fa-file-text"></span>&nbsp;&nbsp; Articles
   <% end %>
 </li>
-<li class=""><%= link_to :controller => 'admin', :action => 'testimonials' do %>
+<li class=""><%= link_to admin_testimonials_path do %>
       <span class="fa fa-file-text"></span>&nbsp;&nbsp;Testimonials
   <% end %>
 </li>
-<li class=""><%= link_to :controller => 'admin', :action => 'projects' do %>
+<li class=""><%= link_to admin_projects_path do %>
       <span class="fa fa-file-text"></span>&nbsp;&nbsp;Projects
   <% end %>
 </li>
