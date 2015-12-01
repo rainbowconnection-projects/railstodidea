@@ -1,7 +1,5 @@
-<%= simple_form_for @category do |f| %>
-    <%= f.input :name, label: 'Title' %>
-    <%= f.input :text, label: 'Article', as: :text %>
-    <%= f.association :category, label: 'Category' %>
-    <%= f.input :photo, as: :file %>
-    <%= f.button :submit, @article.new_record? ? 'Post Article' : 'Update Article', class: 'btn btn-success btn-block btn-medium' %>
+<%= simple_form_for ([:admin,@category]) do |f| %>
+    <%= f.input :name, label: 'Name' %>
+    <%= f.input :description, label: 'Description', as: :text %>
+    <%= f.button :submit, @category.new_record? ? 'Add Category' : 'Update Category', class: 'btn btn-success btn-block btn-medium' %>
 <% end %>

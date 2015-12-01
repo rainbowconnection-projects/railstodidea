@@ -1,14 +1,3 @@
-<div id="sidebar-collapse" class="col-sm-3 col-lg-2 sidebar">
-  <!--<form role="search">
-    <div class="form-group">
-      <input type="text" class="form-control" placeholder="Search">
-    </div>
-  </form>-->
-  <ul class="nav menu">
-    <%= render 'admin/shared/links' %>
-  </ul>
-</div><!--/.sidebar-->
-
 <div class="col-sm-9 col-sm-offset-3 col-lg-10 col-lg-offset-2 main">
   <div class="row">
     <ol class="breadcrumb">
@@ -19,7 +8,7 @@
 
   <div style="padding: 10px">
     <div class="row">
-      <%= link_to 'New Event', {:controller => 'admin', :action => 'new_event'}, :class => 'btn btn-medium btn-primary pull-right' %>
+      <%= link_to 'New Event', new_admin_event_path, :class => 'btn btn-medium btn-primary pull-right' %>
     </div>
     <div class="margin-bottom-20"></div>
     <div class="row">
@@ -48,9 +37,9 @@
 
                 </td>
                 <td>
-                  <%= link_to 'Edit', {controller: 'admin', action: 'edit_event', id: event.id}, class: 'btn btn-primary btn-small' %>
-                  <%= link_to 'View', {controller: 'events', action: 'show', id: event.id}, class: 'btn btn-success btn-small' %>
-                  <%= link_to 'Delete', {controller: 'admin', action: 'destroy_event', id: event.id},class: 'btn btn-danger btn-sm', method: :delete, data: { confirm: 'Are you sure?' } %>
+                  <%= link_to 'Edit', edit_admin_event_path(event), class: 'btn btn-primary btn-small' %>
+                  <%= link_to 'View', admin_event_path(event), class: 'btn btn-success btn-small' %>
+                  <%= link_to 'Delete', admin_event_path(event),class: 'btn btn-danger btn-sm', method: :delete, data: { confirm: 'Are you sure?' } %>
               </tr>
           <% end %>
           </tbody>

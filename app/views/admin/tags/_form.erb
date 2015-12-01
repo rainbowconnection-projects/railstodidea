@@ -1,0 +1,4 @@
+<%= simple_form_for([:admin ,@tag])  do |f| %>
+    <%= f.input :name, label: 'Tag Name' %>
+    <%= f.button :submit, @tag.new_record? ? 'Add Tag' : 'Update Tag', class: 'btn btn-success btn-block btn-medium' %>
+<% end %>

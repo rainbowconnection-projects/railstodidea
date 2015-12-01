@@ -1,1 +1,31 @@
-<h3><%= @article.inspect %></h3>
+<div class="article-header" data-stellar-background-ratio="0.2" style="background-position: 0% 8px;">
+
+</div>
+<div class="container">
+  <div class="row">
+    <div class="col-md-8 col-md-offset-1">
+      <%= image_tag @article.photo, height: '350px' %>
+      <div class="row">
+        <div class="col-md-2 col-md-offset-1 article-side-bar">
+          <ul class="social list-inline">
+            <li><a href="#" class="fb"><i class="ion-social-facebook-outline"></i></a></li>
+            <li><a href="#" class="twitter"><i class="ion-social-twitter-outline"></i></a></li>
+          </ul>
+        </div>
+        <div class="col-md-9">
+          <div class="post">
+            <h2><%= @article.title %></h2>
+            <p class="lead">Posted <em><%= time_ago_in_words(@article.created_at) %></em></p>
+            <div class="tags">
+              <%= @article.tags %>
+            </div>
+            <p class="post-detail">
+              <%= @article.text %>
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+</div>

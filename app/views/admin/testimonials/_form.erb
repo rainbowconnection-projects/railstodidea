@@ -1,4 +1,4 @@
-<%= simple_form_for(@testimonial) do |f| %>
+<%= simple_form_for([:admin,@testimonial]) do |f| %>
     <%= f.error_notification %>
       <%= f.input :designation %>
       <%= f.input :text %>

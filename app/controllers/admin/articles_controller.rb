@@ -8,12 +8,43 @@ class Admin::ArticlesController < AdminController
     @article = Article.new
   end
 
+  def edit
+    @article = Article.find(params[:id])
+  end
+
   def create
+
+=begin
     @article = Article.new(article_params)
+    @tags = article_params[:tag_ids]
+    @tags.inspect
+=end
+=begin
     respond_to do |format|
       if @article.save
+
+        @tags.each do |tag|
+          @article_tag = ArticleTag.new
+         # @article_tag.article_id = tag[]
+        end
+
+        format.html { redirect_to admin_articles_path, notice: 'Article was successfully created.' }
+        format.json { render :show, status: :ok, location: @article }
+      else
+        format.html { render :edit }
+        format.json { render json: @article.errors, status: :unprocessable_entity }
+      end
+    end
+=end
+  end
+
+  def update
+    @article = Article.find(params[:id])
+    respond_to do |format|
+      if @article.update(article_params)
+        @article.tags.update(article_params[:tag_ids])
         format.html { redirect_to admin_articles_path, notice: 'Article was successfully updated.' }
-        format.json { redirect_to admin_articles_path, status: :ok, location: @article }
+        format.json { render :show, status: :ok, location: @article }
       else
         format.html { render :edit }
         format.json { render json: @article.errors, status: :unprocessable_entity }
@@ -21,14 +52,29 @@ class Admin::ArticlesController < AdminController
     end
   end
 
+  def destroy
+    @article = Article.find(params[:id])
+    respond_to do |format|
+      if @article.destroy
+        format.html { redirect_to admin_articles_path, notice: 'Article was successfully deleted.' }
+        format.json { render :show, status: :ok, location: @article }
+      else
+        format.html { render :edit }
+        format.json { render json: @article.errors, status: :unprocessable_entity }
+      end
+    end
+  end
 
   private
-  # Use callbacks to share common setup or constraints between actions.
   def set_article
     @article = Article.find(params[:id])
   end
+  def set_tags
+    @tags = params[:tags]
+  end
 
   def article_params
-    params.require(:article).permit(:title, :text, :photo, :category_id)
+    params.require(:article).permit(:title,:category_id,:tag_ids,:text, :photo)
   end
+
 end

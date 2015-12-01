@@ -14,15 +14,18 @@
             <%= image_tag(article.photo, class: 'img-responsive') %>
             <p class="lead">
 
-            <h2 class="">
-              <a href="#"><%= article.title %></a>
+            <h2>
+              <%= link_to article.title, {controller: 'blog', action: 'show', id: article.id} %>
             </h2>
             </p>
 
             <p>Posted <i class="ion ion-calendar"></i> <%= article.created_at.strftime('%B %d, %Y') %></p>
 
             <hr>
-            <p class="post-detail"><%= article.text %></p>
+            <div class="text-wrapper" id="text-wrapper">
+              <p class="post-detail"><%= article.text %></p>
+            </div>
+
             <!--<p>
 
             </p>-->
@@ -33,7 +36,7 @@
       <% end %>
 
       <%= will_paginate @articles, :page_links => false %>
-      <!-- Pager -->
+      <!-- Pager
       <ul class="pager">
         <li class="previous">
           <a href="#">&larr; Older</a>
@@ -42,6 +45,7 @@
           <a href="#">Newer &rarr;</a>
         </li>
       </ul>
+      -->
     </div>
 
   </div>

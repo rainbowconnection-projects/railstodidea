@@ -7,8 +7,10 @@ Rails.application.routes.draw do
   resources :categories
   resources :products
   resources :events
-  #resources :articles
+  resources :articles
   resources :jobs
+  resources :tags
+
   get 'products' => 'products#index'
   #get 'products/:name' => 'products#show'
 
@@ -29,7 +31,7 @@ Rails.application.routes.draw do
   get 'admin/users' => 'admin#users'
 
   namespace :admin do
-    resources :articles, :products, :events, :projects, :testimonials
+    resources :articles, :products, :events, :projects, :testimonials,:tags, :categories
   end
 
 end

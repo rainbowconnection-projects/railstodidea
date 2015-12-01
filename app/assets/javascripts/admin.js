@@ -12,10 +12,13 @@
 
 
 
+
 $('#calendar').datepicker({
 });
 
-
+$(document).ready(function(){
+    $('.text').froalaEditor()
+});
 function rowStyle(row, index) {
     var classes = ['active', 'success', 'info', 'warning', 'danger'];
 

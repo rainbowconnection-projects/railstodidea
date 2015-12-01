@@ -1,6 +1,7 @@
 /**
  * Created by Alex on 11/24/2015.
  */
+//= require jquery.dotdotdot
 jQuery(function() {
     var bar = jQuery('nav');
     var top = bar.css('top');
@@ -20,5 +21,13 @@ jQuery(function() {
                 bar.stop().animate({top : top}, 300);
             }
         }
+    });
+});
+
+$(function(){
+    $('#text-wrapper').dotdotdot({
+        ellipsis : '...',
+        wrap : 'word',
+        watch : 'window'
     });
 });

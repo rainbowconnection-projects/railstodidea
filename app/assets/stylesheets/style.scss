@@ -10,23 +10,61 @@ body {
   color: #333;
 }
 
+
+
+
+
 /****************
 basic
 *****************/
+.story-title{
+  background: asset_data_url('header_background_gray_light.jpg');
+}
+
+.about-description{
+  color: #777;
+  line-height: 25px;
+  font-size: 18px;
+
+}
+
+
+
 a:hover, a:focus {
   outline: 0;
 }
 
 .text-wrapper {
   max-height: 100px;
+  overflow-y: hidden;
+}
+
+.product-wrapper {
+  overflow-y: hidden;
+  max-height: 200px;
+  font-size: 16px;
+  font-weight: 300;
+  padding: 15px;
+  overflow-x: hidden;
+}
+.product-details{
+  overflow: auto;
+  font-size: 16px;
+  font-weight: 300;
+  padding: 15px;
 }
 
 .text-wrapper-home {
-  max-height: 100px;
+  height: 160px;
+  max-height: 160px;
+}
+
+div.box {
+  height: 160px;
 }
 
 .event-header {
-  background: asset_data_url('e-header.jpg');
+  background: asset_data_url('header.php.png');
 }
 
 /***** margin***/
@@ -629,29 +667,30 @@ call to action areas
   color: #fff;
 }
 
-.product{
-  height:400px;
-  width:400px;
-  position:relative;
-}
-.product img{
-  position:absolute;
-  left:0;
-  top:0;
+.product {
+  height: 400px;
+  width: 400px;
+  position: relative;
 }
 
-.product .title{
-  z-index:100;
-  position:absolute;
-  color:white;
-  font-size:24px;
-  font-weight:bold;
-  left:150px;
-  top:350px;
+.product img {
+  position: absolute;
+  left: 0;
+  top: 0;
 }
 
-.tab-header{
-  background: asset_data_url('tab-header.jpg') no-repeat ;
+.product .title {
+  z-index: 100;
+  position: absolute;
+  color: white;
+  font-size: 24px;
+  font-weight: bold;
+  left: 150px;
+  top: 350px;
+}
+
+.tab-header {
+  background: asset_data_url('tab-header.jpg') no-repeat;
 }
 
 /*****************
@@ -660,6 +699,10 @@ blog
 
 .blog-header {
   background: asset_data_url('blog.jpg');
+}
+
+.article-side-bar {
+  background: #f1f4f7;
 }
 
 .post-thumbnail {
@@ -1709,4 +1752,35 @@ Sidebar
 .event-banner img {
   height: 100%;
   width: 100%;
+}
+
+/** FAQS **/
+.faqHeader {
+  font-size: 27px;
+  margin: 20px;
+}
+
+.panel-heading [data-toggle="collapse"]:after {
+  font-family: 'FontAwesome';
+  content: "\f01d"; /* "play" icon */
+  float: right;
+  color: #F58723;
+  font-size: 18px;
+  line-height: 22px;
+  /* rotate "play" icon from > (right arrow) to down arrow */
+  -webkit-transform: rotate(-90deg);
+  -moz-transform: rotate(-90deg);
+  -ms-transform: rotate(-90deg);
+  -o-transform: rotate(-90deg);
+  transform: rotate(-90deg);
+}
+
+.panel-heading [data-toggle="collapse"].collapsed:after {
+  /* rotate "play" icon from > (right arrow) to ^ (up arrow) */
+  -webkit-transform: rotate(90deg);
+  -moz-transform: rotate(90deg);
+  -ms-transform: rotate(90deg);
+  -o-transform: rotate(90deg);
+  transform: rotate(90deg);
+  color: #454444;
 }

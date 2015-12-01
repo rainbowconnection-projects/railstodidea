@@ -1,25 +1,14 @@
-<div id="sidebar-collapse" class="col-sm-3 col-lg-2 sidebar">
-  <!--<form role="search">
-    <div class="form-group">
-      <input type="text" class="form-control" placeholder="Search">
-    </div>
-  </form>-->
-  <ul class="nav menu">
-    <%= render 'admin/shared/links' %>
-  </ul>
-</div><!--/.sidebar-->
-
 <div class="col-sm-9 col-sm-offset-3 col-lg-10 col-lg-offset-2 main">
   <div class="row">
     <ol class="breadcrumb">
       <li><a href="#"><span class="fa fa-home"></span></a></li>
-      <li class="active">Articles</li>
+      <li class="active">Categories</li>
     </ol>
   </div>
 
   <div style="padding: 10px">
     <div class="row">
-      <%= link_to 'New Article', new_admin_article_path, :class => 'btn btn-medium btn-primary pull-right' %>
+      <%= link_to 'New Category', new_admin_category_path, :class => 'btn btn-medium btn-primary pull-right' %>
     </div>
     <div class="margin-bottom-20"></div>
     <div class="row">
@@ -28,28 +17,22 @@
                data-striped="true">
           <thead>
           <tr>
-            <th data-field="title" data-sortable="true">Title</th>
-            <th data-field="article" data-sortable="true">Article</th>
-            <th data-field="category" data-sortable="true">Category</th>
+            <th data-field="id" data-sortable="true">Id</th>
+            <th data-field="name" data-sortable="true">Name</th>
+            <th data-field="description" data-sortable="false">Description</th>
             <th></th>
           </tr>
           </thead>
           <tbody>
-          <% @articles.each do |article| %>
+          <% @categories.each do |category| %>
               <tr>
-                <td><%= article.title %></td>
+                <td><%= category.id %></td>
+                <td><%= category.name %></td>
+                <td><%= category.description %></td>
                 <td>
-                  <div style="overflow-y: auto">
-                    <p>
-                      <%= article.text %>
-                    </p>
-                  </div>
-                </td>
-                <td><%= article.category.name %></td>
-                <td>
-                  <%= link_to 'Edit', edit_admin_article_path(article), class: 'btn btn-primary btn-small' %>
-                  <%= link_to 'View', admin_article_path(article), class: 'btn btn-success btn-small' %>
-                  <%= link_to 'Delete', admin_article_path(article), class: 'btn btn-danger btn-sm', method: :delete, data: {confirm: 'Are you sure?'} %>
+                  <%= link_to 'Edit', edit_admin_category_path(category), class: 'btn btn-primary btn-small' %>
+                  <%= link_to 'View', admin_category_path(category), class: 'btn btn-success btn-small' %>
+                  <%= link_to 'Delete', admin_category_path(category), class: 'btn btn-danger btn-sm', method: :delete, data: {confirm: 'Are you sure?'} %>
                 </td>
               </tr>
           <% end %>
