@@ -5,13 +5,16 @@ Rails.application.routes.draw do
   resources :projects
   resources :testimonials
   resources :categories
-  resources :products
+  resources :products do
+
+  end
   resources :events
   resources :articles
   resources :jobs
   resources :tags
 
   get 'products' => 'products#index'
+  get 'products/:link/show' => 'products#show'
   #get 'products/:name' => 'products#show'
 
   get 'hour_of_code' => 'hoc#index'
@@ -29,6 +32,8 @@ Rails.application.routes.draw do
   get 'admin' => 'admin#index'
   get 'admin/auth' => 'admin#login'
   get 'admin/users' => 'admin#users'
+
+
 
   namespace :admin do
     resources :articles, :products, :events, :projects, :testimonials,:tags, :categories

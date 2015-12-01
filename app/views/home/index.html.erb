@@ -15,15 +15,33 @@
       <div style="text-align: center">
         <div class="animated fadeInUp" style="position: absolute; top: 300px; left: 30px; width: 480px; height: 120px; font-size: 30px; color: #ffffff; line-height: 38px;">The
           revolutionary tablet built to inspire and motivate
-          <%= link_to 'More About EduTab ', {controller: 'products', action: 'show', id: 3, name: 'edutab'}, {class: 'btn btn-lg btn-radius btn-theme-border wow animated bounceIn', data: {'wow-duration' => '700ms', 'wow-delay' => '200ms'}} %>
+          <%= link_to 'More About EduTab ', {controller: 'products', action: 'show', link: 'edutab'}, {class: 'btn btn-lg btn-radius btn-theme-border wow animated bounceIn', data: {'wow-duration' => '700ms', 'wow-delay' => '200ms'}} %>
+        </div>
+      </div>
+    </div>
+    <div data-p="225.00" style="display: none;">
+      <%= image_tag('red.png', class: 'img-responsive') %>
+      <div style="position: absolute; top: 30px; left: 30px; width: 480px; height: 120px; font-size: 50px; color: #ffffff; line-height: 60px;" class="animated bounceInDown">
+        <%= image_tag('digi-logo.png', class: 'img-responsive') %>
+      </div>
+      <div style="text-align: center">
+        <div class="animated fadeInUp" style="position: absolute; top: 300px; left: 30px; width: 480px; height: 120px; font-size: 30px; color: #ffffff; line-height: 38px;">Portable
+          "coaches" to help keep you active and healthy.
+          <%= link_to 'More About Digital Fit', {controller: 'products', action: 'show', link: 'digitalfit'}, {class: 'btn btn-lg btn-radius btn-theme-border wow animated bounceIn', data: {'wow-duration' => '700ms', 'wow-delay' => '200ms'}} %>
         </div>
       </div>
     </div>
     <div data-p="225.00" style="display: none;">
       <%= image_tag('blue.jpg', class: 'img-responsive') %>
-    </div>
-    <div data-p="225.00" style="display: none;">
-      <%= image_tag('red.jpg', class: 'img-responsive') %>
+      <div style="position: absolute; top: 30px; left: 30px; width: 480px; height: 120px; font-size: 50px; color: #ffffff; line-height: 60px;" class="animated bounceInDown">
+        <%= image_tag('kidsyello.png', class: 'img-responsive') %>
+      </div>
+      <div style="text-align: center">
+        <div class="animated fadeInLeft" style="position: absolute; top: 300px; left: 30px; width: 480px; height: 120px; font-size: 30px; color: #ffffff; line-height: 38px;">TechKids
+          is an after school club in which kids use educational material designed for children
+          <%= link_to 'More About Tech Kids', {controller: 'products', action: 'show', link: 'tech-kids'}, {class: 'btn btn-lg btn-radius btn-theme-border wow animated bounceIn', data: {'wow-duration' => '700ms', 'wow-delay' => '200ms'}} %>
+        </div>
+      </div>
     </div>
   </div>
   <!-- Bullet Navigator -->

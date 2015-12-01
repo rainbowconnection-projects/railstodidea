@@ -12,8 +12,9 @@ class ProductsController < ApplicationController
   end
 
   def show
-    @product = Product.find_by(id: params[:id])
-    @link = @product.link
+    @product = Product.find_by(link: params[:link])
+
+    @link = params[:link]
     if @link == 'edutab'
       render template: 'products/edu-tab'
     elsif @link == 'digitalfit'
@@ -21,6 +22,19 @@ class ProductsController < ApplicationController
     elsif @link == 'techkids'
       render template: 'products/tech-kids'
     end
+
+  end
+
+  def digital_fit
+    render template: 'products/digital-fit'
+  end
+
+  def tech_kids
+    render template: 'products/tech-kids'
+  end
+
+  def edu_tab
+    render template: 'products/edu-tab'
   end
 
   private

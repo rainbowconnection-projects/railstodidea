@@ -1,17 +1,30 @@
+<div class="event-header" data-stellar-background-ratio="0.2" style="background-position: 0% 8px;">
 
+</div>
 <div class="container">
-  </div><div class="row">
-  <div class="col-lg-8 col-lg-offset-2">
-    <div class="event-banner">
-      <%= image_tag('intro_bkg.jpg',class: 'img img-responsive') %>
-      <h3>Event Name</h3>
-    </div>
-    <div class="event-inner">
-      <div class="event-header">
-        <h3>Event Name</h3>
+  <div class="row">
+    <div class="col-md-8 col-md-offset-1">
+      <%= image_tag @event.photo, height: '350px' %>
+      <div class="row">
+        <div class="col-md-2 col-md-offset-1 event-side-bar">
+          <ul class="social list-inline">
+            <li><a href="#" class="fb"><i class="ion-social-facebook-outline"></i></a></li>
+            <li><a href="#" class="twitter"><i class="ion-social-twitter-outline"></i></a></li>
+          </ul>
+        </div>
+        <div class="col-md-9">
+          <div class="post">
+            <h2><%= @event.event_name %></h2>
+
+            <p class="lead">Posted <em><%= @event.date.strftime('%B %d, %Y %H:%M') %></em></p>
+
+            <p class="post-detail">
+              <%= @event.description %>
+            </p>
+          </div>
+        </div>
       </div>
     </div>
   </div>
 </div>
-</div>
-
+<div class="divided-50"></div>
