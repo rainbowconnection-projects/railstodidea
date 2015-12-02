@@ -2,6 +2,6 @@
     <%= f.input :name, label: 'Title' %>
     <%= f.input :description, label: 'Description', as: :text %>
     <%= f.input :photo, as: :file %>
-    <%= f.input :link %>
+    <%= f.input :link, label: 'Link' %>
     <%= f.button :submit, @product.new_record? ? 'Add Product' : 'Update Product', class: 'btn btn-success btn-block btn-medium' %>
 <% end %>
