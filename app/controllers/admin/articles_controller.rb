@@ -13,18 +13,9 @@ class Admin::ArticlesController < AdminController
   end
 
   def create
-
     @article = Article.new(article_params)
-    @tags = article_params[:tag_ids]
-    @tags.inspect
-    respond_to do |format|
+      respond_to do |format|
       if @article.save
-
-        @tags.each do |tag|
-          @article_tag = ArticleTag.new
-         # @article_tag.article_id = tag[]
-        end
-
         format.html { redirect_to admin_articles_path, notice: 'Article was successfully created.' }
         format.json { render :show, status: :ok, location: @article }
       else
@@ -38,7 +29,6 @@ class Admin::ArticlesController < AdminController
     @article = Article.find(params[:id])
     respond_to do |format|
       if @article.update(article_params)
-        @article.tags.update(article_params[:tag_ids])
         format.html { redirect_to admin_articles_path, notice: 'Article was successfully updated.' }
         format.json { render :show, status: :ok, location: @article }
       else
