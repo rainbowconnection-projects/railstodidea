@@ -6,20 +6,27 @@
       <div class="contact-info">
         <h3>Contact information</h3>
         <br>
+
         <p><strong>Address:</strong></p>
+
         <p>
           P.O. Box 6563, Kati House, Nakasero, Kampala,Uganda
         </p>
         <br>
+
         <p><strong>Mail us:</strong></p>
-        <p>info@todidea.org</p>
+
+        <p>info@todidea.com</p>
         <br>
+
         <p><strong>Call us:</strong></p>
+
         <p>+256 757 112 376</p>
         <br>
         <h4>Social Media:</h4><br>
         <ul class="social list-inline">
-          <li><a href="https://www.facebook.com/TheTodIdea" class="fb"><i class="ion-social-facebook-outline"></i></a></li>
+          <li><a href="https://www.facebook.com/TheTodIdea" class="fb"><i class="ion-social-facebook-outline"></i></a>
+          </li>
           <li><a href="https://twitter.com/TOD_Idea" class="twitter"><i class="ion-social-twitter-outline"></i></a></li>
         </ul>
       </div>
@@ -28,30 +35,28 @@
 
     <div class="col-sm-6">
       <h3 class="margin-bottom-30">Send us a message</h3>
-      <form class="contact-form">
-        <label>Name</label>
-        <div class="row margin-bottom-20">
-          <div class="col-sm-12 col-md-offset-0">
-            <input type="text" class="form-control">
-          </div>
-        </div>
 
-        <label>Email </label>
-        <div class="row margin-bottom-20">
-          <div class="col-sm-12 col-md-offset-0">
-            <input type="text" class="form-control">
+      <%= simple_form_for @contact, class: 'contacts-form' do |f| %>
+          <div class="row margin-bottom-20">
+            <div class="col-sm-12 col-md-offset-0">
+              <%= f.input :name, label: 'Name', class: 'form-control' %>
+            </div>
           </div>
-        </div>
-
-        <label>Message</label>
-        <div class="row margin-bottom-20">
-          <div class="col-sm-12 col-md-offset-0">
-            <textarea rows="8" class="form-control"></textarea>
+          <div class="row margin-bottom-20">
+            <div class="col-sm-12 col-md-offset-0">
+              <%= f.input :email, label: 'Email', class: 'form-control' %>
+            </div>
           </div>
-        </div>
+          <div class="row margin-bottom-20">
+            <div class="col-sm-12 col-md-offset-0">
+              <%= f.input :message, label: 'Message', class: 'form-control',rows: '8', as: :text %>
+            </div>
+          </div>
+          <p>
+            <%= f.submit 'Send Message', class: 'btn btn-theme-border btn-radius btn-lg' %>
+          </p>
 
-        <p><button type="submit" class="btn btn-theme-border btn-radius btn-lg">Send Message</button></p>
-      </form>
+      <% end %>
     </div>
 
 

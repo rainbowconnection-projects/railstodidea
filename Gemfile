@@ -19,7 +19,8 @@ gem 'ionicons-rails'
 gem 'jquery-rails'
 gem 'autoprefixer-rails'
 gem 'bootstrap-sass'
-gem "wysiwyg-rails"
+gem 'actionmailer'
+gem 'mail_form'
 
 
 # Turbolinks makes following links in your web application faster. Read more: https://github.com/rails/turbolinks

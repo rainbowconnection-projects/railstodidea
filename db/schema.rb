@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20151128123707) do
+ActiveRecord::Schema.define(version: 20151201153846) do
 
   create_table "admins", force: :cascade do |t|
     t.string   "username",               limit: 255
@@ -32,6 +32,14 @@ ActiveRecord::Schema.define(version: 20151128123707) do
   add_index "admins", ["email"], name: "index_admins_on_email", unique: true, using: :btree
   add_index "admins", ["reset_password_token"], name: "index_admins_on_reset_password_token", unique: true, using: :btree
 
+  create_table "article_tags", force: :cascade do |t|
+    t.integer "article_id", limit: 4
+    t.integer "tag_id",     limit: 4
+  end
+
+  add_index "article_tags", ["article_id"], name: "article_id", using: :btree
+  add_index "article_tags", ["tag_id"], name: "tag_id", using: :btree
+
   create_table "articles", force: :cascade do |t|
     t.string   "title",       limit: 255
     t.integer  "category_id", limit: 4
@@ -42,11 +50,6 @@ ActiveRecord::Schema.define(version: 20151128123707) do
   end
 
   add_index "articles", ["category_id"], name: "category_id", using: :btree
-
-  create_table "articles_tags", force: :cascade do |t|
-    t.integer "article_id", limit: 4
-    t.integer "tag_id",     limit: 4
-  end
 
   create_table "categories", force: :cascade do |t|
     t.string   "name",        limit: 255
@@ -128,6 +131,7 @@ ActiveRecord::Schema.define(version: 20151128123707) do
     t.datetime "updated_at",             null: false
   end
 
+  add_foreign_key "article_tags", "articles", name: "article_tags_ibfk_1"
   add_foreign_key "articles", "categories", name: "articles_ibfk_1"
   add_foreign_key "comments", "articles"
 end

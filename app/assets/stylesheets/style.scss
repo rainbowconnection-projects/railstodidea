@@ -5,7 +5,6 @@
 */
 
 body {
-  font-family: 'Arimo', sans-serif;
   font-weight: 300;
   color: #333;
 }
@@ -162,12 +161,12 @@ hr.big {
 
 /*******typography****/
 h1, h2, h3, h4, h5, h6 {
-  font-family: 'Oswald', sans-serif;
+  font-family: 'Lato', sans-serif;
   margin-top: 0px;
 }
 
 p {
-  font-family: 'Arimo', sans-serif;
+  font-family: 'Lato', sans-serif;
 
 }
 
@@ -226,7 +225,7 @@ buttons
   letter-spacing: 2px;
   -webkit-border-radius: 3px;
   font-size: 14px;
-  font-family: 'Arimo', sans-serif;
+  font-family: 'Lato', sans-serif;
   transition: all 0.3s;
   -webkit-transition: all 0.3s;
   -moz-transition: all 0.3s;
@@ -416,7 +415,7 @@ slider revolution
   font-weight: 400;
   color: #fff;
   font-size: 50px;
-  font-family: 'Oswald', sans-serif;
+  font-family: 'Lato', sans-serif;
   text-transform: uppercase;
 }
 
@@ -455,7 +454,7 @@ caption.slider-title, .slider-title {
   letter-spacing: 0.1em;
   border-color: rgb(255, 255, 255);
   border-style: none;
-  font-family: 'Oswald', sans-serif;
+  font-family: 'Lato', sans-serif;
   text-transform: uppercase;
 }
 
@@ -472,7 +471,7 @@ caption.slider-title, .slider-title {
   color: #eee;
   font-size: 17px;
   font-weight: 400;
-  font-family: 'Arimo', sans-serif;
+  font-family: 'Lato', sans-serif;
 }
 
 /***************
@@ -512,7 +511,7 @@ Footer
   font-size: 17px;
   text-transform: uppercase;
   letter-spacing: 0.20em;
-  font-family: 'Oswald', sans-serif;
+  font-family: 'Lato', sans-serif;
 }
 
 .footer-inner p {
@@ -970,7 +969,7 @@ PORTFOLIO
   display: inline-block;
   width: 100%;
   font-weight: 300;
-  font-family: 'Arimo', sans-serif;
+  font-family: 'Lato', sans-serif;
   font-style: italic;
   font-size: 13px;
 }
@@ -1229,7 +1228,7 @@ PORTFOLIO
   transition: top 0.15s linear;
 }
 
-/***************contact page**************/
+/***************contacts page**************/
 
 iframe {
   margin-bottom: 0;
@@ -1281,7 +1280,7 @@ iframe {
   border-bottom: 5px solid #333;
   font-weight: 700;
   text-transform: uppercase;
-  font-family: 'Oswald', sans-serif;
+  font-family: 'Lato', sans-serif;
   border-radius: 2px;
   -webkit-border-radius: 2px;
 }
@@ -1327,7 +1326,7 @@ iframe {
   margin: 0 0 10px 0;
   border-bottom: 1px solid #d7d8da;
   font-weight: 300;
-  font-family: 'Arimo', sans-serif;
+  font-family: 'Lato', sans-serif;
 }
 
 .list-detail li span {

@@ -5,9 +5,7 @@ Rails.application.routes.draw do
   resources :projects
   resources :testimonials
   resources :categories
-  resources :products do
-
-  end
+  resources :products
   resources :events
   resources :articles
   resources :jobs
@@ -27,7 +25,8 @@ Rails.application.routes.draw do
 
   get 'our_story' => 'story#index'
 
-  get 'contact' => 'contact#index'
+  get 'contact', to: 'contacts#new', as: 'contacts'
+  post 'contact', to: 'contacts#create'
 
   get 'admin' => 'admin#index'
   get 'admin/auth' => 'admin#login'
