@@ -4,6 +4,7 @@ class CreateProducts < ActiveRecord::Migration
       t.string :name
       t.text :description
       t.string :photo
+      t.string :link
 
       t.timestamps null: false
     end
