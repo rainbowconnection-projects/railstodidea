@@ -14,12 +14,9 @@ class Admin::ArticlesController < AdminController
 
   def create
 
-=begin
     @article = Article.new(article_params)
     @tags = article_params[:tag_ids]
     @tags.inspect
-=end
-=begin
     respond_to do |format|
       if @article.save
 
@@ -35,7 +32,6 @@ class Admin::ArticlesController < AdminController
         format.json { render json: @article.errors, status: :unprocessable_entity }
       end
     end
-=end
   end
 
   def update
