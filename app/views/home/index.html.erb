@@ -170,7 +170,7 @@
       <div class="row no-margin">
         <% @projects.each do |project| %>
             <div class="col-sm-3 no-padding">
-              <div class="img"><%= image_tag project.photo, class: 'img img-responsive' %>
+              <div class="img"><%= cl_image_tag project.photo, class: 'img img-responsive' %>
                 <%= link_to project, {class: 'over'} do %>
                     <div class="img-desc">
                       <h2><%= project.name %></h2>
@@ -257,7 +257,7 @@
           <div class="col-sm-6">
             <div class="features-2-box">
               <div class="icon-container">
-                <%= image_tag(testimonial.photo, height: '80px', width: '80px', class: 'img img-responsive img-circle') %>
+                <%= cl_image_tag(testimonial.photo, height: '80px', width: '80px', class: 'img img-responsive img-circle') %>
               </div>
               <div class="text-container">
                 <p>
@@ -293,7 +293,7 @@
         <div class="col-sm-4 margin-bottom-30">
           <div class="post">
             <div class="post-thumbnail">
-              <%= image_tag(article.photo, class: "img-responsive") %>
+              <%= cl_image_tag(article.photo, class: "img-responsive") %>
             </div>
             <!--post image-->
             <h3 class="post-title"><%= link_to article.title, blog_path(article) %></h3>

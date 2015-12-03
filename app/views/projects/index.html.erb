@@ -21,7 +21,7 @@
           <div class="post">
             <div class="post-thumbnail">
               <a href="#">
-                <%= image_tag(project.photo, class: 'img-responsive', alt: 'post-image') %>
+                <%= cl_image_tag(project.photo, class: 'img-responsive', alt: 'post-image') %>
               </a>
             </div><!--post image-->
             <h3 class="post-title"><%= link_to(project.name, controller: 'projects', action: 'show', id: project.id) %></h3>

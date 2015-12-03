@@ -11,7 +11,7 @@
       <% @articles.each do |article| %>
           <!-- First Blog Post -->
           <div class="post">
-            <%= image_tag(article.photo, class: 'img-responsive') %>
+            <%= cl_image_tag(article.photo, class: 'img-responsive') %>
             <p class="lead">
 
             <h2>

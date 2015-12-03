@@ -1,0 +1,19 @@
+---
+development:
+  cloud_name: hi8aneuh5
+  api_key: '134161888597249'
+  api_secret: 2SkMDl4bjBPKWFaqH5cTNc6Fvjk
+  enhance_image_tag: true
+  static_image_support: false
+production:
+  cloud_name: hi8aneuh5
+  api_key: '134161888597249'
+  api_secret: 2SkMDl4bjBPKWFaqH5cTNc6Fvjk
+  enhance_image_tag: true
+  static_image_support: true
+test:
+  cloud_name: hi8aneuh5
+  api_key: '134161888597249'
+  api_secret: 2SkMDl4bjBPKWFaqH5cTNc6Fvjk
+  enhance_image_tag: true
+  static_image_support: false

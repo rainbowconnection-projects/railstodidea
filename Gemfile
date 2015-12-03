@@ -33,6 +33,7 @@ gem 'jquery-turbolinks'
 gem 'font-awesome-rails'
 gem 'will_paginate'
 gem 'carrierwave'
+gem 'cloudinary'
 gem 'simple_form'
 gem 'devise'
 
