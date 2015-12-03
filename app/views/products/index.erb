@@ -5,15 +5,13 @@
         <div class="row">
           <div style="padding: 50px">
             <div class="col-md-6 col-sm-12">
-              <%= link_to product do %>
-                  <%= image_tag product.photo, class: 'img-responsive', width: '400px', height: '300px' %>
-              <% end %>
+              <%= image_tag product.photo, class: 'img-responsive', width: '400px', height: '300px' %>
             </div>
             <div class="col-md-6 col-sm-12">
               <h2 class="media-heading" style="font-weight: 600;"><%= product.name %></h2>
 
               <p class="product-wrapper" id="text-wrapper"><%= product.description %></p>
-              <%= link_to 'More about this product', product_path(product) %>
+              <%= link_to 'More about this product', controller: 'products', action: 'show', name: product.name %>
             </div>
           </div>
 

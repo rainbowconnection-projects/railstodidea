@@ -12,9 +12,9 @@ class ProductsController < ApplicationController
   end
 
   def show
-    @product = Product.find_by(link: params[:link])
+    @product = Product.find_by(name: params[:name])
 
-    @link = params[:link]
+    @link = strip_spaces_downcase params[:name].to_s
     if @link == 'edutab'
       render template: 'products/edu-tab'
     elsif @link == 'digitalfit'
@@ -25,15 +25,22 @@ class ProductsController < ApplicationController
 
   end
 
+  def strip_spaces_downcase string
+    return string.split.join('').downcase
+  end
+
   def digital_fit
+    @product = Product.find_by(link: 'digitalfit')
     render template: 'products/digital-fit'
   end
 
   def tech_kids
+    @product = Product.find_by(link: 'techkids')
     render template: 'products/tech-kids'
   end
 
   def edu_tab
+    @product = Product.find_by(link: 'digitalfit')
     render template: 'products/edu-tab'
   end
 

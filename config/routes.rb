@@ -5,7 +5,9 @@ Rails.application.routes.draw do
   resources :projects
   resources :testimonials
   resources :categories
-  #resources :products
+  resources :products, except: ['show'] do
+    get 'products/:name' => 'products#show'
+  end
   resources :events
   resources :articles
   resources :jobs
@@ -13,9 +15,8 @@ Rails.application.routes.draw do
 
   get 'products' => 'products#index'
   #get 'products/:link/show' => 'products#show'
-  #get 'products/:name' => 'products#show'
+  get 'products/:name' => 'products#show'
 
-  get 'products/digital-fit' => 'products#digital_fit'
 
   get 'hour_of_code' => 'hoc#index'
 
