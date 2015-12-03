@@ -8,6 +8,7 @@
 
   <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track' => true %>
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+  <script id="dsq-count-scr" src="//todidea.disqus.com/count.js" async></script>
 
   <%= stylesheet_link_tag params[:controller] if TODIdea::Application.assets.find_asset("#{params[:controller]}.css") %>
   <%= javascript_include_tag params[:controller] if TODIdea::Application.assets.find_asset("#{params[:controller]}.js") %>

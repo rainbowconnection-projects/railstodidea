@@ -5,15 +5,17 @@ Rails.application.routes.draw do
   resources :projects
   resources :testimonials
   resources :categories
-  resources :products
+  #resources :products
   resources :events
   resources :articles
   resources :jobs
   resources :tags
 
   get 'products' => 'products#index'
-  get 'products/:link/show' => 'products#show'
+  #get 'products/:link/show' => 'products#show'
   #get 'products/:name' => 'products#show'
+
+  get 'products/digital-fit' => 'products#digital_fit'
 
   get 'hour_of_code' => 'hoc#index'
 
