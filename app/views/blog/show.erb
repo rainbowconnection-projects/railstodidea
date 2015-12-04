@@ -17,7 +17,7 @@
             <h2><%= @article.title %></h2>
             <p class="lead">Posted <em><%= time_ago_in_words(@article.created_at) %></em></p>
             <div class="tags">
-              <%= @article.tags %>
+              <%= #@article.tags %>
             </div>
             <p class="post-detail">
               <%= @article.text %>
