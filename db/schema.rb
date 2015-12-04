@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20151201153846) do
+ActiveRecord::Schema.define(version: 20151125103121) do
 
   create_table "admins", force: :cascade do |t|
     t.string   "username",               limit: 255
@@ -37,9 +37,6 @@ ActiveRecord::Schema.define(version: 20151201153846) do
     t.integer "tag_id",     limit: 4
   end
 
-  add_index "article_tags", ["article_id"], name: "article_id", using: :btree
-  add_index "article_tags", ["tag_id"], name: "tag_id", using: :btree
-
   create_table "articles", force: :cascade do |t|
     t.string   "title",       limit: 255
     t.integer  "category_id", limit: 4
@@ -48,8 +45,6 @@ ActiveRecord::Schema.define(version: 20151201153846) do
     t.datetime "created_at",                null: false
     t.datetime "updated_at",                null: false
   end
-
-  add_index "articles", ["category_id"], name: "category_id", using: :btree
 
   create_table "categories", force: :cascade do |t|
     t.string   "name",        limit: 255
@@ -69,7 +64,7 @@ ActiveRecord::Schema.define(version: 20151201153846) do
 
   create_table "events", force: :cascade do |t|
     t.string   "event_name",  limit: 255
-    t.string   "photo",       limit: 255,   null: false
+    t.string   "photo",       limit: 255
     t.datetime "date"
     t.text     "description", limit: 65535
     t.datetime "created_at",                null: false
@@ -93,9 +88,9 @@ ActiveRecord::Schema.define(version: 20151201153846) do
     t.string   "name",        limit: 255
     t.text     "description", limit: 65535
     t.string   "photo",       limit: 255
+    t.string   "link",        limit: 255
     t.datetime "created_at",                null: false
     t.datetime "updated_at",                null: false
-    t.string   "link",        limit: 255
   end
 
   create_table "projects", force: :cascade do |t|
@@ -114,10 +109,10 @@ ActiveRecord::Schema.define(version: 20151201153846) do
   end
 
   create_table "testimonials", force: :cascade do |t|
-    t.string   "name",        limit: 255,   null: false
+    t.string   "name",        limit: 255
     t.string   "photo",       limit: 255
-    t.string   "designation", limit: 255,   null: false
     t.text     "text",        limit: 65535
+    t.text     "designation", limit: 65535
     t.datetime "created_at",                null: false
     t.datetime "updated_at",                null: false
   end
@@ -131,7 +126,5 @@ ActiveRecord::Schema.define(version: 20151201153846) do
     t.datetime "updated_at",             null: false
   end
 
-  add_foreign_key "article_tags", "articles", name: "article_tags_ibfk_1"
-  add_foreign_key "articles", "categories", name: "articles_ibfk_1"
   add_foreign_key "comments", "articles"
 end
