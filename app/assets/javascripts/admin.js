@@ -8,6 +8,7 @@
 //= require jquery.turbolinks
 //= require bootstrap-table
 //= require bootstrap-datepicker
+//= require bootsy
 
 
 

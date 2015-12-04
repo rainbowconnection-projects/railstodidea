@@ -1,4 +1,5 @@
 class Article < ActiveRecord::Base
+  include Bootsy::Container
   mount_uploader :photo, ImageUploader
   has_many :comments
   has_many :article_tags
