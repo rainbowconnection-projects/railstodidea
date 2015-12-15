@@ -1,6 +1,6 @@
 <%= simple_form_for([:admin, @article], class: 'form') do |f| %>
     <%= f.input :title, label: 'Title' %>
-    <%= f.input :text, {'id' => 'text'} %>
+    <%= f.input_field :text,  {'id' => 'text'} %>
     <%= f.association :category, label: 'Category' %>
     <%= f.association :tags, label: 'Tags' %>
     <%= f.input :photo, as: :file %>

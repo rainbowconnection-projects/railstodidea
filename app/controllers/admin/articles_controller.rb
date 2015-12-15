@@ -13,6 +13,8 @@ class Admin::ArticlesController < AdminController
   end
 
   def create
+
+    #render plain params['article']
     @article = Article.new(article_params)
       respond_to do |format|
       if @article.save
@@ -60,7 +62,7 @@ class Admin::ArticlesController < AdminController
   end
 
   def article_params
-    params.require(:articles).permit(:title,:category_id,:tag_ids,:text, :photo,:bootsy_image_gallery_id)
+    params.require(:article).permit(:title,:category_id,:tag_ids,:text, :photo,:bootsy_image_gallery_id)
   end
 
 end

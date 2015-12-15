@@ -17,10 +17,13 @@
             <h2><%= @article.title %></h2>
             <p class="lead">Posted <em><%= time_ago_in_words(@article.created_at) %></em></p>
             <div class="tags">
-            
+
             </div>
             <p class="post-detail">
-              <%= @article.text %>
+              <div class="fr-view">
+                <%= simple_format(@article.text) %>
+              </div>
+
             </p>
             <div id="disqus_thread"></div>
             <script>
