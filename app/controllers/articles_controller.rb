@@ -1,4 +1,5 @@
-class BlogController < ApplicationController
+class ArticlesController < ApplicationController
+  before_filter :except => ['create','update','destroy']
   def index
     @articles = Article.order(created_at: :desc).paginate(:page => params[:page], :per_page => 4)
 
@@ -7,7 +8,4 @@ class BlogController < ApplicationController
     @article = Article.find_by(id: params[:id])
   end
 
-  def create
-
-  end
 end

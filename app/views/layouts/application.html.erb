@@ -22,13 +22,7 @@
 <body>
 
 <header>
-
-  <% if params[:controller] != 'admin' %>
       <%= render 'layouts/navigation' %>
-  <% else %>
-      <%= render 'layouts/admin_nav' %>
-  <% end %>
-
 </header>
 <!--header end-->
 
@@ -66,6 +60,7 @@
 <% if params[:controller] != 'admin' %>
     <%= render 'layouts/footer' %>
 <% end %>
+<script id="dsq-count-scr" src="//todidea.disqus.com/count.js" async></script>
 </body>
 </html>
 

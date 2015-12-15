@@ -9,9 +9,13 @@
 //= require bootstrap-table
 //= require bootstrap-datepicker
 //= require bootsy
+//= require froala_editor.min.js
 
 
 
+$(function() {
+    $('textarea#text').froalaEditor()
+});
 
 
 $('#calendar').datepicker({

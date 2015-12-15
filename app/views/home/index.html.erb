@@ -282,7 +282,7 @@
       <h1>
         <small>From the</small>
         <br>Blog.
-        <span class="pull-right"><%= link_to("More News", blog_path, :class => "btn btn-theme-border btn-radius btn-lg wow animated fadeIn", :data => {'wow-duration' => "700ms", 'wow-delay' => "1800ms"}) %></span>
+        <span class="pull-right"><%= link_to("More News", articles_path, :class => "btn btn-theme-border btn-radius btn-lg wow animated fadeIn", :data => {'wow-duration' => "700ms", 'wow-delay' => "1800ms"}) %></span>
       </h1>
     </div>
   </div>
@@ -295,7 +295,7 @@
               <%= cl_image_tag(article.photo, class: "img-responsive") %>
             </div>
             <!--post image-->
-            <h3 class="post-title"><%= link_to article.title, blog_path(article) %></h3>
+            <h3 class="post-title"><%= link_to article.title %></h3>
 
             <div id="text-wrapper" class="text-wrapper">
               <p>
@@ -303,7 +303,7 @@
               </p>
             </div>
 
-        <span class="read-more"><%= link_to('Read more', blog_path(article)) %>
+        <span class="read-more"><%= link_to 'Read more', article_path(article) %>
           <i class="ion-ios-arrow-thin-right"></i></span>
           </div>
           <!--post-->
