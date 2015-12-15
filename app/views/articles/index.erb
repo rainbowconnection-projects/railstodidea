@@ -15,7 +15,7 @@
             <p class="lead">
 
             <h2>
-              <%= link_to article.title, {controller: 'blog', action: 'show', id: article.id} %>
+              <%= link_to article.title %>
             </h2>
             </p>
 
@@ -29,7 +29,7 @@
             <!--<p>
 
             </p>-->
-            <%= link_to('Read more ', {controller: 'blog', action: 'show', id: article.id}, class: 'read-more') %>
+            <%= link_to('Read more ', article_path(article), class: 'read-more') %>
 
             <hr>
           </div>

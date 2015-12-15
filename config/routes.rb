@@ -20,15 +20,8 @@ Rails.application.routes.draw do
 
 
   get 'hour_of_code' => 'hoc#index'
-
   get 'rails_training' => 'rails_training#index'
-
-  get 'blog' => 'blog#index'
-  get 'blog/:id' => 'blog#show'
-  get 'blog/new' => 'blog#new'
-
   get 'our_story' => 'story#index'
-
   get 'contact', to: 'contacts#new', as: 'contacts'
   post 'contact', to: 'contacts#create'
 
