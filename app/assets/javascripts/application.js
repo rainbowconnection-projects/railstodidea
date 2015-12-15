@@ -21,6 +21,7 @@
 //= require jquery.stellar.min
 //= require jssor.slider.min
 //= require wow.min
+//= require ga
 
 
 
@@ -31,6 +32,9 @@ $(function() {
         verticalOffset: 40
     });
 });
+
+
+
 
 $(document).ready(function() {
 
