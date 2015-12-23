@@ -31,6 +31,11 @@ class Admin::ArticlesController < AdminController
     @article = Article.find(params[:id])
     respond_to do |format|
       if @article.update(article_params)
+        @article_params = params[:article]
+        article_params[:tag_ids].each do |tag|
+          @article_tag = @article.article_tags.build('article_id'=>@article.id,'tag_id'=>tag)
+          @article_tag.save
+        end
         format.html { redirect_to admin_articles_path, notice: 'Article was successfully updated.' }
         format.json { render :show, status: :ok, location: @article }
       else
@@ -39,6 +44,8 @@ class Admin::ArticlesController < AdminController
       end
     end
   end
+
+
 
   def destroy
     @article = Article.find(params[:id])
@@ -62,7 +69,7 @@ class Admin::ArticlesController < AdminController
   end
 
   def article_params
-    params.require(:article).permit(:title,:category_id,:tag_ids,:text, :photo,:bootsy_image_gallery_id)
+    params.require(:article).permit(:title,:category_id,:text, :photo,:tag_ids => [])
   end
 
 end

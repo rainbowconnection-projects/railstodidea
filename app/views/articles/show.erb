@@ -14,7 +14,9 @@
         </div>
         <div class="col-md-9">
           <div class="post">
-            <h2><%= @article.title %></h2>
+            <div class="post-title">
+              <%= @article.title %>
+            </div>
             <p class="lead">Posted <em><%= time_ago_in_words(@article.created_at) %></em></p>
             <div class="tags">
 

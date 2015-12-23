@@ -15,15 +15,17 @@
             <p class="lead">
 
             <h2>
-              <%= link_to article.title %>
+              <%= link_to article.title, article_path(article) %>
             </h2>
             </p>
 
             <p>Posted <i class="ion ion-calendar"></i> <%= article.created_at.strftime('%B %d, %Y') %></p>
-
+            <% article.tags.each do |tag| %>
+                <%= tag.name.inspect %>
+            <% end %>
             <hr>
             <div class="text-wrapper" id="text-wrapper">
-              <p class="post-detail"><%= article.text %></p>
+              <p class="post-detail"><%= simple_format article.text %></p>
             </div>
 
             <!--<p>

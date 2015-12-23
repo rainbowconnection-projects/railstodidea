@@ -296,13 +296,11 @@
             </div>
             <!--post image-->
             <h3 class="post-title"><%= link_to article.title %></h3>
-
-            <div id="text-wrapper" class="text-wrapper">
+            <div id="wrapper" class="text-wrapper">
               <p>
                 <%= simple_format(article.text) %>
               </p>
             </div>
-
         <span class="read-more"><%= link_to 'Read more', article_path(article) %>
           <i class="ion-ios-arrow-thin-right"></i></span>
           </div>
