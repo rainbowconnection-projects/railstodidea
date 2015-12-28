@@ -292,7 +292,7 @@
         <div class="col-sm-4 margin-bottom-30">
           <div class="post">
             <div class="post-thumbnail">
-              <%= cl_image_tag(article.photo, class: "img-responsive") %>
+              <%= cl_image_tag(article.photo,:width => 360, :height => 170, :crop => :scale, class: "img-responsive") %>
             </div>
             <!--post image-->
             <h3 class="post-title"><%= link_to article.title %></h3>
