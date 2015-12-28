@@ -36,8 +36,6 @@ gem 'carrierwave'
 gem 'cloudinary'
 gem 'simple_form'
 gem 'devise'
-
-gem 'bootsy'
 gem "wysiwyg-rails"
 
 # Use ActiveModel has_secure_password

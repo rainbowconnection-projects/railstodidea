@@ -296,9 +296,9 @@
             </div>
             <!--post image-->
             <h3 class="post-title"><%= link_to article.title %></h3>
-            <div id="wrapper" class="text-wrapper">
+            <div class="text-wrapper">
               <p>
-                <%= simple_format(article.text) %>
+                <%= simple_format(article.text.downcase) %>
               </p>
             </div>
         <span class="read-more"><%= link_to 'Read more', article_path(article) %>

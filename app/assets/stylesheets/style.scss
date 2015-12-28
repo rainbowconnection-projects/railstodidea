@@ -24,6 +24,25 @@ basic
 
 }
 
+/* Ellipsis*/
+.ellip {
+  display: block;
+  height: 100%;
+}
+
+.ellip-line {
+  display: inline-block;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  word-wrap: normal;
+  max-width: 100%;
+}
+
+.ellip,
+.ellip-line {
+  position: relative;
+  overflow: hidden;
+}
 
 
 a:hover, a:focus {
@@ -31,8 +50,9 @@ a:hover, a:focus {
 }
 
 .text-wrapper {
-  width: 100%;
-  max-height: 100px;
+  height: 100px;
+  -webkit-text-size-adjust: none;
+  overflow: auto;
 }
 
 .product-wrapper {

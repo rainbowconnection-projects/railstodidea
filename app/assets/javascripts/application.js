@@ -12,7 +12,6 @@
 //
 //= require jquery
 //= require jquery_ujs
-
 //= require turbolinks
 //= require bootstrap-sprockets
 //= require jquery.turbolinks
@@ -22,18 +21,20 @@
 //= require jssor.slider.min
 //= require wow.min
 //= require ga
+//=require jquery.ellipsis.min
 
-
-//parallax-background
-$(function () {
+$(document).ready(function () {
     $.stellar({
         horizontalScrolling: false,
         verticalOffset: 40
     });
-});
-
-
-$(document).ready(function () {
+    $('.text-wrapper').ellipsis(
+        {
+            lines: 3,             // force ellipsis after a certain number of lines. Default is 'auto'
+            ellipClass: 'ellip',  // class used for ellipsis wrapper and to namespace ellip line
+            responsive: true
+        }
+    );
 
     $("#about-img-slide").owlCarousel({
         items: 1,
