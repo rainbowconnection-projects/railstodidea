@@ -1,6 +1,7 @@
 <%= simple_form_for([:admin,@event]) do |f| %>
     <%= f.input :event_name, label: 'Title' %>
-    <%= f.input :description, label: 'Event Description', as: :text %>
+    <label>Event Description</label>
+    <%= f.input :description, as: :text %>
     <%= f.input :photo, as: :file %>
     <%= f.input :date, label: 'Date', as: :date %>
     <%= f.button :submit, @event.new_record? ? 'Post Event' : 'Update Event', class: 'btn btn-success btn-block btn-medium' %>
