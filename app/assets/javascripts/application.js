@@ -35,6 +35,14 @@ $(document).ready(function () {
             responsive: true
         }
     );
+    $('.product-wrapper').ellipsis(
+        {
+            lines: 7,             // force ellipsis after a certain number of lines. Default is 'auto'
+            ellipClass: 'ellip',  // class used for ellipsis wrapper and to namespace ellip line
+            responsive: true
+        }
+    );
+
 
     $("#about-img-slide").owlCarousel({
         items: 1,
