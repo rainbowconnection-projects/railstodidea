@@ -14,3 +14,5 @@ Rails.application.config.assets.precompile += %w( home.css )
 Rails.application.config.assets.precompile += %w( home.js )
 Rails.application.config.assets.precompile += %w( admin.css )
 Rails.application.config.assets.precompile += %w( admin.js )
+Rails.application.config.assets.precompile += %w( digital-fit )
+
