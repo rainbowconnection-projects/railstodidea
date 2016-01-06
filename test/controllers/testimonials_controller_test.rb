@@ -18,7 +18,7 @@ class TestimonialsControllerTest < ActionController::TestCase
 
   test "should create testimonial" do
     assert_difference('Testimonial.count') do
-      post :create, testimonial: {  }
+      post :create, testimonial: {}
     end
 
     assert_redirected_to testimonial_path(assigns(:testimonial))
@@ -35,7 +35,7 @@ class TestimonialsControllerTest < ActionController::TestCase
   end
 
   test "should update testimonial" do
-    patch :update, id: @testimonial, testimonial: {  }
+    patch :update, id: @testimonial, testimonial: {}
     assert_redirected_to testimonial_path(assigns(:testimonial))
   end
 
