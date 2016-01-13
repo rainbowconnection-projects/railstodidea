@@ -57,12 +57,7 @@ a:hover, a:focus {
 }
 
 .product-wrapper {
-  overflow-y: hidden;
-  max-height: 200px;
-  font-size: 16px;
-  font-weight: 300;
-  padding: 15px;
-  overflow-x: hidden;
+
 }
 .product-details{
   overflow: auto;
@@ -688,8 +683,6 @@ call to action areas
 }
 
 .product {
-  height: 400px;
-  width: 400px;
   position: relative;
 }
 
@@ -702,11 +695,19 @@ call to action areas
 .product .title {
   z-index: 100;
   position: absolute;
-  color: white;
-  font-size: 24px;
-  font-weight: bold;
-  left: 150px;
-  top: 350px;
+  color: #555459;
+  font-size: 36px;
+  font-weight: 900;
+  font-family: "Josefin Sans", sans-serif;
+  line-height: 36px;
+}
+.product .description{
+  overflow-y: hidden;
+  max-height: 200px;
+  font-size: 21px;
+  line-height: 21px;
+  padding: 15px;
+  overflow-x: hidden;
 }
 
 .tab-header {
@@ -844,6 +845,9 @@ blog
 
 .team-info h4 {
   margin: 0px;
+}
+.team-info p{
+  font-size: large;
 }
 
 .team-info span {

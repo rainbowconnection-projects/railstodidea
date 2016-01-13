@@ -298,7 +298,7 @@
             <h3 class="post-title"><%= link_to article.title %></h3>
             <div class="text-wrapper">
               <p>
-                <%= simple_format(article.text.downcase) %>
+                <%= simple_format(article.text.capitalize) %>
               </p>
             </div>
         <span class="read-more"><%= link_to 'Read more', article_path(article) %>
