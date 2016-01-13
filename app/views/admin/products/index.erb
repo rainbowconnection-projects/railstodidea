@@ -27,6 +27,7 @@
             <th data-field="id" data-sortable="true">Id</th>
             <th data-field="photo" data-sortable="false">Photo</th>
             <th data-field="name" data-sortable="true">Name</th>
+            <th data-field="short_description" data-sortable="true">hort Description</th>
             <th data-field="description" data-sortable="true">Description</th>
             <th></th>
           </tr>
@@ -37,6 +38,13 @@
                 <td><%= product.id %></td>
                 <td><%= cl_image_tag(product.photo, height: '60px', width: '60px') %></td>
                 <td><%= product.name %></td>
+                <td>
+                  <div style="overflow-y: auto">
+                    <p>
+                      <%= simple_format product.short_description %>
+                    </p>
+                  </div>
+                </td>
                 <td>
                   <div style="overflow-y: auto">
                     <p>
