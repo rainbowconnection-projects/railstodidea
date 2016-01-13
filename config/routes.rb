@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  resources :people
+  resources :teams
   root 'home#index'
 
   devise_for :admin
@@ -31,7 +33,7 @@ Rails.application.routes.draw do
 
 
   namespace :admin do
-    resources :articles, :products, :events, :projects, :testimonials,:tags, :categories
+    resources :articles, :products, :events, :projects, :testimonials,:tags, :categories, :teams, :people
   end
 
 end

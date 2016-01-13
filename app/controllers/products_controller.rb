@@ -13,7 +13,7 @@ class ProductsController < ApplicationController
 
   def show
     @product = Product.find_by(name: params[:name])
-
+    @team = @product.team.persons
     @link = strip_spaces_downcase params[:name].to_s
     if @link == 'edutab'
       render template: 'products/edu-tab'

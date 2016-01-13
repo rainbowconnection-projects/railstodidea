@@ -69,6 +69,26 @@
 
         Price: 40,000/=
       </p>
+      <div class="row white centered">
+        <h1 STYLE="text-align: center">EDUTAB TEAM</h1>
+        <hr>
+        <br>
+        <% @team.each do |member| %>
+            <div class="col-lg-3 centered" style="text-align: center">
+              <%= cl_image_tag member.photo, width: '120px', height: '120px', class: 'img img-circle' %>
+              <br>
+              <h4><b><%= member.name %></b></h4>
+              <a href="#" class="icon icon-twitter"></a>
+              <a href="#" class="icon icon-facebook"></a>
+              <a href="#" class="icon icon-flickr"></a>
+
+              <p><%= simple_format member.about %></p>
+            </div>
+            <!-- col-lg-3 -->
+        <% end %>
+        <!-- col-lg-3 -->
+
+      </div>
 
       <div class="divided-20"></div>
       <div class="panel-group" id="accordion">
