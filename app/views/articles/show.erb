@@ -4,16 +4,12 @@
 <div class="container">
   <div class="row">
     <div class="col-md-8 col-md-offset-1">
-      <%= cl_image_tag @article.photo, height: '350px', :width => 1000, :crop => :scale, class: 'img-responsive' %>
+      <%= cl_image_tag @article.photo, height: '350px',:width=>1000, :crop=>:scale, class: 'img-responsive' %>
       <div class="row">
         <div class="col-md-2 col-md-offset-1 article-side-bar">
           <ul class="social list-inline">
-            <li>
-              <a target="_blank" href="https://www.facebook.com/dialog/feed?app_id=134530986736267&link=<%= request.original_url %>&name=<%= @article.title %>&picture=<%= image_url(@article.photo) %>&redirect_uri=http://facebook.com/"></a><i class="ion-social-facebook-outline"></i>
-            </li>
-            <li>
-              <a target="_blank" title="<%= @article.title %>" href="http://twitter.com/home?status=<%= @article.title %>  &mdash; <%= request.original_url %> via @TOD_Idea"><i class="social-twitter-outline"></i></a>
-            </li>
+            <li><a target="_blank"  href="https://www.facebook.com/dialog/feed?app_id=134530986736267&link=<%= request.original_url %>&name=<%= @article.title%>&picture=<%=image_url(@article.photo)%>&redirect_uri=http://facebook.com/"  class="fb"><i class="ion-social-facebook-outline"></i></a></li>
+            <li><a href="#" class="twitter"><i class="ion-social-twitter-outline"></i></a></li>
           </ul>
         </div>
         <div class="col-md-9">
@@ -22,33 +18,30 @@
               <%= @article.title %>
             </div>
             <p class="lead">Posted <em><%= time_ago_in_words(@article.created_at) %></em> ago</p>
-
             <div class="tags">
 
             </div>
             <p class="post-detail">
-
-            <div class="fr-view">
-              <%= simple_format(@article.text) %>
-            </div>
+              <div class="fr-view">
+                <%= simple_format(@article.text) %>
+              </div>
 
             </p>
             <div id="disqus_thread"></div>
             <script>
-                var disqus_config = function () {
-                    this.page.url = "todidea.com/articles/"<%= @article.id %>;
-                    this.page.identifier = 'articles';
-                };
+                 var disqus_config = function () {
+                 this.page.url = "todidea.com/articles/"<%= @article.id %>;
+                 this.page.identifier = 'articles';
+                 };
 
-                (function () {
+                (function() {
                     var d = document, s = d.createElement('script');
                     s.src = '//todidea.disqus.com/embed.js';
                     s.setAttribute('data-timestamp', +new Date());
                     (d.head || d.body).appendChild(s);
                 })();
             </script>
-            <noscript>Please enable JavaScript to view the
-              <a href="https://disqus.com/?ref_noscript" rel="nofollow">comments powered by Disqus.</a></noscript>
+            <noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript" rel="nofollow">comments powered by Disqus.</a></noscript>
           </div>
         </div>
       </div>
