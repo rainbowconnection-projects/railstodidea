@@ -8,10 +8,16 @@
               <%= cl_image_tag product.photo, class: 'img-responsive', width: '400px', height: '300px' %>
             </div>
             <div class="col-md-6 col-sm-12">
-              <h2 class="media-heading" style="font-weight: 600;"><%= product.name %></h2>
+              <div class="product">
+                <div class="title">
+                  <%= product.name %>
+                </div>
+                <p class="description">
+                  <%= simple_format(product.short_description) %>
+                </p>
+                <%= link_to 'More about this product', controller: 'products', action: 'show', name: product.name %>
+              </div>
 
-              <p class="product-wrapper" id="text-wrapper"><%= simple_format(product.description) %></p>
-              <%= link_to 'More about this product', controller: 'products', action: 'show', name: product.name %>
             </div>
           </div>
 
