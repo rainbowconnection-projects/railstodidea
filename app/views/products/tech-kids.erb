@@ -27,27 +27,28 @@
       </ul>
       We also run weekend as well as holiday programs at our offices at Kati House in Nakasero next to Kisozi Complex.
       </p>
-      <div class="row white centered">
-        <h1 STYLE="text-align: center">TECH KIDS TEAM</h1>
-        <hr>
-        <br>
-        <% @team.each do |member| %>
-            <div class="col-lg-3 centered" style="text-align: center">
-              <%= cl_image_tag member.photo, width: '120px', height: '120px', class: 'img img-circle' %>
-              <br>
-              <h4><b><%= member.name %></b></h4>
-              <a href="#" class="icon icon-twitter"></a>
-              <a href="#" class="icon icon-facebook"></a>
-              <a href="#" class="icon icon-flickr"></a>
+      <% if @team.count > 0 %>
+          <div class="row white centered">
+            <h1 STYLE="text-align: center">TECH KIDS TEAM</h1>
+            <hr>
+            <br>
+            <% @team.each do |member| %>
+                <div class="col-lg-3 centered" style="text-align: center">
+                  <%= cl_image_tag member.photo, width: '120px', height: '120px', class: 'img img-circle' %>
+                  <br>
+                  <h4><b><%= member.name %></b></h4>
+                  <a href="#" class="icon icon-twitter"></a>
+                  <a href="#" class="icon icon-facebook"></a>
+                  <a href="#" class="icon icon-flickr"></a>
 
-              <p><%= simple_format member.about %></p>
-            </div>
+                  <p><%= simple_format member.about %></p>
+                </div>
+                <!-- col-lg-3 -->
+            <% end %>
             <!-- col-lg-3 -->
-        <% end %>
-        <!-- col-lg-3 -->
 
-      </div>
-
+          </div>
+      <% end %>
     </div>
   </div>
 </div>
