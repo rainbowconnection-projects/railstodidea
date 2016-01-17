@@ -12,8 +12,8 @@ class ProductsController < ApplicationController
   end
 
   def show
-    @product = Product.find_by(name: params[:name])
-    if @product.team.count > 0
+    @product = Product.where(name: params[:name]).first
+    if @product.team.present?
       @team = @product.team.persons
     end
     @link = strip_spaces_downcase params[:name].to_s
