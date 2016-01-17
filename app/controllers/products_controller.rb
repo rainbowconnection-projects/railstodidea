@@ -13,7 +13,9 @@ class ProductsController < ApplicationController
 
   def show
     @product = Product.find_by(name: params[:name])
-    @team = @product.team.persons
+    if @product.team.count > 0
+      @team = @product.team.persons
+    end
     @link = strip_spaces_downcase params[:name].to_s
     if @link == 'edutab'
       render template: 'products/edu-tab'
