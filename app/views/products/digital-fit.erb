@@ -6,7 +6,7 @@
     <%= cl_image_tag @product.photo, height: '200px' %>
     <div class="product-details">
       <p class="fr-view">
-        <%= @product.description %>
+        <%= simple_format @product.description %>
       </p>
 
     </div>
