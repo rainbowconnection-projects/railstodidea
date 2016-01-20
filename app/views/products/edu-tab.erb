@@ -3,75 +3,11 @@
   <div class="col-lg-8 col-lg-offset-2">
     <%= cl_image_tag @product.photo, height: '200px' %>
     <div class="product-details">
-      <p>
-        The EduTab is a normal tablet PC with educational content uploaded by us to cater for your child along different
-        age groups; Nursery, Lower Primary, Upper Primary and Secondary.
-      </p>
-
-      <p>
-
-        The EduTab is meant to address the limitations of our outdated current education system, a system that doesn't
-        impart essential 21st century skills of collaboration, critical thinking and communication.
-      </p>
-
-      <p>
-
-        At the TOD Idea, we hope to use the EduTab to improve educational outcomes through focussing on the brain the
-        child takes to class , a brain that is able to learn how to learn as it were.
-      </p>
-
-      <p>
-        <b>These are the cognitive attributes we hope we impart:</b>
-      <ul>
-        <li>Attention: <br>Learning occurs when you capture the learners attention in this most distracted world of
-          today.
-          The EduTab fosters attention.
-        </li>
-        <li>
-          Memory: <br>Activities to enhance both short term and long term memory are present on the EduTab
-        </li>
-        <li>
-          Prediction : <br>The ability to anticipate what's coming is every entrepreneur's best attribute and we hope to
-          achieve this using the EduTab.
-        </li>
-        <li>
-          Higher Executive thinking: <br>Skills like decision making. Planning, strategy,analytical skills, critical
-          thinking etc
-        </li>
-      </ul>
-      </p>
-      <p>
-        Picture:
-      </p>
-
-      <p>
-        <b class="color-blue">Specifications:</b>
-        <br>Operating System: Android 5.1.1<br>
-        Internal Memory: 6GB<br>
-        RAM: 512MB<br>
-        Screen size: 7 inch<br>
-
-        Price: 400,000/=
-      </p>
-
-      <p>
-        <b>Accessories:</b><br>
-
-        <%= image_tag('covers.png', class: 'img-responsive') %><br>
-
-        These ensure better handling and reduce impact when the EduTab falls.<br>
-
-        Price : 20,000/=<br>
-
-        Picture of Headphones
-
-        These ensure focused learning to keep out any distractions during EduTab use.
-
-        Price: 40,000/=
-      </p>
-
+      <div class="fr-view">
+        <%= simple_format @product.description %>
+      </div>
       <div class="row white centered">
-        <% if @team.count > 0 %>
+        <% if @team.present? %>
             <h1 STYLE="text-align: center">EDUTAB TEAM</h1>
             <hr>
             <br>

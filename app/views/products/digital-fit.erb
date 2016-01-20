@@ -5,15 +5,8 @@
   <div class="col-lg-8 col-lg-offset-2">
     <%= cl_image_tag @product.photo, height: '200px' %>
     <div class="product-details">
-      <p>
-        Digital-Fit smart wearables are about using technology to help us keep fit to enjoy healthier and more
-        productive lives.
-
-        Digital-Fit's tracking bands and smart watches have small sensors that track aspects of athletic performance
-        such as steps, distance , pace,heart rate and calories burnt and communicate that information securely and
-        efficiently to consumer-friendly mobile apps.
-
-        These gadgets are your portable"coaches" to help keep you active and healthy.
+      <p class="fr-view">
+        <%= @product.description %>
       </p>
 
     </div>

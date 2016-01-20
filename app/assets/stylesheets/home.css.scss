@@ -1,37 +1,48 @@
-.team-info{
-  font-size: 18px;
+.team-info {
+
 }
+
+.team-info p {
+  font-family: Lato, sans-serif;
+  font-weight: 200;
+}
+
 .centered {
   text-align: center;
 }
-.product-row{
+
+.product-row {
   padding: 50px;
   width: 1300px;
   height: 600px;
 
 }
-.product-row h2{
+
+.product-row h2 {
   font-family: "Helvetica Neue", Arial, "Lucida Grande", sans-serif;
   text-align: center;
   font-weight: 600;
 }
-.product-logo{
+
+.product-logo {
   max-height: 100px;
 }
-.product{
+
+.product {
   text-align: center;
 }
 
 nav.navbar-fixed-top li a {
-  color:#FFF;
+  color: #FFF;
   text-shadow: none;
 }
-nav.navbar-fixed-top{
+
+nav.navbar-fixed-top {
   background: transparent;
   border-bottom: 0px !important;
 }
 
-nav.navbar-fixed-top .logo{
+nav.navbar-fixed-top .logo {
   color: #FFF;
 }
 

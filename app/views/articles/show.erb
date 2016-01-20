@@ -3,15 +3,9 @@
 </div>
 <div class="container">
   <div class="row">
-    <div class="col-md-8 col-md-offset-1">
+    <div class="col-md-12 col-md-offset-1">
       <%= cl_image_tag @article.photo, height: '350px',:width=>1000, :crop=>:scale, class: 'img-responsive' %>
       <div class="row">
-        <div class="col-md-2 col-md-offset-1 article-side-bar">
-          <ul class="social list-inline">
-            <li><a target="_blank"  href="https://www.facebook.com/dialog/feed?app_id=134530986736267&link=<%= request.original_url %>&name=<%= @article.title%>&picture=<%=image_url(@article.photo)%>&redirect_uri=http://facebook.com/"  class="fb"><i class="ion-social-facebook-outline"></i></a></li>
-            <li><a href="#" class="twitter"><i class="ion-social-twitter-outline"></i></a></li>
-          </ul>
-        </div>
         <div class="col-md-9">
           <div class="post">
             <div class="post-title">

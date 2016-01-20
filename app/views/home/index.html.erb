@@ -25,7 +25,8 @@
 
       </div>
       <div style="text-align: center">
-        <div class="animated fadeInUp" style="color: black;position: absolute; top: 300px; left: 30px; width: 480px; height: 120px; font-size: 30px; color: #000; line-height: 38px;">"Wearable Smart" watches to help keep you active and healthy.
+        <div class="animated fadeInUp" style="color: black;position: absolute; top: 300px; left: 30px; width: 480px; height: 120px; font-size: 30px; color: #000; line-height: 38px;">"Wearable
+          Smart" watches to help keep you active and healthy.
           <%= link_to 'More About Digital Fit', {controller: 'products', action: 'show', name: 'Digital Fit'}, {class: 'btn btn-lg btn-radius btn-theme-border wow animated bounceIn', data: {'wow-duration' => '700ms', 'wow-delay' => '200ms'}} %>
         </div>
       </div>
@@ -65,17 +66,17 @@
     <div class="row">
       <div class="row">
         <div class="col-sm-8 col-sm-offset-2">
-          <h1 class="center-heading">Meet the Founders</h1>
+          <h3 class="center-heading">Meet the Founders</h3>
           <hr>
         </div>
       </div>
       <div class="col-sm-6 wow animated fadeInLeft" data-wow-duration="700ms" data-wow-delay="200ms">
         <div class="row margin-bottom-20">
           <div class="col-sm-12 section-title">
-            <h2>
+            <h4 class="founder-name">
               Mbanda Shyaka
 
-            </h2><em>Managing Director</em>
+            </h4><em>Managing Director</em>
 
           </div>
         </div>
@@ -93,6 +94,9 @@
               <p>
                 He is currently serving on the executive of Akright City as the Honourable Minister of ICT entrusted
                 with the responsibility of getting government approval making Akright City a Cyber City.
+              </p>
+
+              <p class="hidden-xs hidden-sm">
                 He is a founding member and board member of the Silas Shyaka Education Fund dedicated to providing
                 educational opportunities to children in areas recovering from war in Uganda.
               </p>
@@ -108,9 +112,9 @@
       <div class="col-sm-6 wow animated fadeInRight" data-wow-duration="700ms" data-wow-delay="200ms">
         <div class="row margin-bottom-20">
           <div class="col-sm-12 section-title">
-            <h2>
+            <h4 class="founder-name">
               Nkusi Shyaka
-            </h2>
+            </h4>
             <em>Director Operations</em>
           </div>
         </div>
@@ -128,8 +132,11 @@
             <div class="team-info">
               <p>
                 Nkusi Shyaka is the founder of the "TheRailsShop" , a web skills training and consultancy firm. He is a
-                founding member of the Silas Shyaka Education
-                Fund dedicated to providing quality education to the disadvantaged children in areas recovering from war
+                founding member of the Silas Shyaka Education Fund .
+              </p>
+
+              <p class="hidden-xs hidden-sm">
+                Dedicated to providing quality education to the disadvantaged children in areas recovering from war
                 in Uganda. He is a
                 board member and a committed cadre of the cause.
               </p>
@@ -291,10 +298,11 @@
         <div class="col-sm-4 margin-bottom-30">
           <div class="post">
             <div class="post-thumbnail">
-              <%= cl_image_tag(article.photo,:width => 360, :height => 170, :crop => :scale, class: "img-responsive") %>
+              <%= cl_image_tag(article.photo, :width => 360, :height => 170, :crop => :scale, class: "img-responsive") %>
             </div>
             <!--post image-->
             <h3 class="post-title"><%= link_to article.title %></h3>
+
             <div class="text-wrapper">
               <p>
                 <%= simple_format(article.text.capitalize) %>

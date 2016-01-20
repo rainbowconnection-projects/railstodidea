@@ -3,30 +3,9 @@
   <div class="col-lg-8 col-lg-offset-2">
     <%= cl_image_tag @product.photo, height: '200px' %>
     <div class="product-details">
-      <p>
-        TechKids is an after school club in which kids use educational material designed for children 5 years and up
-        both on virtual and physical platforms to teach computational thinking skills.
-        Computer programming is the new literacy. It's just like reading and writing.
-
-        Lately, almost every aspect of our lives is run by computers, from agriculture, government, health, business
-        etc.
-
-        For our children to succeed and thrive in this 21st Century , they are going to need to know how to read and
-        write computer programs.
-
-        Computer Programming fosters creativity, develops risk takers, encourages trial and error and imparts problem
-        solving skills. These are all summed up as computational thinking skills.
-
-        Cuurently, TechKids is operational in
-      <ul>
-        <li><b>Daffodils Primary, Kololo</b></li>
-        <li><b>The Ark School, Kololo</b></li>
-        <li><b>KinderKare Elementary, Kitante,</b></li>
-        <li><b>British School of Kampala, Muyenga</b></li>
-        <li><b>Treasures Christian Pre-School and Elementary, Bugolobi</b></li>
-      </ul>
-      We also run weekend as well as holiday programs at our offices at Kati House in Nakasero next to Kisozi Complex.
-      </p>
+      <div class="fr-view">
+        <%= @product.description %>
+      </div>
       <% if @team.present? %>
           <div class="row white centered">
             <h1 STYLE="text-align: center">TECH KIDS TEAM</h1>
