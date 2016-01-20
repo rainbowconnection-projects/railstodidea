@@ -40,7 +40,29 @@ $('#calendar').datepicker({});
 $(document).ready(function () {
     $('.text').froalaEditor({
         minHeight: 200,
-        toolbarButtons: ['fullscreen', 'bold', 'italic', 'underline', 'strikeThrough', 'subscript', 'superscript', 'fontFamily', 'fontSize', '|', 'color', 'emoticons', 'inlineStyle', 'paragraphStyle', '|', 'paragraphFormat', 'align', 'formatOL', 'formatUL', 'outdent', 'indent', '-', 'insertLink', 'insertImage', 'insertVideo', 'insertFile', 'insertTable', '|', 'quote', 'insertHR', 'undo', 'redo', 'clearFormatting', 'selectAll', 'html']
+        toolbarButtons: ['fullscreen', 'bold', 'italic', 'underline', 'strikeThrough', 'subscript', 'superscript', 'fontFamily', 'fontSize', '|', 'color', 'emoticons', 'inlineStyle', 'paragraphStyle', '|', 'paragraphFormat', 'align', 'formatOL', 'formatUL', 'outdent', 'indent', '-', 'insertLink', 'insertImage', 'insertVideo', 'insertFile', 'insertTable', '|', 'quote', 'insertHR', 'undo', 'redo', 'clearFormatting', 'selectAll', 'html'],
+        plainPaste: true,
+        imageUploadURL: '<%= refinery.admin_upload_image_path %>',
+        imageUploadParams: {
+            authenticity_token: '<%= form_authenticity_token %>',
+            return_to: window.location.href,
+            site: '<%= current_site.id %>'
+        },
+        imageErrorCallback: function (error) {
+            console.log('ERROR: %O', error);
+
+            var scroll_pos=(0);
+            var message = error.message + ' (Code: ' + error.code + ')';
+            var flash =  '<div id="flash_container"><div id="flash" class="flash flash_error" style="visibility: visible; opacity: 1;">'+ message +'</div></div>';
+
+            $('#content').prepend(flash);
+            $('html, body').animate({scrollTop:(scroll_pos)}, '2000');
+            setTimeout(function(){
+                $('#flash_container').fadeOut('slow');
+                $('#flash_container').remove();
+            }, 2000);
+        }
+
     })
 });
 function rowStyle(row, index) {

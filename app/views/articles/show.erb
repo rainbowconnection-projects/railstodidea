@@ -4,7 +4,7 @@
 <div class="container">
   <div class="row">
     <div class="col-md-12 col-md-offset-1">
-      <%= cl_image_tag @article.photo, height: '350px',:width=>1000, :crop=>:scale, class: 'img-responsive' %>
+      <%= cl_image_tag @article.photo, height: '350px', :width => 1000, :crop => :scale, class: 'img-responsive' %>
       <div class="row">
         <div class="col-md-9">
           <div class="post">
@@ -12,30 +12,40 @@
               <%= @article.title %>
             </div>
             <p class="lead">Posted <em><%= time_ago_in_words(@article.created_at) %></em> ago</p>
+
             <div class="tags">
 
             </div>
             <p class="post-detail">
-              <div class="fr-view">
-                <%= simple_format(@article.text) %>
-              </div>
+
+            <div class="fr-view">
+              <%= simple_format(@article.text) %>
+            </div>
 
             </p>
             <div id="disqus_thread"></div>
             <script>
+                /**
+                 *  RECOMMENDED CONFIGURATION VARIABLES: EDIT AND UNCOMMENT THE SECTION BELOW TO INSERT DYNAMIC VALUES FROM YOUR PLATFORM OR CMS.
+                 *  LEARN WHY DEFINING THESE VARIABLES IS IMPORTANT: https://disqus.com/admin/universalcode/#configuration-variables
+                 */
+
                  var disqus_config = function () {
-                 this.page.url = "todidea.com/articles/"<%= @article.id %>;
-                 this.page.identifier = 'articles';
+                 this.page.url = 'www.todidea.com';  // Replace PAGE_URL with your page's canonical URL variable
+                 this.page.identifier = 'articles'; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
                  };
 
-                (function() {
+                (function () {  // DON'T EDIT BELOW THIS LINE
                     var d = document, s = d.createElement('script');
+
                     s.src = '//todidea.disqus.com/embed.js';
+
                     s.setAttribute('data-timestamp', +new Date());
                     (d.head || d.body).appendChild(s);
                 })();
             </script>
-            <noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript" rel="nofollow">comments powered by Disqus.</a></noscript>
+            <noscript>Please enable JavaScript to view the
+              <a href="https://disqus.com/?ref_noscript" rel="nofollow">comments powered by Disqus.</a></noscript>
           </div>
         </div>
       </div>
