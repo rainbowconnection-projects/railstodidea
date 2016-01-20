@@ -27,7 +27,6 @@
           <tr>
             <th data-field="title" data-sortable="true">Title</th>
             <th data-field="article" data-sortable="true">Article</th>
-            <th data-field="category" data-sortable="true">Category</th>
             <th></th>
           </tr>
           </thead>
@@ -42,7 +41,6 @@
                     </p>
                   </div>
                 </td>
-                <td><%= article.category.name %></td>
                 <td>
                   <%= link_to 'Edit', edit_admin_article_path(article), class: 'btn btn-primary btn-small' %>
                   <%= link_to 'View', admin_article_path(article), class: 'btn btn-success btn-small' %>
