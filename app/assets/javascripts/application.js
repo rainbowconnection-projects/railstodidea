@@ -52,6 +52,15 @@ $(document).ready(function () {
         autoPlay: true
     });
 
+    $("#owl-slider").owlCarousel({
+        autoPlay: 3000, //Set AutoPlay to 3 seconds
+
+        items : 4,
+        itemsDesktop : [1199,3],
+        itemsDesktopSmall : [979,3]
+
+    });
+
     var jssor_1_SlideoTransitions = [
         [{b: 5500.0, d: 3000.0, o: -1.0, r: 240.0, e: {r: 2.0}}],
         [{b: -1.0, d: 1.0, o: -1.0, c: {x: 51.0, t: -51.0}}, {

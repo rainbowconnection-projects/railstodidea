@@ -1,14 +1,22 @@
 <div class="divided-30"></div>
 <div class="row">
   <div class="col-lg-8 col-lg-offset-2">
-    <%= cl_image_tag @product.photo, height: '200px' %>
+    <% if @gallery %>
+        <div id="owl-slider" class="owl-carousel owl-theme">
+          <% @gallery.each do |photo| %>
+              <div class="item"><%= cl_image_tag photo.photo, class: 'img-responsive', height: '200px' %></div>
+          <% end %>
+        </div>
+    <% else %>
+        <%= cl_image_tag @product.photo, height: '200px' %>
+    <% end %>
     <div class="product-details">
       <div class="fr-view">
         <%= simple_format @product.description %>
       </div>
       <div class="row white centered">
         <% if @team.present? %>
-            <h1 STYLE="text-align: center">EDUTAB TEAM</h1>
+            <h3 STYLE="text-align: center; font-weight: bold;">EDUTAB TEAM</h3>
             <hr>
             <br>
             <% @team.each do |member| %>

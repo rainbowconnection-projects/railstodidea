@@ -1,7 +1,15 @@
 <div class="divided-30"></div>
 <div class="row">
   <div class="col-lg-8 col-lg-offset-2">
-    <%= cl_image_tag @product.photo, height: '200px' %>
+    <% if @gallery %>
+        <div id="owl-slider" class="owl-carousel owl-theme">
+          <% @gallery.each do |photo| %>
+              <div class="item"><%= cl_image_tag photo.photo, class: 'img-responsive', height: '200px' %></div>
+          <% end %>
+        </div>
+    <% else %>
+        <%= cl_image_tag @product.photo, height: '200px' %>
+    <% end %>
     <div class="product-details">
       <div class="fr-view">
         <%= simple_format @product.description %>

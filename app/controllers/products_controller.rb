@@ -16,6 +16,7 @@ class ProductsController < ApplicationController
     if @product.team.present?
       @team = @product.team.persons
     end
+    @gallery = @product.try(:gallery).try(:photos)
     @link = strip_spaces_downcase params[:name].to_s
     if @link == 'edutab'
       render template: 'products/edu-tab'
