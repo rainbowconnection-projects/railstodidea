@@ -33,7 +33,10 @@ Rails.application.routes.draw do
 
 
   namespace :admin do
-    resources :articles, :products, :events, :projects, :testimonials,:tags, :categories, :teams, :people
+    resources :articles, :products, :events,
+              :projects, :testimonials,:tags,
+              :categories, :teams, :people, :galleries,
+              :photos
   end
 
 end
