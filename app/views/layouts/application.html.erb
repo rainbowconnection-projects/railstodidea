@@ -1,10 +1,19 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <title>TODIdea</title>
+  <title><%= if content_for?(:title) then yield(:title) + ' | '  end%> TODIdea</title>
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="<%= yield_meta_tag(:description,'Description') %>">
+
+  <meta property="og:title" content="<%= if content_for(:og_title) then yield(:og_title) end %>">
+  <meta property="og:type" content="website">
+  <meta property="og:description" content="<%= if content_for(:og_description) then yield(:og_description) end %>">
+  <meta property="og:url" content="<%= if content_for(:og_url) then yield(:og_url) end %>">
+  <meta property="og:image" content="<%= if content_for(:og_image) then yield(:og_image) end %>">
+
+  <meta property="fb:app_id" content="151442568564380">
 
   <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track' => true %>
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
@@ -24,6 +33,7 @@
       doNotCopy: false,
       hashAddressBar: false
   });</script>
+
 </head>
 <body>
 
