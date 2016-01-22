@@ -10,12 +10,12 @@
       <section class="blog_feed-3 bg-white-smoke">
         <div class="row">
           <div class="col-xs-12 col-sm-4 col-md-3 text-center blog-post-image">
-            <%= cl_image_tag article.photo, class: 'img-responsive img-sm-75' %>
+            <%= cl_image_tag article.photo, class: 'img-responsive' %>
           </div>
 
           <div class="col-xs-12 col-sm-8 col-md-9">
             <h2 class="blog-post-title text-light"><%= article.title %></h2>
-            <h4 class="blog-post-author text-light highlight"><em><%= article.author %></em></h4>
+            <h4 class="blog-post-author text-light highlight"><em><%= article.try(:author) %></em></h4>
 
             <p class="text-xsmall blog-post-date text-light"><em><%= article.created_at.to_formatted_s(:long_ordinal) %></em></p>
 
