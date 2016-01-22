@@ -8,9 +8,9 @@
 
         <div class="col-xs-12 col-sm-9 col-md-9 text-light">
           <h1 class="blog-post-title"><%= @article.title %></h1>
-          <h4 class="text-light highlight"><em>Stefan Neculai</em></h4>
+          <h4 class="text-light highlight"><em><%= @article.author %></em></h4>
 
-          <p class="text-xsmall blog-post-date text-light"><em>Wed, December 9, 2015</em></p>
+          <p class="text-xsmall blog-post-date text-light"><em><%= @article.created_at.to_formatted_s(:long_ordinal) %></em></p>
 
           <div class="text-large text-light blog-post-content"><%= simple_format @article.text %></div>
         </div>

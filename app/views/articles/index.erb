@@ -15,9 +15,9 @@
 
           <div class="col-xs-12 col-sm-8 col-md-9">
             <h2 class="blog-post-title text-light"><%= article.title %></h2>
-            <h4 class="blog-post-author text-light highlight"><em>Diana Neculai<%= %></em></h4>
+            <h4 class="blog-post-author text-light highlight"><em><%= article.author %></em></h4>
 
-            <p class="text-xsmall blog-post-date text-light"><em>Mon, August 31, 2015<%= %></em></p>
+            <p class="text-xsmall blog-post-date text-light"><em><%= article.created_at.to_formatted_s(:long_ordinal) %></em></p>
 
             <div class="text-large text-light blog-post-content text-wrapper"><%= simple_format article.text %></div>
             <%= link_to 'Keep Reading', {class: 'text-small', 'title' => 'Read'} do %>
