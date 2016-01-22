@@ -1,59 +1,67 @@
-<div class="article-header" data-stellar-background-ratio="0.2" style="background-position: 0% 8px;">
-
-</div>
-<div class="container">
-  <div class="row">
-    <div class="col-md-8 col-md-offset-1">
-      <%= cl_image_tag @article.photo, height: '350px',:width=>'1000px', :crop=>:scale, class: 'img-responsive' %>
+<article class="blog-post-3">
+  <section>
+    <div class="container">
       <div class="row">
-        <div class="col-md-2 col-md-offset-1 article-side-bar">
-          <ul class="social list-inline">
-            <li><a target="_blank"  href="https://www.facebook.com/dialog/feed?app_id=134530986736267&link=<%= request.original_url %>&name=<%= @article.title%>&picture=<%=image_url(@article.photo)%>&redirect_uri=http://facebook.com/"  class="fb"><i class="ion-social-facebook-outline"></i></a></li>
-            <li><a href="#" class="twitter"><i class="ion-social-twitter-outline"></i></a></li>
-          </ul>
+        <div class="col-xs-12 col-sm-3 col-md-3 text-center blog-post-image">
+          <%= cl_image_tag @article.photo, class: 'img-responsive' %>
         </div>
-        <div class="col-md-9">
-          <div class="post">
-            <div class="post-title">
-              <%= @article.title %>
-            </div>
-            <p class="lead">Posted <em><%= time_ago_in_words(@article.created_at) %></em> ago</p>
-            <div class="tags">
 
-            </div>
-            <p class="post-text">
-              <div class="fr-view">
-                <%= simple_format(@article.text) %>
-              </div>
+        <div class="col-xs-12 col-sm-9 col-md-9 text-light">
+          <h1 class="blog-post-title"><%= @article.title %></h1>
+          <h4 class="text-light highlight"><em>Stefan Neculai</em></h4>
 
-            </p>
-            <div id="disqus_thread"></div>
-            <script>
-                /**
-                 *  RECOMMENDED CONFIGURATION VARIABLES: EDIT AND UNCOMMENT THE SECTION BELOW TO INSERT DYNAMIC VALUES FROM YOUR PLATFORM OR CMS.
-                 *  LEARN WHY DEFINING THESE VARIABLES IS IMPORTANT: https://disqus.com/admin/universalcode/#configuration-variables
-                 */
+          <p class="text-xsmall blog-post-date text-light"><em>Wed, December 9, 2015</em></p>
 
-                var disqus_config = function () {
-                    this.page.url = '<%= request.original_url %>';  // Replace PAGE_URL with your page's canonical URL variable
-                    //this.page.identifier = PAGE_IDENTIFIER; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
-                };
-
-                (function () {  // DON'T EDIT BELOW THIS LINE
-                    var d = document, s = d.createElement('script');
-
-                    s.src = '//todidea.disqus.com/embed.js';
-
-                    s.setAttribute('data-timestamp', +new Date());
-                    (d.head || d.body).appendChild(s);
-                })();
-            </script>
-            <noscript>Please enable JavaScript to view the
-              <a href="https://disqus.com/?ref_noscript" rel="nofollow">comments powered by Disqus.</a></noscript>
-          </div>
+          <div class="text-large text-light blog-post-content"><%= simple_format @article.text %></div>
         </div>
       </div>
     </div>
-  </div>
+  </section>
 
-</div>
+  <section class="blog-post-social">
+    <div class="container">
+      <div class="row">
+        <!--<div class="col-xs-12 col-sm-9 col-sm-offset-3 col-md-9 col-md-offset-3">
+          <span class='st_sharethis_large' displayText='ShareThis'></span>
+          <span class='st_facebook_large' displayText='Facebook'></span>
+          <span class='st_twitter_large' displayText='Tweet'></span>
+          <span class='st_linkedin_large' displayText='LinkedIn'></span>
+          <span class='st_pinterest_large' displayText='Pinterest'></span>
+          <span class='st_email_large' displayText='Email'></span>
+        </div>-->
+      </div>
+    </div>
+  </section>
+
+  <section class="disqus">
+    <div class="container">
+      <div class="row">
+        <div class="col-xs-12 col-sm-9 col-sm-offset-3 col-md-9 col-md-offset-3">
+          <div id="disqus_thread"></div>
+          <script>
+              /**
+               *  RECOMMENDED CONFIGURATION VARIABLES: EDIT AND UNCOMMENT THE SECTION BELOW TO INSERT DYNAMIC VALUES FROM YOUR PLATFORM OR CMS.
+               *  LEARN WHY DEFINING THESE VARIABLES IS IMPORTANT: https://disqus.com/admin/universalcode/#configuration-variables
+               */
+
+              var disqus_config = function () {
+                  this.page.url = '<%= request.original_url %>';  // Replace PAGE_URL with your page's canonical URL variable
+                  //this.page.identifier = PAGE_IDENTIFIER; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
+              };
+
+              (function () {  // DON'T EDIT BELOW THIS LINE
+                  var d = document, s = d.createElement('script');
+
+                  s.src = '//todidea.disqus.com/embed.js';
+
+                  s.setAttribute('data-timestamp', +new Date());
+                  (d.head || d.body).appendChild(s);
+              })();
+          </script>
+          <noscript>Please enable JavaScript to view the
+            <a href="https://disqus.com/?ref_noscript" rel="nofollow">comments powered by Disqus.</a></noscript>
+        </div>
+      </div>
+    </div>
+  </section>
+</article>

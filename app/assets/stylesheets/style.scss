@@ -50,9 +50,6 @@ a:hover, a:focus {
 
 .text-wrapper {
   height: 100px;
-  -webkit-text-size-adjust: none;
-  font-size: large;
-  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
 }
 
 .product-wrapper {
@@ -756,6 +753,7 @@ blog
   display: block;
   text-align: right;
   margin-top: 20px;
+
 }
 
 .post .read-more a {

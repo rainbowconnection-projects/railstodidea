@@ -5,50 +5,33 @@
 <!-- Page Content -->
 
 <div class="container">
-  <div class="row">
-    <!-- Blog Entries Column -->
-    <div class="col-md-8 col-lg-offset-2">
-      <% @articles.each do |article| %>
-          <!-- First Blog Post -->
-          <div class="post">
-            <%= cl_image_tag(article.photo, class: 'img-responsive') %>
-            <p class="lead">
 
-            <h2>
-              <%= link_to article.title, article_path(article) %>
-            </h2>
-            </p>
-
-            <p>Posted <i class="ion ion-calendar"></i> <%= article.created_at.strftime('%B %d, %Y') %></p>
-            <% article.tags.each do |tag| %>
-                <%= tag.name.inspect %>
-            <% end %>
-            <hr>
-            <div class="text-wrapper" id="text-wrapper">
-              <p class="post-detail"><%= simple_format article.text %></p>
-            </div>
-
-            <!--<p>
-
-            </p>-->
-            <%= link_to('Read more ', article_path(article), class: 'read-more') %>
-
-            <hr>
+  <% @articles.each do |article| %>
+      <section class="blog_feed-3 bg-white-smoke">
+        <div class="row">
+          <div class="col-xs-12 col-sm-4 col-md-3 text-center blog-post-image">
+            <%= cl_image_tag article.photo, class: 'img-responsive img-sm-75' %>
           </div>
-      <% end %>
 
-      <%= will_paginate @articles, :page_links => false %>
-      <!-- Pager
-      <ul class="pager">
-        <li class="previous">
-          <a href="#">&larr; Older</a>
-        </li>
-        <li class="next">
-          <a href="#">Newer &rarr;</a>
-        </li>
-      </ul>
-      -->
-    </div>
+          <div class="col-xs-12 col-sm-8 col-md-9">
+            <h2 class="blog-post-title text-light"><%= article.title %></h2>
+            <h4 class="blog-post-author text-light highlight"><em>Diana Neculai<%= %></em></h4>
 
-  </div>
+            <p class="text-xsmall blog-post-date text-light"><em>Mon, August 31, 2015<%= %></em></p>
+
+            <div class="text-large text-light blog-post-content text-wrapper"><%= simple_format article.text %></div>
+            <%= link_to 'Keep Reading', {class: 'text-small', 'title' => 'Read'} do %>
+
+            <% end %>
+            <span class="read-more"><%= link_to 'Read more', article_path(article) %>  <i class="fa fa-chevron-circle-right"></i></span>
+          </div>
+        </div>
+      </section>
+
+  <% end %>
+
+  <%= will_paginate @articles, :page_links => false %>
+</div>
+
+</div>
 </div>
