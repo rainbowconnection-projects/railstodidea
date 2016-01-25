@@ -4,6 +4,7 @@ class CreatePeople < ActiveRecord::Migration
       t.string :name
       t.text :about
       t.string :photo
+      t.integer :team_id
 
       t.timestamps null: false
     end

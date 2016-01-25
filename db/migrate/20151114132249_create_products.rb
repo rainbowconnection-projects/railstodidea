@@ -5,6 +5,7 @@ class CreateProducts < ActiveRecord::Migration
       t.text :description
       t.string :photo
       t.string :link
+      t.text :short_description
 
       t.timestamps null: false
     end
