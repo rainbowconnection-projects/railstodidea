@@ -38,6 +38,10 @@
 $('#calendar').datepicker({});
 
 $(document).ready(function () {
+    $('[data-toggle=offcanvas]').click(function() {
+        $('.row-offcanvas').toggleClass('active');
+    });
+
     $('.text').froalaEditor({
         minHeight: 200,
         toolbarButtons: ['fullscreen', 'bold', 'italic', 'underline', 'strikeThrough', 'subscript', 'superscript', 'fontFamily', 'fontSize', '|', 'color', 'emoticons', 'inlineStyle', 'paragraphStyle', '|', 'paragraphFormat', 'align', 'formatOL', 'formatUL', 'outdent', 'indent', '-', 'insertLink', '|', 'quote', 'insertHR', 'undo', 'redo', 'clearFormatting', 'selectAll', 'html'],
@@ -76,17 +80,3 @@ function rowStyle(row, index) {
     return {};
 }
 
-
-!function ($) {
-    $(document).on("click", "ul.nav li.parent > a > span.icon", function () {
-        $(this).find('em:first').toggleClass("glyphicon-minus");
-    });
-    $(".sidebar span.icon").find('em:first').addClass("glyphicon-plus");
-}(window.jQuery);
-
-$(window).on('resize', function () {
-    if ($(window).width() > 768) $('#sidebar-collapse').collapse('show')
-})
-$(window).on('resize', function () {
-    if ($(window).width() <= 767) $('#sidebar-collapse').collapse('hide')
-})

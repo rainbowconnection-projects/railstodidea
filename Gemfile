@@ -23,9 +23,7 @@ gem 'bootstrap', '~> 4.0.0.alpha3'
 gem 'actionmailer'
 gem 'mail_form'
 
-gem 'koala'
-
-
+#gem 'koala'
 # Turbolinks makes following links in your web application faster. Read more: https://github.com/rails/turbolinks
 gem 'turbolinks'
 # Build JSON APIs with ease. Read more: https://github.com/rails/jbuilder
@@ -39,7 +37,7 @@ gem 'carrierwave'
 gem 'cloudinary'
 gem 'simple_form'
 gem 'devise'
-gem "wysiwyg-rails"
+gem 'wysiwyg-rails'
 
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'

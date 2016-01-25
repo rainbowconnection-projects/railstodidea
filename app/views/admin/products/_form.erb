@@ -4,7 +4,9 @@
     <%= f.input_field :short_description, as: :text %>
     <label>Full Description</label>
     <%= f.input_field :description, label: 'Description', as: :text %>
-    <%= f.input :photo, as: :file %>
+    <label>Photo</label>
+    <%= f.input_field :photo, as: :file %>
     <%= f.input :link, label: 'Link' %>
     <%= f.button :submit, @product.new_record? ? 'Add Product' : 'Update Product', class: 'btn btn-success btn-block btn-medium' %>
 <% end %>
+<div class="divided-20"></div>

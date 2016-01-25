@@ -1,8 +1,10 @@
 <%= simple_form_for([:admin, @project]) do |f| %>
     <%= f.error_notification %>
-      <%= f.input :name %>
-      <%= f.input_field :description, as: :text %>
-      <%= f.input :date, as: :date %>
-      <%= f.input :photo, as: :file %>
-      <%= f.button :submit,@project.new_record? ? 'Add Project' : 'Update Project', class: 'btn btn-success btn-block btn-medium' %>
+    <%= f.input :name %>
+    <%= f.input_field :description, as: :text %>
+    <%= f.input :date, as: :date %>
+    <label>Photo</label>
+    <%= f.input_field :photo, as: :file %>
+    <%= f.button :submit, @project.new_record? ? 'Add Project' : 'Update Project', class: 'btn btn-success btn-block btn-medium' %>
 <% end %>
+<div class="divided-20"></div>

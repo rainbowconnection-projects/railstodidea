@@ -4,6 +4,8 @@
     <%= f.input_field :text,  {'id' => 'text'} %>
     <%= f.association :category, label: 'Category' %>
     <%= f.association :tags, label: 'Tags' %>
-    <%= f.input :photo, as: :file %>
+    <label>Photo</label>
+    <%= f.input_field :photo, as: :file %>
     <%= f.button :submit, @article.new_record? ? 'Post Article' : 'Update Article', class: 'btn btn-success btn-block btn-medium' %>
 <% end %>
+<div class="divided-20"></div>

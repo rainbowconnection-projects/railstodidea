@@ -1,56 +1,39 @@
-<div class="col-sm-9 col-sm-offset-3 col-lg-10 col-lg-offset-2 main">
-  <div class="row">
-    <ol class="breadcrumb">
-      <li><a href="#"><span class="fa fa-home"></span></a></li>
-      <li class="active">Articles</li>
-    </ol>
-  </div>
-
-  <div style="padding: 10px">
-    <div class="row">
-      <%= link_to 'New Article', new_admin_article_path, :class => 'btn btn-medium btn-primary pull-right' %>
-    </div>
-    <div class="margin-bottom-20"></div>
-    <div class="row">
-      <div class="col-lg-12">
-        <table id="table"
-               data-toggle="table"
-               data-height="550"
-               data-pagination="true"
-               data-page-size="5"
-               data-page-list="[5,8,10]"
-               data-pagination-first-text="First"
-               data-pagination-pre-text="Previous"
-               data-pagination-next-text="Next"
-               data-pagination-last-text="Last">
-          <thead>
-          <tr>
-            <th data-field="title" data-sortable="true">Title</th>
-            <th data-field="article" data-sortable="true">Article</th>
-            <th></th>
-          </tr>
-          </thead>
-          <tbody>
-          <% @articles.each do |article| %>
-              <tr>
-                <td><%= article.title %></td>
-                <td>
-                  <div style="overflow-y: auto">
-                    <p>
-                      <%= article.text %>
-                    </p>
-                  </div>
-                </td>
-                <td>
-                  <%= link_to 'Edit', edit_admin_article_path(article), class: 'btn btn-primary btn-small' %>
-                  <%= link_to 'View', admin_article_path(article), class: 'btn btn-success btn-small' %>
-                  <%= link_to 'Delete', admin_article_path(article), class: 'btn btn-danger btn-sm', method: :delete, data: {confirm: 'Are you sure?'} %>
-                </td>
-              </tr>
-          <% end %>
-          </tbody>
-        </table>
-      </div>
-    </div>
-  </div>
-</div>    <!--/.main-->
+<%= link_to 'New Article', new_admin_article_path, class:'btn btn-block btn-primary' %>
+<div class="divided-20"></div>
+<table id="table"
+       data-toggle="table"
+       data-height="700"
+       data-pagination="true"
+       data-page-size="3"
+       data-page-list="[5,8,10]"
+       data-pagination-first-text="First"
+       data-pagination-pre-text="Previous"
+       data-pagination-next-text="Next"
+       data-pagination-last-text="Last">
+  <thead>
+  <tr>
+    <th data-field="title" data-sortable="true">Title</th>
+    <th data-field="article" data-sortable="true">Article</th>
+    <th></th>
+  </tr>
+  </thead>
+  <tbody>
+  <% @articles.each do |article| %>
+      <tr>
+        <td><%= article.title %></td>
+        <td>
+          <div style="overflow-y: auto">
+            <p>
+              <%= article.text %>
+            </p>
+          </div>
+        </td>
+        <td>
+          <%= link_to 'Edit', edit_admin_article_path(article), class: 'btn btn-primary btn-sm' %>
+          <%= link_to 'Delete', admin_article_path(article), class: 'btn btn-danger btn-sm', method: :delete, data: {confirm: 'Are you sure?'} %>
+        </td>
+      </tr>
+  <% end %>
+  </tbody>
+</table>
+<!--/.main-->

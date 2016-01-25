@@ -1,8 +1,11 @@
-<%= simple_form_for([:admin,@testimonial]) do |f| %>
+<%= simple_form_for([:admin, @testimonial]) do |f| %>
     <%= f.error_notification %>
-      <%= f.input :designation %>
-      <%= f.input_field :text, as: :text %>
-      <%= f.input :name %>
-      <%= f.input :photo, as: :file %>
-      <%= f.button :submit,@testimonial.new_record? ? 'Add Testimonial' : 'Update Testimonial', class: 'btn btn-success btn-block btn-medium' %>
+    <%= f.input :designation %>
+    <%= f.input_field :text, as: :text %>
+    <%= f.input :name %>
+    <label>Photo</label>
+    <%= f.input_field :photo, as: :file %>
+    <%= f.button :submit, @testimonial.new_record? ? 'Add Testimonial' : 'Update Testimonial', class: 'btn btn-success btn-block btn-medium' %>
 <% end %>
+
+<div class="divided-20"></div>
