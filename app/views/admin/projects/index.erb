@@ -6,7 +6,6 @@
     <th data-field="id" data-sortable="true">Id</th>
     <th data-field="photo" data-sortable="false">Photo</th>
     <th data-field="name" data-sortable="true">Name</th>
-    <th data-field="description" data-sortable="true">Description</th>
     <th data-field="date" data-sortable="true">Date</th>
     <th></th>
   </tr>
@@ -17,11 +16,6 @@
         <td><%= project.id %></td>
         <td><%= cl_image_tag(project.photo, height: '60px', width: '60px') %></td>
         <td><%= project.name %></td>
-        <td>
-          <p id="text-wrapper" class="text-wrapper-admin">
-            <%= project.description %>
-          </p>
-        </td>
         <td><%= project.date %></td>
         <td>
           <%= link_to 'Edit', edit_admin_project_path(project), class: 'btn btn-primary btn-sm' %>

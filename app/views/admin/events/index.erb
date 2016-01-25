@@ -6,7 +6,6 @@
     <th data-field="id" data-sortable="true">Id</th>
     <th data-field="photo" data-sortable="false">Photo</th>
     <th data-field="event" data-sortable="true">Event</th>
-    <th data-field="description" data-sortable="true">Description</th>
     <th data-field="date" data-sortable="date">Date</th>
     <th></th>
   </tr>
@@ -17,12 +16,6 @@
         <td><%= event.id %></td>
         <td><%= cl_image_tag(event.photo, height: '60px', width: '60px') %></td>
         <td><%= event.event_name %></td>
-        <td>
-          <p id="text-wrapper" class="text-wrapper-admin">
-            <%= event.description %>
-          </p>
-
-        </td>
         <td>
           <%= event.date %>
         </td>

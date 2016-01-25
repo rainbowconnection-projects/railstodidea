@@ -12,22 +12,16 @@
        data-pagination-last-text="Last">
   <thead>
   <tr>
+    <th>Id</th>
     <th data-field="title" data-sortable="true">Title</th>
-    <th data-field="article" data-sortable="true">Article</th>
     <th></th>
   </tr>
   </thead>
   <tbody>
   <% @articles.each do |article| %>
       <tr>
+        <td><%= article.id %></td>
         <td><%= article.title %></td>
-        <td>
-          <div style="overflow-y: auto">
-            <p>
-              <%= article.text %>
-            </p>
-          </div>
-        </td>
         <td>
           <%= link_to 'Edit', edit_admin_article_path(article), class: 'btn btn-primary btn-sm' %>
           <%= link_to 'Delete', admin_article_path(article), class: 'btn btn-danger btn-sm', method: :delete, data: {confirm: 'Are you sure?'} %>
