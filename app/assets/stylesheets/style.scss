@@ -12,35 +12,12 @@ body {
 /****************
 basic
 *****************/
+.container{
+  padding-left: 15px;
+  padding-right: 15px;
+}
 .story-title{
   background: asset_data_url('banner.jpg');
-}
-
-.about-description{
-  color: #777;
-  line-height: 25px;
-  font-size: 18px;
-
-}
-
-/* Ellipsis*/
-.ellip {
-  display: block;
-  height: 100%;
-}
-
-.ellip-line {
-  display: inline-block;
-  text-overflow: ellipsis;
-  white-space: nowrap;
-  word-wrap: normal;
-  max-width: 100%;
-}
-
-.ellip,
-.ellip-line {
-  position: relative;
-  overflow: hidden;
 }
 
 
@@ -48,9 +25,6 @@ a:hover, a:focus {
   outline: 0;
 }
 
-.text-wrapper {
-  height: 100px;
-}
 
 .product-wrapper {
 
@@ -299,6 +273,23 @@ buttons
 /**************
 Bootstrap menu and container overrides
 ***************/
+.navbar-toggler{
+  float: right !important;
+}
+.nav-header{
+  margin-left: 15px;
+  margin-right: 15px;
+}
+.navbar-right {
+  float: right !important;
+  margin-right: -15px;
+}
+.navbar-nav .nav-link {
+  display: block;
+  padding-top: 0.725rem;
+  padding-bottom: 0.725rem;
+}
+
 
 .navbar-inverse {
   margin-bottom: 0px;
@@ -306,6 +297,7 @@ Bootstrap menu and container overrides
   padding: 15px 0;
   background: #f8f8f8;
 }
+
 
 .navbar-inverse .navbar-nav > li > a {
   font-size: 17px;
@@ -832,7 +824,7 @@ blog
 /*****founder****/
 .founder {
   background-color: #f8f8f8;
-  padding-top: 80px;
+  padding-top: 30px;
   padding-bottom: 50px;
 }
 
@@ -843,8 +835,41 @@ blog
 .team-info h4 {
   margin: 0px;
 }
-.team-info p{
-  font-size: large;
+
+
+/* Custom, iPhone Retina */
+@media only screen and (min-width : 320px) {
+  .team-info p{
+    font-size: small;
+  }
+}
+
+/* Extra Small Devices, Phones */
+@media only screen and (min-width : 480px) {
+  .team-info p{
+    font-size: small;
+  }
+}
+
+/* Small Devices, Tablets */
+@media only screen and (min-width : 768px) {
+  .team-info p{
+    font-size: large;
+  }
+}
+
+/* Medium Devices, Desktops */
+@media only screen and (min-width : 992px) {
+  .team-info p{
+    font-size: large;
+  }
+}
+
+/* Large Devices, Wide Screens */
+@media only screen and (min-width : 1200px) {
+  .team-info p{
+    font-size: large;
+  }
 }
 
 .team-info span {
@@ -1059,14 +1084,12 @@ h2.text-thin, .h2.text-thin {
 .center-heading {
   text-align: center;
   color: #000;
-  text-transform: uppercase;
+  text-transform: capitalize;
   font-weight: 400;
   letter-spacing: 0.0em;
   line-height: 40px;
 }
-.founder-name{
 
-}
 .post-text{
   font-weight: 400;
 }

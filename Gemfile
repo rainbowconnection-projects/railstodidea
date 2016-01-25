@@ -18,7 +18,8 @@ gem 'ionicons-rails'
 # Use jquery as the JavaScript library
 gem 'jquery-rails'
 gem 'autoprefixer-rails'
-gem 'bootstrap-sass'
+gem 'bootstrap', '~> 4.0.0.alpha3'
+#gem 'bootstrap-sass'
 gem 'actionmailer'
 gem 'mail_form'
 

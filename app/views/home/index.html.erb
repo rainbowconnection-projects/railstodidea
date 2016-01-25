@@ -1,60 +1,100 @@
 <!-- revolution slider-->
-
-<div id="jssor_1" style="position: relative; margin: 0 auto; top: 0px; left: 0px; width: 1300px; height: 500px; overflow: hidden; visibility: hidden;">
-  <!-- Loading Screen -->
-  <div data-u="loading" style="position: absolute; top: 0px; left: 0px;">
-    <div style="filter: alpha(opacity=70); opacity: 0.7; position: absolute; display: block; top: 0px; left: 0px; width: 100%; height: 100%;"></div>
-    <div style="position:absolute;display:block;background:url('../images/loading.gif') no-repeat center center;top:0px;left:0px;width:100%;height:100%;"></div>
-  </div>
-  <div data-u="slides" style="cursor: default; position: relative; top: 0px; left: 0px; width: 1300px; height: 500px; overflow: hidden;">
-    <div data-p="225.00" style="display: none;">
-      <%= image_tag('purple.png', class: 'img-responsive') %>
-      <div style="position: absolute; top: 30px; left: 30px; width: 480px; height: 120px; font-size: 50px; color: #ffffff; line-height: 60px;" class="animated fadeInLeft">
-        <%= image_tag('edutab.png', class: 'img-responsive') %>
+<div class="hidden-sm-down">
+  <div id="jssor_1" style="position: relative; margin: 0 auto; top: 0px; left: 0px; width: 1300px; height: 500px; overflow: hidden; visibility: hidden;">
+    <!-- Loading Screen -->
+    <div data-u="loading" style="position: absolute; top: 0px; left: 0px;">
+      <div style="filter: alpha(opacity=70); opacity: 0.7; position: absolute; display: block; top: 0px; left: 0px; width: 100%; height: 100%;"></div>
+      <div style="position:absolute;display:block;background:url('../images/loading.gif') no-repeat center center;top:0px;left:0px;width:100%;height:100%;"></div>
+    </div>
+    <div data-u="slides" style="cursor: default; position: relative; top: 0px; left: 0px; width: 1300px; height: 500px; overflow: hidden;">
+      <div data-p="225.00" style="display: none;">
+        <%= image_tag('purple.png', class: 'img-responsive') %>
+        <div style="position: absolute; top: 30px; left: 30px; width: 480px; height: 120px; font-size: 50px; color: #ffffff; line-height: 60px;" class="animated fadeInLeft">
+          <%= image_tag('edutab.png', class: 'img-responsive img-xs-25 img-sm-75') %>
+        </div>
+        <div style="text-align: center">
+          <div class="animated fadeInUp" style="color: black;position: absolute; top: 300px; left: 30px; width: 480px; height: 120px; font-size: 30px; color: #000; line-height: 38px;">Digital
+            Education Unleashed
+            <%= link_to 'More About EduTab ', {controller: 'products', action: 'show', name: 'EduTab'}, {class: 'btn btn-lg btn-radius btn-theme-border wow animated bounceIn', data: {'wow-duration' => '700ms', 'wow-delay' => '200ms'}} %>
+          </div>
+        </div>
       </div>
-      <div style="text-align: center">
-        <div class="animated fadeInUp" style="color: black;position: absolute; top: 300px; left: 30px; width: 480px; height: 120px; font-size: 30px; color: #000; line-height: 38px;">Digital
-          Education Unleashed
-          <%= link_to 'More About EduTab ', {controller: 'products', action: 'show', name: 'EduTab'}, {class: 'btn btn-lg btn-radius btn-theme-border wow animated bounceIn', data: {'wow-duration' => '700ms', 'wow-delay' => '200ms'}} %>
+      <div data-p="225.00" style="display: none;">
+        <%= image_tag('new-digi-banner.png', class: 'img-responsive') %>
+        <div style="position: absolute; top: 30px; left: 30px; width: 480px; height: 120px; font-size: 50px; color: #ffffff; line-height: 60px;" class="animated bounceInDown">
+
+        </div>
+        <div style="text-align: center">
+          <div class="animated fadeInUp" style="color: black;position: absolute; top: 300px; left: 30px; width: 480px; height: 120px; font-size: 30px; color: #000; line-height: 38px;">"Wearable
+            Smart" watches to help keep you active and healthy.
+            <%= link_to 'More About Digital Fit', {controller: 'products', action: 'show', name: 'Digital Fit'}, {class: 'btn btn-lg btn-radius btn-theme-border wow animated bounceIn', data: {'wow-duration' => '700ms', 'wow-delay' => '200ms'}} %>
+          </div>
+        </div>
+      </div>
+      <div data-p="225.00" style="display: none;">
+        <%= image_tag('techkids.png', class: 'img-responsive') %>
+        <div style="position: absolute; top: 30px; left: 30px; width: 480px; height: 120px; font-size: 50px; color: #ffffff; line-height: 60px;" class="animated bounceInDown">
+
+        </div>
+        <div style="text-align: center">
+          <div class="animated fadeInLeft" style="position: absolute; top: 300px; left: 30px; width: 480px; height: 120px; font-size: 30px; color: #000; line-height: 38px;">
+            After-school Computer Programming and Robotics Clubs for children 5years and up
+            <%= link_to 'More About Tech Kids', {controller: 'products', action: 'show', name: 'TechKids'}, {class: 'btn btn-lg btn-radius btn-theme-border wow animated bounceIn', data: {'wow-duration' => '700ms', 'wow-delay' => '200ms'}} %>
+          </div>
         </div>
       </div>
     </div>
-    <div data-p="225.00" style="display: none;">
-      <%= image_tag('new-digi-banner.png', class: 'img-responsive') %>
-      <div style="position: absolute; top: 30px; left: 30px; width: 480px; height: 120px; font-size: 50px; color: #ffffff; line-height: 60px;" class="animated bounceInDown">
-
-      </div>
-      <div style="text-align: center">
-        <div class="animated fadeInUp" style="color: black;position: absolute; top: 300px; left: 30px; width: 480px; height: 120px; font-size: 30px; color: #000; line-height: 38px;">"Wearable
-          Smart" watches to help keep you active and healthy.
-          <%= link_to 'More About Digital Fit', {controller: 'products', action: 'show', name: 'Digital Fit'}, {class: 'btn btn-lg btn-radius btn-theme-border wow animated bounceIn', data: {'wow-duration' => '700ms', 'wow-delay' => '200ms'}} %>
-        </div>
-      </div>
+    <!-- Bullet Navigator -->
+    <div data-u="navigator" class="jssorb05" style="bottom:16px;right:6px;" data-autocenter="1">
+      <!-- bullet navigator item prototype -->
+      <div data-u="prototype" style="width:16px;height:16px;"></div>
     </div>
-    <div data-p="225.00" style="display: none;">
-      <%= image_tag('techkids.png', class: 'img-responsive') %>
-      <div style="position: absolute; top: 30px; left: 30px; width: 480px; height: 120px; font-size: 50px; color: #ffffff; line-height: 60px;" class="animated bounceInDown">
-
-      </div>
-      <div style="text-align: center">
-        <div class="animated fadeInLeft" style="position: absolute; top: 300px; left: 30px; width: 480px; height: 120px; font-size: 30px; color: #000; line-height: 38px;">
-          After-school Computer Programming and Robotics Clubs for children 5years and up
-          <%= link_to 'More About Tech Kids', {controller: 'products', action: 'show', name: 'TechKids'}, {class: 'btn btn-lg btn-radius btn-theme-border wow animated bounceIn', data: {'wow-duration' => '700ms', 'wow-delay' => '200ms'}} %>
-        </div>
-      </div>
-    </div>
+    <!-- Arrow Navigator -->
+    <span data-u="arrowleft" class="jssora22l" style="top:123px;left:12px;width:40px;height:58px;" data-autocenter="2"></span>
+    <span data-u="arrowright" class="jssora22r" style="top:123px;right:12px;width:40px;height:58px;" data-autocenter="2"></span>
   </div>
-  <!-- Bullet Navigator -->
-  <div data-u="navigator" class="jssorb05" style="bottom:16px;right:6px;" data-autocenter="1">
-    <!-- bullet navigator item prototype -->
-    <div data-u="prototype" style="width:16px;height:16px;"></div>
-  </div>
-  <!-- Arrow Navigator -->
-  <span data-u="arrowleft" class="jssora22l" style="top:123px;left:12px;width:40px;height:58px;" data-autocenter="2"></span>
-  <span data-u="arrowright" class="jssora22r" style="top:123px;right:12px;width:40px;height:58px;" data-autocenter="2"></span>
-  <a href="http://www.jssor.com" style="display:none">Jssor Slider</a>
 </div>
 
+<div class="hidden-sm-up">
+  <div class="divided-10"></div>
+  <div class="row">
+    <div class="text-center">
+      <div class="col-xs-12 col-sm-6 col-md-3">
+        <%= image_tag('edutab.png', class: 'img-responsive img-xs-25 img-sm-50') %>
+        <h3 class="text-center">Edutab</h3>
+
+        <p class="text-light"><%= @edutab.short_description %></p>
+
+        <div class="divided-10"></div>
+        <%= link_to 'More About EduTab ', {controller: 'products', action: 'show', name: 'EduTab'}, {class: 'btn btn-lg btn-radius btn-theme-border wow animated bounceIn', data: {'wow-duration' => '700ms', 'wow-delay' => '200ms'}} %>
+        <div class="divided-10"></div>
+      </div>
+      <div class="col-xs-12 col-sm-6 col-md-3">
+        <div style="padding-left: 30%; padding-right: 30%">
+          <%= image_tag('digi-logo.png', height: '80px', width: '150px', class: 'img-responsive img-xs-25 img-sm-50') %>
+        </div>
+        <h3 class="text-center">Digital Fit</h3>
+
+        <p class="text-light"><%= @digital_fit.short_description %></p>
+
+        <div class="divided-10"></div>
+        <%= link_to 'More About Digital Fit ', {controller: 'products', action: 'show', name: 'Digital Fit'}, {class: 'btn btn-lg btn-radius btn-theme-border wow animated bounceIn', data: {'wow-duration' => '700ms', 'wow-delay' => '200ms'}} %>
+        <div class="divided-10"></div>
+      </div>
+      <div class="clearfix visible-sm-block"></div>
+      <div class="col-xs-12 col-sm-6 col-md-3">
+        <%= image_tag('kidsyello.png', class: 'img-responsive img-xs-25 img-sm-50') %>
+        <h3 class="text-center">Tech Kids</h3>
+
+        <p class="text-light"><%= @tech_kids.short_description %></p>
+
+        <div class="divided-10"></div>
+        <%= link_to 'More About Tech Kids ', {controller: 'products', action: 'show', name: 'TechKids'}, {class: 'btn btn-lg btn-radius btn-theme-border wow animated bounceIn', data: {'wow-duration' => '700ms', 'wow-delay' => '200ms'}} %>
+        <div class="divided-10"></div>
+      </div>
+    </div>
+  </div>
+</div>
 <!--end-->
 <!--
 <div class="divided-50"></div>-->
@@ -91,12 +131,12 @@
           </div>
           <div class="col-xs-8">
             <div class="team-info">
-              <p>
+              <p class="text-small">
                 He is currently serving on the executive of Akright City as the Honourable Minister of ICT entrusted
                 with the responsibility of getting government approval making Akright City a Cyber City.
               </p>
 
-              <p class="hidden-xs hidden-sm">
+              <p class="hidden-sm-down">
                 He is a founding member and board member of the Silas Shyaka Education Fund dedicated to providing
                 educational opportunities to children in areas recovering from war in Uganda.
               </p>
@@ -135,7 +175,7 @@
                 founding member of the Silas Shyaka Education Fund .
               </p>
 
-              <p class="hidden-xs hidden-sm">
+              <p class="hidden-sm-down">
                 Dedicated to providing quality education to the disadvantaged children in areas recovering from war
                 in Uganda. He is a
                 board member and a committed cadre of the cause.
@@ -162,10 +202,10 @@
   <div class="container">
     <div class="row margin-bottom-40">
       <div class="col-sm-12 section-title">
-        <h1>
+        <h3>
           <small>Schools</small>
           <br>Reached.
-        </h1>
+        </h3>
       </div>
     </div>
     <!--section title row-->

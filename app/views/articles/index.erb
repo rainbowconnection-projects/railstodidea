@@ -1,5 +1,5 @@
 <!--page-title-->
-<div class="page-title blog-header" data-stellar-background-ratio="0.2" style="background-position: 0% 8px;">
+<div class="page-title blog-header hidden-md-down" data-stellar-background-ratio="0.2" style="background-position: 0% 8px;">
 
 </div>
 <!-- Page Content -->
@@ -14,7 +14,7 @@
           </div>
 
           <div class="col-xs-12 col-sm-8 col-md-9">
-            <h2 class="blog-post-title text-light"><%= article.title %></h2>
+            <h4 class="blog-post-title text-light"><%= article.title %></h4>
             <h4 class="blog-post-author text-light highlight"><em><%= article.try(:author) %></em></h4>
 
             <p class="text-xsmall blog-post-date text-light"><em><%= article.created_at.to_formatted_s(:long_ordinal) %></em></p>

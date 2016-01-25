@@ -1,28 +1,44 @@
-<nav class="navbar navbar-inverse navbar-static-top">
+<nav class="navbar navbar-light navbar-fixed-top bg-faded">
   <div class="container">
-    <div class="navbar-header">
-      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
-        <span class="sr-only">Toggle navigation</span>
-        <span class="icon-bar"></span>
-        <span class="icon-bar"></span>
-        <span class="icon-bar"></span>
+    <div class="nav-header hidden-sm-up">
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#exCollapsingNavbar2">
+        &#9776;
       </button>
       <%= link_to root_path do %>
-          <%= image_tag("TODIDEA LOGO main-01.png", height: '60px', class:'', alt:"") %>
+          <%= image_tag("TODIDEA LOGO main-01.png", height: '50px', class: 'navbar-brand ', alt: "") %>
       <% end %>
     </div>
-    <div id="navbar" class="navbar-collapse collapse">
-      <ul class="nav navbar-nav navbar-right">
-        <li class="<%= 'active' if params[:controller] == 'home' %>"><%= link_to("Home", root_path) %></li>
-        <li class="<%= 'active' if params[:controller] == 'products' %>"><%= link_to("Products", products_path) %></li>
-        <li class="<%= 'active' if params[:controller] == 'events' %>"><%= link_to("Events", events_path) %></li>
-        <li class="<%= 'active' if params[:controller] == 'blog' %>"><%= link_to("Blog", articles_path) %></li>
-        <li class="<%= 'active' if params[:controller] == 'contacts' %>"><%= link_to("Contact", contact_path) %></li>
-        <li class="<%= 'active' if params[:controller] == 'story' %>"><%= link_to("Our Story", our_story_path) %></li>
 
-      </ul>
+    <div class="nav-header">
+      <div class="collapse navbar-toggleable-xs" id="exCollapsingNavbar2">
+
+        <%= link_to root_path do %>
+            <%= image_tag("TODIDEA LOGO main-01.png", height: '50px', class: 'navbar-brand hidden-xs-down', alt: "") %>
+        <% end %>
+        <ul class="nav navbar-nav navbar-right">
+          <li class="nav-item">
+            <%= link_to("Home", root_path, class: 'nav-link') %>
+          </li>
+          <li class="nav-item">
+            <%= link_to("Products", products_path, class: 'nav-link') %>
+          </li>
+          <li class="nav-item">
+            <%= link_to("Events", events_path, class: 'nav-link') %>
+          </li>
+          <li class="nav-item">
+            <%= link_to("Blog", articles_path, class: 'nav-link') %>
+          </li>
+          <li class="nav-item">
+            <%= link_to("Contact", contact_path, class: 'nav-link') %>
+          </li>
+          <li class="nav-item">
+            <%= link_to("Our Story", our_story_path, class: 'nav-link') %>
+          </li>
+        </ul>
+      </div>
     </div>
-    <!--/.nav-collapse -->
+
+
   </div>
-  <!--/.container -->
 </nav>
+<div class="divided-60"></div>
