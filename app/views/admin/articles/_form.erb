@@ -1,4 +1,4 @@
-<%= simple_form_for([:admin, @article], class: 'form') do |f| %>
+<%= simple_form_for([:admin, @article]) do |f| %>
     <%= f.input :title, label: 'Title' %>
     <%= f.input :author, label: 'Author' %>
     <%= f.input_field :text,  {'id' => 'text'} %>
