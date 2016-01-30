@@ -1,1 +1,7 @@
-<%= @product.inspect %>
+<% if @link == 'edutab' %>
+    <%= render template: 'products/edu-tab' %>
+<% elsif @link == 'digitalfit' %>
+    <%= render template: 'products/digital-fit' %>
+<% elsif @link == 'techkids' %>
+    <%= render template: 'products/tech-kids' %>
+<% end %>

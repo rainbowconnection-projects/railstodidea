@@ -18,13 +18,7 @@ class ProductsController < ApplicationController
     end
     @gallery = @product.try(:gallery).try(:photos)
     @link = strip_spaces_downcase params[:name].to_s
-    if @link == 'edutab'
-      render template: 'products/edu-tab'
-    elsif @link == 'digitalfit'
-      render template: 'products/digital-fit'
-    elsif @link == 'techkids'
-      render template: 'products/tech-kids'
-    end
+
 
   end
 
