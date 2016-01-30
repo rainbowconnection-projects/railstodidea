@@ -28,7 +28,7 @@ class ProductsController < ApplicationController
 
   end
 
-  def strip_spaces_downcase string
+  def strip_spaces_downcase(string)
     return string.split.join('').downcase
   end
 
