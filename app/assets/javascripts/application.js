@@ -21,8 +21,9 @@
 //= require jssor.slider.min
 //= require wow.min
 //= require ga
-//= require jquery.chocolat
 //=require jquery.ellipsis.min
+//=require lightgallery-all.min
+
 
 // Copyright 2014-2015 Twitter, Inc.
 // Licensed under MIT (https://github.com/twbs/bootstrap/blob/master/LICENSE)
@@ -36,8 +37,15 @@ if (navigator.userAgent.match(/IEMobile\/10\.0/)) {
     document.head.appendChild(msViewportStyle)
 }
 
+
 $(document).ready(function () {
-    $('.gallery a').Chocolat();
+
+    $('#animated-thumbnails').lightGallery({
+        thumbnail:true,
+        animateThumb: false,
+        showThumbByDefault: false
+    });
+
 
     $.stellar({
         horizontalScrolling: false,
@@ -70,9 +78,9 @@ $(document).ready(function () {
     $("#owl-slider").owlCarousel({
         autoPlay: 3000, //Set AutoPlay to 3 seconds
 
-        items: 4,
-        itemsDesktop: [1199, 3],
-        itemsDesktopSmall: [979, 3]
+        items : 4,
+        itemsDesktop : [1199,3],
+        itemsDesktopSmall : [979,3]
 
     });
 
@@ -191,18 +199,18 @@ $(function () {
 /*==========================*/
 $('#grid').mixitup();
 /*
- $(window).scroll(
- {
- previousTop: 0
- },
- function () {
- var currentTop = $(window).scrollTop();
- if (currentTop < this.previousTop) {
- $("header").hide();
- } else {
- $("header").show();
- }
- this.previousTop = currentTop;
- });
- */
+$(window).scroll(
+    {
+        previousTop: 0
+    },
+    function () {
+        var currentTop = $(window).scrollTop();
+        if (currentTop < this.previousTop) {
+            $("header").hide();
+        } else {
+            $("header").show();
+        }
+        this.previousTop = currentTop;
+    });
+*/
 

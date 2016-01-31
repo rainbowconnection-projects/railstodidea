@@ -63,7 +63,7 @@
         <%= image_tag('edutab.png', class: 'img-responsive img-xs-25 img-sm-50') %>
         <h3 class="text-center">Edutab</h3>
 
-        <p class="text-light"><%= simple_format @edutab.short_description %></p>
+        <p class="text-light"><%= simple_format(@edutab.short_description) %></p>
 
         <div class="divided-10"></div>
         <%= link_to 'More About EduTab ', {controller: 'products', action: 'show', name: 'EduTab'}, {class: 'btn btn-lg btn-radius btn-theme-border wow animated bounceIn', data: {'wow-duration' => '700ms', 'wow-delay' => '200ms'}} %>
@@ -75,7 +75,7 @@
         </div>
         <h3 class="text-center">Digital Fit</h3>
 
-        <p class="text-light"><%= simple_format @digital_fit.short_description %></p>
+        <p class="text-light"><%= simple_format(@digital_fit.short_description) %></p>
 
         <div class="divided-10"></div>
         <%= link_to 'More About Digital Fit ', {controller: 'products', action: 'show', name: 'Digital Fit'}, {class: 'btn btn-lg btn-radius btn-theme-border wow animated bounceIn', data: {'wow-duration' => '700ms', 'wow-delay' => '200ms'}} %>
@@ -86,7 +86,7 @@
         <%= image_tag('kidsyello.png', class: 'img-responsive img-xs-25 img-sm-50') %>
         <h3 class="text-center">Tech Kids</h3>
 
-        <p class="text-light"><%= simple_format @tech_kids.short_description %></p>
+        <p class="text-light"><%= simple_format(@tech_kids.short_description) %></p>
 
         <div class="divided-10"></div>
         <%= link_to 'More About Tech Kids ', {controller: 'products', action: 'show', name: 'TechKids'}, {class: 'btn btn-lg btn-radius btn-theme-border wow animated bounceIn', data: {'wow-duration' => '700ms', 'wow-delay' => '200ms'}} %>
