@@ -13,9 +13,8 @@ class ProductsController < ApplicationController
 
   def show
     @product = Product.where(name: params[:name]).first
-    if @product.team.present?
-      @team = @product.team.persons
-    end
+    @team = @product.try(:team).try(:persons)
+
     @gallery = @product.try(:gallery).try(:photos)
     @link = strip_spaces_downcase params[:name].to_s
 

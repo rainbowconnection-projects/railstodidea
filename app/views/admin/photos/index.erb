@@ -1,11 +1,16 @@
-<%= link_to 'Add Photo', new_admin_photo_path, class:'btn btn-block btn-primary' %>
+<%= link_to 'Add Photo', new_admin_photo_path, class: 'btn btn-block btn-primary' %>
 <div class="divided-20"></div>
-<table data-toggle="table" data-classes="table table-hover table-condensed"
-       data-striped="true">
+<table data-toggle="table"
+       data-height="700"
+       data-pagination="true"
+       data-page-size="10"
+       data-page-list="[5,8,10]"
+        data-toggle="table" data-classes="table table-hover table-condensed">
   <thead>
   <tr>
     <th data-field="photo" data-sortable="false">Photo</th>
     <th data-field="gallery" data-sortable="true">Gallery</th>
+    <th data-field="caption" data-sortable="true">Caption</th>
     <th></th>
   </tr>
   </thead>
@@ -13,7 +18,8 @@
   <% @photos.each do |photo| %>
       <tr>
         <td><%= cl_image_tag photo.photo, height: '80px' %></td>
-        <td><%= photo.gallery.name %></td>
+        <td><%= photo.try(:gallery).try(:name) %></td>
+        <td><%= photo.caption %></td>
         <td>
           <%= link_to 'Edit', edit_admin_photo_path(photo), class: 'btn btn-primary btn-sm' %>
           <%= link_to 'Delete', admin_photo_path(photo), class: 'btn btn-danger btn-sm', method: :delete, data: {confirm: 'Are you sure?'} %>
