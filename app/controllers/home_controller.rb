@@ -3,7 +3,7 @@ class HomeController < ApplicationController
     @articles = Article.all.order(created_at: :desc).limit(3)
     @products = Product.all
     @edutab = Product.find_by :link=>strip_spaces_downcase('Edutab')
-    @digital_fit = Product.find_by :link=>strip_spaces_downcase('DigitalFit')
+    @digital_fit = Product.find_by :link=>'digitalfit'
     @tech_kids = Product.find_by :link=>strip_spaces_downcase('TechKids')
 
 
