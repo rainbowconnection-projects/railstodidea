@@ -1,4 +1,4 @@
-<%= link_to 'Add Photo', new_admin_photo_path, class: 'btn btn-block btn-primary' %>
+<%= link_to 'Add Photo', new_admin_event_photo_path, class: 'btn btn-block btn-primary' %>
 <div class="divided-20"></div>
 <table data-toggle="table"
        data-height="700"
@@ -15,14 +15,14 @@
   </tr>
   </thead>
   <tbody>
-  <% @photos.each do |photo| %>
+  <% @event_photos.each do |photo| %>
       <tr>
         <td><%= cl_image_tag photo.photo, height: '80px' %></td>
-        <td><%= photo.try(:gallery).try(:name) %></td>
-        <td><%= simple_format(photo.caption) %></td>
+        <td><%= photo.try(:event_gallery).try(:name) %></td>
+        <td><%= simple_format photo.caption %></td>
         <td>
-          <%= link_to 'Edit', edit_admin_photo_path(photo), class: 'btn btn-primary btn-sm' %>
-          <%= link_to 'Delete', admin_photo_path(photo), class: 'btn btn-danger btn-sm', method: :delete, data: {confirm: 'Are you sure?'} %>
+          <%= link_to 'Edit', edit_admin_event_photo_path(photo), class: 'btn btn-primary btn-sm' %>
+          <%= link_to 'Delete', admin_event_photo_path(photo), class: 'btn btn-danger btn-sm', method: :delete, data: {confirm: 'Are you sure?'} %>
         </td>
       </tr>
   <% end %>

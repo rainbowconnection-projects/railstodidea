@@ -36,7 +36,7 @@ Rails.application.routes.draw do
     resources :articles, :products, :events,
               :projects, :testimonials,:tags,
               :categories, :teams, :people, :galleries,
-              :photos
+              :photos, :event_galleries, :event_photos
   end
 
 end

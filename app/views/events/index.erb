@@ -9,13 +9,13 @@
             <%= cl_image_tag event.photo,class: 'img-responsive' %>
           <% end %>
         </div><!--post image-->
-        <h3 class="post-title"><%= link_to(event.event_name, controller: 'events', action: 'show', id: event.id) %></h3>
+        <h3 class="post-title"><%= link_to(event.name, controller: 'events', action: 'show', id: event.id) %></h3>
         <div id="text-wrapper" class="text-wrapper">
           <p>
             <%= simple_format event.description %>
           </p>
         </div>
-        <span class="read-more"><em>On <%= event.created_at.strftime('%B %d, %Y') %></em><%= link_to('Read more', controller: 'events', action: 'show', id: event.id) %><i class="ion-ios-arrow-thin-right"></i></span>
+        <span class="read-more"><em>On <%= event.date.strftime('%B %d, %Y') %></em><%= link_to('Read more', controller: 'events', action: 'show', id: event.id) %><i class="ion-ios-arrow-thin-right"></i></span>
       </div><!--post-->
     </div><!--post col end-->
     <% end %>

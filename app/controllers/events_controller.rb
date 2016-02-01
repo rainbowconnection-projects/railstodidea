@@ -4,7 +4,8 @@ class EventsController < ApplicationController
   end
 
   def show
-    @event = Event.find(params[:id])
+    @event = Event.where(id: params[:id]).first
+    @gallery = @event.try(:event_gallery).try(:event_photos)
   end
 
   def create

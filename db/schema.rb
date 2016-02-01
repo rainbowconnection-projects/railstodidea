@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160131152648) do
+ActiveRecord::Schema.define(version: 20160201103030) do
 
   create_table "admins", force: :cascade do |t|
     t.string   "username",               limit: 255
@@ -68,8 +68,21 @@ ActiveRecord::Schema.define(version: 20160131152648) do
 
   add_index "comments", ["article_id"], name: "fk_rails_3bf61a60d3", using: :btree
 
+  create_table "event_galleries", force: :cascade do |t|
+    t.integer  "event_id",   limit: 4
+    t.string   "name",       limit: 255
+    t.datetime "created_at",             null: false
+    t.datetime "updated_at",             null: false
+  end
+
+  create_table "event_photos", force: :cascade do |t|
+    t.string  "photo",            limit: 255
+    t.integer "event_gallery_id", limit: 4
+    t.string  "caption",          limit: 255, null: false
+  end
+
   create_table "events", force: :cascade do |t|
-    t.string   "event_name",  limit: 255
+    t.string   "name",        limit: 255
     t.string   "photo",       limit: 255,   null: false
     t.datetime "date"
     t.text     "description", limit: 65535

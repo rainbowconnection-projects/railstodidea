@@ -1,5 +1,5 @@
-<% title @event.event_name %>
-<% og_title @event.event_name %>
+<% title @event.name %>
+<% og_title @event.name %>
 <% og_image @event.photo %>
 <% og_description @event.description %>
 <% og_url request.original_url %>
@@ -13,12 +13,27 @@
         </div>
 
         <div class="col-xs-12 col-sm-9 col-md-9 text-light">
-          <h3 class="blog-post-title"><%= @event.event_name %></h3>
+          <h3 class="blog-post-title"><%= @event.name %></h3>
 
           <p class="text-xs-small blog-post-date text-light">
-            <em><%= @event.created_at.to_formatted_s(:long_ordinal) %></em></p>
+            <em><%= @event.date.to_formatted_s(:long_ordinal) %></em></p>
 
-          <div class="text-light blog-post-content"><%= simple_format @event.description %></div>
+          <div class="text-light blog-post-content">
+            <%= simple_format @event.description %>
+            <div class="divided-20"></div>
+            <% if @gallery %>
+                <h3 class="center-heading">Gallery</h3>
+
+                <div id="animated-thumbnails">
+                  <% @gallery.each do |photo| %>
+                      <a href="<%= photo.photo %>" data-sub-html="<%= simple_format(photo.caption).html_safe %>">
+                        <img src="<%= photo.photo %>" width="250px"/>
+                      </a>
+                  <% end %>
+                </div>
+            <% end %>
+
+          </div>
         </div>
       </div>
     </div>

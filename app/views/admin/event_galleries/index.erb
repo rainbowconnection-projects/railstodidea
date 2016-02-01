@@ -1,0 +1,26 @@
+<%= link_to 'New Gallery', new_admin_event_gallery_path, class: 'btn btn-block btn-primary' %>
+<div class="divided-20"></div>
+<table data-toggle="table" data-classes="table table-hover table-condensed"
+       data-striped="true">
+  <thead>
+  <tr>
+    <th data-field="id" data-sortable="true">Name</th>
+    <th data-field="id" data-sortable="true">Event</th>
+    <th data-field="name" data-sortable="false">Photos</th>
+    <th></th>
+  </tr>
+  </thead>
+  <tbody>
+  <% @event_galleries.each do |gallery| %>
+      <tr>
+        <td><%= gallery.name %></td>
+        <td><%= gallery.event.name %></td>
+        <td><%= gallery.event_photos.count %></td>
+        <td>
+          <%= link_to 'Edit', edit_admin_event_gallery_path(gallery), class: 'btn btn-primary btn-sm' %>
+          <%= link_to 'Delete', admin_event_gallery_path(gallery), class: 'btn btn-danger btn-sm', method: :delete, data: {confirm: 'Are you sure?'} %>
+        </td>
+      </tr>
+  <% end %>
+  </tbody>
+</table>
