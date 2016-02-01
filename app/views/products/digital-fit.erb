@@ -9,16 +9,17 @@
       </div>
 
 
-        <% if @gallery %>
+      <% if @gallery %>
           <h3 class="center-heading">Gallery</h3>
-            <div id="animated-thumbnails">
-              <% @gallery.each do |photo| %>
-                  <a href="<%= photo.photo %>" data-sub-html="<%= simple_format photo.caption %>">
-                    <img src="<%= photo.photo %>" width="250px"/>
-                  </a>
-              <% end %>
-            </div>
-        <% end %>
+
+          <div id="animated-thumbnails">
+            <% @gallery.each do |photo| %>
+                <a href="<%= photo.photo %>" data-sub-html="<%= simple_format photo.caption %>">
+                  <img src="<%= photo.photo %>" width="250px"/>
+                </a>
+            <% end %>
+          </div>
+      <% end %>
 
     </div>
   </div>

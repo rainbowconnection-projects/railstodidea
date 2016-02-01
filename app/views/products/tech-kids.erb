@@ -1,23 +1,17 @@
 <div class="divided-30"></div>
 <div class="row">
   <div class="container">
-    <div class="col-lg-8 col-lg-offset-2">
-      <% if @gallery %>
-          <div id="owl-slider" class="owl-carousel owl-theme">
-            <% @gallery.each do |photo| %>
-                <div class="item"><%= cl_image_tag photo.photo, class: 'img-responsive', height: '200px' %></div>
-            <% end %>
-          </div>
-      <% else %>
-          <%= cl_image_tag @product.photo, height: '200px' %>
-      <% end %>
+    <div class="col-lg-12">
+
+      <%= cl_image_tag @product.photo, height: '200px' %>
+
       <div class="product-details">
         <div class="fr-view">
           <%= simple_format @product.description %>
         </div>
         <% if @team %>
             <div class="row white centered">
-              <h1 STYLE="text-align: center">TECH KIDS TEAM</h1>
+              <h3 STYLE="text-align: center">TECH KIDS TEAM</h3>
               <hr>
               <br>
               <% @team.each do |member| %>
@@ -37,18 +31,20 @@
               <div class="divided-30">
 
               </div>
-              <% if @gallery %>
-                  <h3 class="center-heading">Gallery</h3>
-                  <div id="animated-thumbnails">
-                    <% @gallery.each do |photo| %>
-                        <a href="<%= photo.photo %>" data-sub-html="<%= simple_format photo.caption %>">
-                          <img src="<%= photo.photo %>" width="250px"/>
-                        </a>
-                    <% end %>
-                  </div>
-              <% end %>
+
 
             </div>
+            <% if @gallery %>
+                <h3 class="center-heading">Gallery</h3>
+
+                <div id="animated-thumbnails">
+                  <% @gallery.each do |photo| %>
+                      <a href="<%= photo.photo %>" data-sub-html="<%= simple_format photo.caption %>">
+                        <img src="<%= photo.photo %>" width="250px"/>
+                      </a>
+                  <% end %>
+                </div>
+            <% end %>
         <% end %>
       </div>
     </div>
