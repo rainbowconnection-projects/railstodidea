@@ -1,33 +1,18 @@
-<div class="page-title event-header" data-stellar-background-ratio="0.2" style="background-position: 0% 8px;">
-  <div class="container">
-    <div class="row">
-      <div class="col-sm-6">
-        <h1>Latest Events</h1>
-      </div>
-      <div class="col-sm-6">
-        <ol class="breadcrumb">
-          <li><a href="#"><i class="ion-home"></i></a></li>
-          <li class="active">Events</li>
-        </ol>
-      </div>
-    </div>
-  </div>
-</div>
-<div class="divided-30"></div>
+<div class="divided-20"></div>
 <div class="container">
   <div class="row">
     <% @events.each do |event| %>
     <div class="col-sm-4 margin-bottom-30">
       <div class="post">
         <div class="post-thumbnail">
-          <a href="#">
-            <%= image_tag('slider2.jpg', class: 'img-responsive', alt: 'post-image') %>
-          </a>
+          <%= link_to event do %>
+            <%= cl_image_tag event.photo,class: 'img-responsive' %>
+          <% end %>
         </div><!--post image-->
         <h3 class="post-title"><%= link_to(event.event_name, controller: 'events', action: 'show', id: event.id) %></h3>
         <div id="text-wrapper" class="text-wrapper">
           <p>
-            <%= event.description %>
+            <%= simple_format event.description %>
           </p>
         </div>
         <span class="read-more"><em>On <%= event.created_at.strftime('%B %d, %Y') %></em><%= link_to('Read more', controller: 'events', action: 'show', id: event.id) %><i class="ion-ios-arrow-thin-right"></i></span>
