@@ -1,41 +1,56 @@
 <div class="divided-30"></div>
 <div class="row">
-  <div class="col-lg-8 col-lg-offset-2">
-    <% if @gallery %>
-        <div id="owl-slider" class="owl-carousel owl-theme">
-          <% @gallery.each do |photo| %>
-              <div class="item"><%= cl_image_tag photo.photo, class: 'img-responsive', height: '200px' %></div>
-          <% end %>
-        </div>
-    <% else %>
-        <%= cl_image_tag @product.photo, height: '200px' %>
-    <% end %>
-    <div class="product-details">
-      <div class="fr-view">
-        <%= simple_format @product.description %>
-      </div>
-      <% if @team %>
-          <div class="row white centered">
-            <h1 STYLE="text-align: center">TECH KIDS TEAM</h1>
-            <hr>
-            <br>
-            <% @team.each do |member| %>
-                <div class="col-lg-3 centered" style="text-align: center">
-                  <%= cl_image_tag member.photo, width: '120px', height: '120px', class: 'img img-circle' %>
-                  <br>
-                  <h4><b><%= member.name %></b></h4>
-                  <a href="#" class="icon icon-twitter"></a>
-                  <a href="#" class="icon icon-facebook"></a>
-                  <a href="#" class="icon icon-flickr"></a>
-
-                  <p><%= simple_format member.about %></p>
-                </div>
-                <!-- col-lg-3 -->
+  <div class="container">
+    <div class="col-lg-8 col-lg-offset-2">
+      <% if @gallery %>
+          <div id="owl-slider" class="owl-carousel owl-theme">
+            <% @gallery.each do |photo| %>
+                <div class="item"><%= cl_image_tag photo.photo, class: 'img-responsive', height: '200px' %></div>
             <% end %>
-            <!-- col-lg-3 -->
-
           </div>
+      <% else %>
+          <%= cl_image_tag @product.photo, height: '200px' %>
       <% end %>
+      <div class="product-details">
+        <div class="fr-view">
+          <%= simple_format @product.description %>
+        </div>
+        <% if @team %>
+            <div class="row white centered">
+              <h1 STYLE="text-align: center">TECH KIDS TEAM</h1>
+              <hr>
+              <br>
+              <% @team.each do |member| %>
+                  <div class="col-lg-3 centered" style="text-align: center">
+                    <%= cl_image_tag member.photo, width: '120px', height: '120px', class: 'img img-circle' %>
+                    <br>
+                    <h4><b><%= member.name %></b></h4>
+                    <a href="#" class="icon icon-twitter"></a>
+                    <a href="#" class="icon icon-facebook"></a>
+                    <a href="#" class="icon icon-flickr"></a>
+
+                    <p><%= simple_format member.about %></p>
+                  </div>
+                  <!-- col-lg-3 -->
+              <% end %>
+              <!-- col-lg-3 -->
+              <div class="divided-30">
+
+              </div>
+              <% if @gallery %>
+                  <h3 class="center-heading">Gallery</h3>
+                  <div id="animated-thumbnails">
+                    <% @gallery.each do |photo| %>
+                        <a href="<%= photo.photo %>" data-sub-html="<%= simple_format photo.caption %>">
+                          <img src="<%= photo.photo %>" width="250px"/>
+                        </a>
+                    <% end %>
+                  </div>
+              <% end %>
+
+            </div>
+        <% end %>
+      </div>
     </div>
   </div>
 </div>

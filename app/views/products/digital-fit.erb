@@ -7,9 +7,10 @@
           <%= simple_format @product.description %>
         </p>
       </div>
-        <h3 class="center-heading">Gallery</h3>
+
 
         <% if @gallery %>
+          <h3 class="center-heading">Gallery</h3>
             <div id="animated-thumbnails">
               <% @gallery.each do |photo| %>
                   <a href="<%= photo.photo %>" data-sub-html="<%= simple_format photo.caption %>">
