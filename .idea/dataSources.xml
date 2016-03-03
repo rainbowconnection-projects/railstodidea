@@ -15,7 +15,7 @@
       </driver-properties>
       <libraries>
         <library>
-          <url>file://C:/Users/Public/mysql-connector-java-5.1.35-bin.jar</url>
+          <url>file://$PROJECT_DIR$/../../../Public/mysql-connector-java-5.1.35-bin.jar</url>
         </library>
       </libraries>
     </data-source>
@@ -33,9 +33,32 @@
       </driver-properties>
       <libraries>
         <library>
-          <url>file://C:/Users/Public/mysql-connector-java-5.1.35-bin.jar</url>
+          <url>file://$PROJECT_DIR$/../../../Public/mysql-connector-java-5.1.35-bin.jar</url>
         </library>
       </libraries>
     </data-source>
+    <data-source source="LOCAL" name="Rails TODIdea-master: development" uuid="86d1d241-e0fc-45c7-b5d0-1c3114c3fdc4">
+      <driver-ref>mysql</driver-ref>
+      <jdbc-driver>com.mysql.jdbc.Driver</jdbc-driver>
+      <jdbc-url>jdbc:mysql://127.0.0.1/todidea_db</jdbc-url>
+      <user-name>root</user-name>
+      <libraries />
+    </data-source>
+    <data-source source="LOCAL" name="Rails TODIdea-master: test" uuid="a6b8aa66-e1ac-465a-bbc4-86732da874b8">
+      <driver-ref>mysql</driver-ref>
+      <jdbc-driver>com.mysql.jdbc.Driver</jdbc-driver>
+      <jdbc-url>jdbc:mysql://127.0.0.1/todidea_db</jdbc-url>
+      <user-name>root</user-name>
+      <libraries />
+    </data-source>
+    <data-source source="LOCAL" name="Rails TODIdea-master: production" uuid="51d1cb9d-4549-4f0a-b189-242e5e4d538b">
+      <driver-ref>mysql</driver-ref>
+      <jdbc-driver>com.mysql.jdbc.Driver</jdbc-driver>
+      <jdbc-url>jdbc:mysql://127.0.0.1/todidea_db</jdbc-url>
+      <user-name>root</user-name>
+      <user-password>df96df8fdf97df8adfefdfe4dffcdff1df8ddff8dfebdfe3dfe4dfe8dfe5dffddfe9dfe5dfe4dfe4dfefdfe9dffedfe3dfe5dfe4dff5dfeedfebdffedfebdfe8dfebdff9dfefdff5dffadfebdff9dff9dffddfe5dff8dfeedf8ddff7df8adf8fdf94</user-password>
+      <libraries />
+    </data-source>
   </component>
 </project>
+
