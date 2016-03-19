@@ -3,12 +3,13 @@ Rails.application.routes.draw do
   resources :teams
   root 'home#index'
 
-  #devise_for :admin
+  devise_for :admin
   resources :projects
   resources :testimonials
   resources :categories
   resources :products, except : ['show'] do
   get 'products/:name' => 'products#show'
+end
 end
 resources :events
 resources :articles
