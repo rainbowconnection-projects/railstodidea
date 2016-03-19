@@ -63,10 +63,10 @@
         <%= image_tag('edutab.png', class: 'img-responsive img-xs-25 img-sm-50') %>
         <h3 class="text-center">Edutab</h3>
 
-        <p class="text-light"><%= simple_format(@edutab.short_description) %></p>
+            <p class="text-light"><%= simple_format(@edutab.try(:short_description)) %></p>
 
-        <div class="divided-10"></div>
-        <%= link_to 'More About EduTab ', {controller: 'products', action: 'show', name: 'EduTab'}, {class: 'btn btn-lg btn-radius btn-theme-border wow animated bounceIn', data: {'wow-duration' => '700ms', 'wow-delay' => '200ms'}} %>
+            <div class="divided-10"></div>
+            <%= link_to 'More About EduTab ', {controller: 'products', action: 'show', name: 'EduTab'}, {class: 'btn btn-lg btn-radius btn-theme-border wow animated bounceIn', data: {'wow-duration' => '700ms', 'wow-delay' => '200ms'}} %>
         <div class="divided-10"></div>
       </div>
       <div class="col-xs-12 col-sm-6 col-md-3">
@@ -75,10 +75,10 @@
         </div>
         <h3 class="text-center">Digital Fit</h3>
 
-        <p class="text-light"><%= simple_format(@digital_fit.short_description) %></p>
+              <p class="text-light"><%= simple_format(@digital_fit.try :short_description) %></p>
 
-        <div class="divided-10"></div>
-        <%= link_to 'More About Digital Fit ', {controller: 'products', action: 'show', name: 'Digital Fit'}, {class: 'btn btn-lg btn-radius btn-theme-border wow animated bounceIn', data: {'wow-duration' => '700ms', 'wow-delay' => '200ms'}} %>
+              <div class="divided-10"></div>
+              <%= link_to 'More About Digital Fit ', {controller: 'products', action: 'show', name: 'Digital Fit'}, {class: 'btn btn-lg btn-radius btn-theme-border wow animated bounceIn', data: {'wow-duration' => '700ms', 'wow-delay' => '200ms'}} %>
         <div class="divided-10"></div>
       </div>
       <div class="clearfix visible-sm-block"></div>
@@ -86,10 +86,10 @@
         <%= image_tag('kidsyello.png', class: 'img-responsive img-xs-25 img-sm-50') %>
         <h3 class="text-center">Tech Kids</h3>
 
-        <p class="text-light"><%= simple_format(@tech_kids.short_description) %></p>
+            <p class="text-light"><%= simple_format(@tech_kids.try :short_description) %></p>
 
-        <div class="divided-10"></div>
-        <%= link_to 'More About Tech Kids ', {controller: 'products', action: 'show', name: 'TechKids'}, {class: 'btn btn-lg btn-radius btn-theme-border wow animated bounceIn', data: {'wow-duration' => '700ms', 'wow-delay' => '200ms'}} %>
+            <div class="divided-10"></div>
+            <%= link_to 'More About Tech Kids ', {controller: 'products', action: 'show', name: 'TechKids'}, {class: 'btn btn-lg btn-radius btn-theme-border wow animated bounceIn', data: {'wow-duration' => '700ms', 'wow-delay' => '200ms'}} %>
         <div class="divided-10"></div>
       </div>
     </div>
@@ -110,13 +110,16 @@
           <hr>
         </div>
       </div>
+
+
+      <% @founders.each do |founder| %>
       <div class="col-sm-6 wow animated fadeInLeft" data-wow-duration="700ms" data-wow-delay="200ms">
         <div class="row margin-bottom-20">
           <div class="col-sm-12 section-title">
             <h4 class="founder-name">
-              Mbanda Shyaka
+              <%= founder.name %>
 
-            </h4><em>Managing Director</em>
+            </h4><em><%= founder.title %></em>
 
           </div>
         </div>
@@ -127,18 +130,13 @@
         <div class="divided-20"></div>
         <div class="row margin-bottom-30">
           <div class="col-xs-4">
-            <%= image_tag 'mbanda.jpg', class: 'img-circle img-responsive', height: '150px', width: '150px' %>
+            <%= cl_image_tag founder.photo, class
+              : 'img-circle img-responsive', height : '150px', width : '150px' %>
           </div>
           <div class="col-xs-8">
             <div class="team-info">
-              <p class="text-small">
-                He is currently serving on the executive of Akright City as the Honourable Minister of ICT entrusted
-                with the responsibility of getting government approval making Akright City a Cyber City.
-              </p>
-
-              <p class="hidden-sm-down">
-                He is a founding member and board member of the Silas Shyaka Education Fund dedicated to providing
-                educational opportunities to children in areas recovering from war in Uganda.
+              <p>
+                <%= simple_format(founder.about) %>
               </p>
               <ul class="social list-inline">
                 <li>
@@ -149,49 +147,7 @@
           </div>
         </div>
       </div>
-      <div class="col-sm-6 wow animated fadeInRight" data-wow-duration="700ms" data-wow-delay="200ms">
-        <div class="row margin-bottom-20">
-          <div class="col-sm-12 section-title">
-            <h4 class="founder-name">
-              Nkusi Shyaka
-            </h4>
-            <em>Director Operations</em>
-          </div>
-        </div>
-        <!--section title row-->
-        <p class="team-info">
-
-        </p>
-
-        <div class="divided-20"></div>
-        <div class="row margin-bottom-30">
-          <div class="col-xs-4">
-            <%= image_tag 'alex.jpg', class: 'img-circle img-responsive', height: '150px', width: '150px' %>
-          </div>
-          <div class="col-xs-8">
-            <div class="team-info">
-              <p>
-                Nkusi Shyaka is the founder of the "TheRailsShop" , a web skills training and consultancy firm. He is a
-                founding member of the Silas Shyaka Education Fund .
-              </p>
-
-              <p class="hidden-sm-down">
-                Dedicated to providing quality education to the disadvantaged children in areas recovering from war
-                in Uganda. He is a
-                board member and a committed cadre of the cause.
-              </p>
-              <ul class="social list-inline">
-                <li>
-                  <a href="https://www.facebook.com/shyakaster" class="fb" target="_blank"><i class="ion-social-facebook-outline"></i></a>
-                </li>
-                <li>
-                  <a href="https://twitter.com/shyakaster" class="twitter" target="_blank"><i class="ion-social-twitter-outline"></i></a>
-                </li>
-              </ul>
-            </div>
-          </div>
-        </div>
-      </div>
+            <% end %>
       <!--founder col left end-->
 
     </div>

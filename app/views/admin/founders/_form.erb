@@ -1,0 +1,11 @@
+<%= simple_form_for([:admin, @founder]) do |f| %>
+    <%= f.input :name, label: 'Name' %>
+    <label>About</label><br>
+    <%= f.input_field :about, {'id' => 'text'} %>
+    <%= f.input :title, label: 'Title' %>
+    <label>Photo</label>
+    <%= f.input_field :photo, as: :file %>
+    <%= f.button :submit, @founder.new_record? ? 'Add Founder' : 'Update Founder', class
+      : 'btn btn-success btn-block btn-medium' %>
+    <% end %>
+    <div class="divided-20"></div>

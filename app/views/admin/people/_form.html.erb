@@ -1,16 +1,16 @@
-<%= simple_form_for([:admin,@person]) do |f| %>
-  <%= f.error_notification %>
+<%= simple_form_for([:admin, @person]) do |f| %>
+    <%= f.error_notification %>
 
-  <div class="form-inputs">
-    <%= f.input :name %>
-    <%= f.association :team %>
-    <label>Photo</label>
-    <%= f.input_field :photo, as: :file %>
-    <%= f.input_field :about,{'id' => 'text'} %>
-  </div>
+    <div class="form-inputs">
+      <%= f.input :name %>
+      <%= f.association :team %>
+      <label>Photo</label>
+      <%= f.input_field :photo, as: :file %>
+      <%= f.input_field :stories, {'id' => 'text'} %>
+    </div>
 
-  <div class="form-actions">
-    <%= f.button :submit %>
-  </div>
+    <div class="form-actions">
+      <%= f.button :submit %>
+    </div>
 <% end %>
 <div class="divided-20"></div>
