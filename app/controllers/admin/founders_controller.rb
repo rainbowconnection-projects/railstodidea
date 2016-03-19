@@ -18,11 +18,11 @@ class Admin::FoundersController < AdminController
     @founder = Founder.new(founder_params)
     respond_to do |format|
       if @founder.save
-        format.html { redirect_to admin_founders_path, notice : 'Founder was successfully created.' }
-        format.json { render :show, status : :ok, location : @founder }
+        format.html { redirect_to admin_founders_path, notice: 'Founder was successfully created.' }
+        format.json { render :show, status: :ok, location: @founder }
       else
         format.html { render :edit }
-        format.json { render json : @founder.errors, status : :unprocessable_entity }
+        format.json { render json: @founder.errors, status: :unprocessable_entity }
       end
     end
   end
@@ -31,11 +31,11 @@ class Admin::FoundersController < AdminController
     @founder = Founder.find(params[:id])
     respond_to do |format|
       if @founder.save
-        format.html { redirect_to admin_founders_path, notice : 'Founder was successfully updated.' }
-        format.json { render :show, status : :ok, location : @founder }
+        format.html { redirect_to admin_founders_path, notice: 'Founder was successfully updated.' }
+        format.json { render :show, status: :ok, location: @founder }
       else
         format.html { render :edit }
-        format.json { render json : @founder.errors, status : :unprocessable_entity }
+        format.json { render json: @founder.errors, status: :unprocessable_entity }
       end
     end
   end
@@ -45,11 +45,11 @@ class Admin::FoundersController < AdminController
     @founder = Founder.find(params[:id])
     respond_to do |format|
       if @founder.destroy
-        format.html { redirect_to admin_founders_path, notice : 'Founder was successfully deleted.' }
-        format.json { render :show, status : :ok, location : @founder }
+        format.html { redirect_to admin_founders_path, notice: 'Founder was successfully deleted.' }
+        format.json { render :show, status: :ok, location: @founder }
       else
         format.html { render :edit }
-        format.json { render json : @founder.errors, status : :unprocessable_entity }
+        format.json { render json: @founder.errors, status: :unprocessable_entity }
       end
     end
   end

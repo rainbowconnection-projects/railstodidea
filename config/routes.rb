@@ -7,9 +7,8 @@ Rails.application.routes.draw do
   resources :projects
   resources :testimonials
   resources :categories
-  resources :products, except : ['show'] do
-  get 'products/:name' => 'products#show'
-end
+  resources :products, except: ['show'] do
+   get 'products/:name' => 'products#show'
 end
 resources :events
 resources :articles
@@ -24,8 +23,8 @@ get 'products/:name' => 'products#show'
 get 'hour_of_code' => 'hoc#index'
 get 'rails_training' => 'rails_training#index'
 get 'our_story' => 'story#index'
-get 'contact', to : 'contacts#new', as : 'contacts'
-post 'contact', to : 'contacts#create'
+get 'contact', to: 'contacts#new', as: 'contacts'
+post 'contact', to: 'contacts#create'
 
 get 'admin' => 'admin#index'
 get 'admin/auth' => 'admin#login'
@@ -38,5 +37,4 @@ namespace :admin do
             :categories, :teams, :people, :galleries,
             :photos, :event_galleries, :event_photos, :founders, :stories
 end
-
 end

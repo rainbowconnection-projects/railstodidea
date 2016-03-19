@@ -1,14 +1,14 @@
 class HomeController < ApplicationController
   def index
-    @articles = Article.all.order(created_at : :desc).limit(3)
+    @articles = Article.all.order(created_at: :desc).limit(3)
     @products = Product.all
     @edutab = Product.find_by(:link => strip_spaces_downcase('Edutab'))
     @digital_fit = Product.find_by(:link => 'digitalfit')
     @tech_kids = Product.find_by(:link => strip_spaces_downcase('TechKids'))
     @founders = Founder.all
 
-    @testimonials = Testimonial.all.order(created_at : :desc).limit(4)
-    @projects = Project.all.order(created_at : :desc).limit(4)
+    @testimonials = Testimonial.all.order(created_at: :desc).limit(4)
+    @projects = Project.all.order(created_at: :desc).limit(4)
   end
 
   def strip_spaces_downcase string
