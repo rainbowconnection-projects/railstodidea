@@ -6,7 +6,7 @@ class CreatePeople < ActiveRecord::Migration
       t.string :photo
       t.integer :team_id
 
-      t.timestamps null : false
+      t.timestamps null: false
     end
   end
 end
