@@ -30,7 +30,7 @@ class Admin::FoundersController < AdminController
   def update
     @founder = Founder.find(params[:id])
     respond_to do |format|
-      if @founder.save
+      if @founder.update(founder_params)
         format.html { redirect_to admin_founders_path, notice: 'Founder was successfully updated.' }
         format.json { render :show, status: :ok, location: @founder }
       else
@@ -64,6 +64,6 @@ class Admin::FoundersController < AdminController
   end
 
   def founder_params
-    params.require(:founder).permit(:name, :stories, :photo, :title)
+    params.require(:founder).permit(:name, :about, :photo, :title)
   end
 end

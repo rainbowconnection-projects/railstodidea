@@ -1,30 +1,27 @@
-<%= link_to 'New Founder', new_admin_founder_path, class
-  :'btn btn-block btn-primary' %>
-    <div class="divided-20"></div>
-    <table class="table">
-      <thead>
-      <tr>
-        <th>Photo</th>
-        <th data-field="title" data-sortable="true">Name</th>
-        <th data-field="title" data-sortable="true">Title</th>
+<%= link_to 'New Founder', new_admin_founder_path, class: 'btn btn-block btn-primary' %>
+<div class="divided-20"></div>
+<table class="table">
+  <thead>
+  <tr>
+    <th>Photo</th>
+    <th data-field="title" data-sortable="true">Name</th>
+    <th data-field="title" data-sortable="true">Title</th>
 
-        <th></th>
+    <th></th>
+  </tr>
+  </thead>
+  <tbody>
+  <% @founders.each do |founder| %>
+      <tr>
+        <td><%= cl_image_tag founder.photo, width: '80px', height: '80px' %></td>
+        <td><%= founder.name %></td>
+        <td><%= founder.title %></td>
+        <td>
+          <%= link_to 'Edit', edit_admin_founder_path(founder), class: 'btn btn-primary btn-sm' %>
+          <%= link_to 'Delete', admin_founder_path(founder), class: 'btn btn-danger btn-sm', method: :delete, data: {confirm: 'Are you sure?'} %>
+        </td>
       </tr>
-      </thead>
-      <tbody>
-      <% @founders.each do |founder| %>
-          <tr>
-            <td><%= cl_image_tag founder.photo, width: '80px', height: '80px' %></td>
-            <td><%= founder.name %></td>
-            <td><%= founder.title %></td>
-            <td>
-              <%= link_to 'Edit', edit_admin_founder_path(founder), class
-                : 'btn btn-primary btn-sm' %>
-                  <%= link_to 'Delete', admin_founder_path(founder), class
-                    : 'btn btn-danger btn-sm', method : :delete, data : {confirm : 'Are you sure?'} %>
-                      </td>
-                      </tr>
-                  <% end %>
-                  </tbody>
-                  </table>
-                  <!--/.main-->
+  <% end %>
+  </tbody>
+</table>
+<!--/.main-->
