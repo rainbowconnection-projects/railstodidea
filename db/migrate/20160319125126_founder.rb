@@ -4,7 +4,7 @@ class Founder < ActiveRecord::Migration
       t.string :name
       t.string :title
       t.string :photo
-      t.text :stories
+      t.text :about
     end
   end
 end
