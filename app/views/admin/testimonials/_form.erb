@@ -1,6 +1,8 @@
 <%= simple_form_for([:admin, @testimonial]) do |f| %>
     <%= f.error_notification %>
-    <%= f.input :designation %>
+    <label>Designation</label>
+    <%= f.input_field :designation, as: :text %>
+    <label>Testimonial</label>
     <%= f.input_field :text, as: :text %>
     <%= f.input :name %>
     <label>Photo</label>

@@ -1,4 +1,5 @@
 class Admin::ProductsController < AdminController
+  include AmazonSignature
   def index
     @products = Product.all
   end
@@ -12,6 +13,7 @@ class Admin::ProductsController < AdminController
   end
 
   def create
+    @hash = AmazonSignature::data_hash
     @product = Product.new(product_params)
     respond_to do |format|
       if @product.save
@@ -25,6 +27,7 @@ class Admin::ProductsController < AdminController
   end
 
   def update
+    @hash = AmazonSignature::data_hash
     @product = Product.find(params[:id])
     respond_to do |format|
       if @product.update(product_params)

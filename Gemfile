@@ -21,8 +21,6 @@ gem 'autoprefixer-rails'
 gem 'bootstrap', '~> 4.0.0.alpha3'
 #gem 'bootstrap-sass'
 gem 'actionmailer'
-gem 'mail_form'
-
 #gem 'koala'
 # Turbolinks makes following links in your web application faster. Read more: https://github.com/rails/turbolinks
 gem 'turbolinks'
@@ -38,6 +36,7 @@ gem 'cloudinary'
 gem 'simple_form'
 gem 'devise'
 gem 'wysiwyg-rails'
+gem "fog"
 
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'

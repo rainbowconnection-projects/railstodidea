@@ -1,6 +1,7 @@
 <%= simple_form_for([:admin, @project]) do |f| %>
     <%= f.error_notification %>
     <%= f.input :name %>
+    <label>Description</label>
     <%= f.input_field :description, as: :text %>
     <%= f.input :date, as: :date %>
     <label>Photo</label>

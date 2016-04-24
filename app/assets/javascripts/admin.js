@@ -34,40 +34,41 @@
 //= require plugins/url.min.js
 //= require plugins/video.min.js
 
-
 $('#calendar').datepicker({});
 
 $(document).ready(function () {
-    $('[data-toggle=offcanvas]').click(function() {
+    $('[data-toggle=offcanvas]').click(function () {
         $('.row-offcanvas').toggleClass('active');
     });
-
     $('.text').froalaEditor({
+        inlineMode: false,
         minHeight: 200,
-        toolbarButtons: ['fullscreen', 'bold', 'italic', 'underline', 'strikeThrough', 'subscript', 'superscript', 'fontFamily', 'fontSize', '|', 'color', 'emoticons', 'inlineStyle', 'paragraphStyle', '|', 'paragraphFormat', 'align', 'formatOL', 'formatUL', 'outdent', 'indent', '-', 'insertLink', '|', 'quote', 'insertHR', 'undo', 'redo', 'clearFormatting', 'selectAll', 'html'],
+        //toolbarButtons: ['fullscreen', 'bold', 'italic', 'underline', 'strikeThrough', 'subscript', 'superscript', 'fontFamily', 'fontSize', '|', 'color', 'emoticons', 'inlineStyle', 'paragraphStyle',,'image', '|', 'paragraphFormat', 'align', 'formatOL', 'formatUL', 'outdent', 'indent', '-', 'insertLink', '|', 'quote', 'insertHR', 'undo', 'redo', 'clearFormatting', 'selectAll', 'html'],
         plainPaste: true,
-        imageUploadURL: '<%= refinery.admin_upload_image_path %>',
-        imageUploadParams: {
-            authenticity_token: '<%= form_authenticity_token %>',
-            return_to: window.location.href,
-            site: '<%= current_site.id %>'
-        },
-        imageErrorCallback: function (error) {
-            console.log('ERROR: %O', error);
-
-            var scroll_pos=(0);
-            var message = error.message + ' (Code: ' + error.code + ')';
-            var flash =  '<div id="flash_container"><div id="flash" class="flash flash_error" style="visibility: visible; opacity: 1;">'+ message +'</div></div>';
-
-            $('#content').prepend(flash);
-            $('html, body').animate({scrollTop:(scroll_pos)}, '2000');
-            setTimeout(function(){
-                $('#flash_container').fadeOut('slow');
-                $('#flash_container').remove();
-            }, 2000);
+        /*imageUploadURL: "https://api.cloudinary.com/v1_1/" + cloud_name + "/auto/upload",
+         imageUploadParams: {
+         upload_preset: unsigned_preset,
+         api_key: api_key
+         }*/
+        imageUploadToS3: {
+            bucket: 'todidea',
+            // Your bucket region.
+            region: 's3-eu-west-1',
+            keyStart: 'uploads/',
+            callback: function (url, key) {
+                // The URL and Key returned from Amazon.
+                console.log (url);
+                console.log (key);
+            },
+            params: {
+                acl: 'public-read', // ACL according to Amazon Documentation.
+                AWSAccessKeyId: '<%= @hash[:access_key] %>', // Access Key from Amazon.
+                policy: '<%= @hash[:policy] %>', // Policy string computed in the backend.
+                signature: '<%= @hash[:signature] %>' // Signature computed in the backend.
+            }
         }
 
-    })
+    });
 });
 function rowStyle(row, index) {
     var classes = ['active', 'success', 'info', 'warning', 'danger'];

@@ -1,10 +1,11 @@
 class Admin::ArticlesController < AdminController
-
+  include AmazonSignature
   def index
     @articles = Article.all
   end
 
   def new
+    @hash = AmazonSignature::data_hash
     @article = Article.new
   end
 
@@ -13,7 +14,7 @@ class Admin::ArticlesController < AdminController
   end
 
   def create
-
+    @hash = AmazonSignature::data_hash
     #render plain params['article']
     @article = Article.new(article_params)
       respond_to do |format|
@@ -28,6 +29,7 @@ class Admin::ArticlesController < AdminController
   end
 
   def update
+    @hash = AmazonSignature::data_hash
     @article = Article.find(params[:id])
     respond_to do |format|
       if @article.update(article_params)
