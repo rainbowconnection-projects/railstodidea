@@ -18,26 +18,10 @@ class ProductsController < ApplicationController
     @gallery = @product.try(:gallery).try(:photos)
     @link = strip_spaces_downcase params[:name].to_s
 
-
   end
 
   def strip_spaces_downcase(string)
     return string.split.join('').downcase
-  end
-
-  def digital_fit
-    @product = Product.find_by(link: 'digitalfit')
-    render template: 'products/digital-fit'
-  end
-
-  def tech_kids
-    @product = Product.find_by(link: 'techkids')
-    render template: 'products/tech-kids'
-  end
-
-  def edu_tab
-    @product = Product.find_by(link: 'digitalfit')
-    render template: 'products/edu-tab'
   end
 
   private
