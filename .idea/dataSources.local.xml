@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="dataSourceStorageLocal">
+    <data-source name="Rails TODIdea-master: development" uuid="a64ca367-964e-4875-a7ae-f2bc0e350114">
+      <user-name>root</user-name>
+    </data-source>
+    <data-source name="Rails TODIdea-master: test" uuid="5345c5b2-2b44-4f00-90b9-67fc92a71eb4">
+      <user-name>root</user-name>
+    </data-source>
+    <data-source name="Rails TODIdea-master: production" uuid="d0dcfb04-a9a7-4cc5-91ed-345aacf57743">
+      <user-name>root</user-name>
+      <user-password>df96df8fdf97df8adfefdfe4dffcdff1df8ddff8dfebdfe3dfe4dfe8dfe5dffddfe9dfe5dfe4dfe4dfefdfe9dffedfe3dfe5dfe4dff5dfeedfebdffedfebdfe8dfebdff9dfefdff5dffadfebdff9dff9dffddfe5dff8dfeedf8ddff7df8adf8fdf94</user-password>
+    </data-source>
+  </component>
+</project>

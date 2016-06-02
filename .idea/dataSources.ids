@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<component name="dataSourceStorage">
+  <data-source source="LOCAL" name="Rails TODIdea-master: development" uuid="a64ca367-964e-4875-a7ae-f2bc0e350114">
+    <database-info product="" version="" jdbc-version="" driver-name="" driver-version=""/>
+  </data-source>
+  <data-source source="LOCAL" name="Rails TODIdea-master: test" uuid="5345c5b2-2b44-4f00-90b9-67fc92a71eb4">
+    <database-info product="" version="" jdbc-version="" driver-name="" driver-version=""/>
+  </data-source>
+  <data-source source="LOCAL" name="Rails TODIdea-master: production" uuid="d0dcfb04-a9a7-4cc5-91ed-345aacf57743">
+    <database-info product="" version="" jdbc-version="" driver-name="" driver-version=""/>
+  </data-source>
+</component>

@@ -28,6 +28,7 @@ body {
   font-family: Lato, sans-serif;
 }
 
+
 /* Custom, iPhone Retina */
 @media only screen and (min-width: 320px) {
   body {
@@ -97,6 +98,12 @@ body {
   //border-radius: 100%;
   //position: fixed;
   //width: calc(18% - 30px);
+}
+
+.blog-post-content  p img{
+  display: block;
+  max-width: 100%;
+  height: auto;
 }
 
 h4.text-light, .h4.text-light {
