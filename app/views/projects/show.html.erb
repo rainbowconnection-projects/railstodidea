@@ -15,7 +15,7 @@
       <p>Date <i class="ion ion-calendar"></i> <%= @project.date.strftime('%B %d, %Y') %></p>
 
       <hr>
-      <p><%= @project.description %></p>
+      <p><%= simple_format @project.description %></p>
 
       <hr>
     </div>
