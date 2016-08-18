@@ -2,25 +2,24 @@
 <div class="container">
   <div class="row">
     <% @events.each do |event| %>
-    <div class="col-sm-4 margin-bottom-30">
-      <div class="post">
-        <div class="post-thumbnail">
-          <%= link_to event do %>
-            <%= cl_image_tag event.photo,class: 'img-responsive' %>
-          <% end %>
-        </div><!--post image-->
-        <h3 class="post-title"><%= link_to(event.name, controller: 'events', action: 'show', id: event.id) %></h3>
-        <div id="text-wrapper" class="text-wrapper">
-          <p>
-            <%= simple_format event.description %>
-          </p>
-        </div>
-        <span class="read-more"><em>On <%= event.date.strftime('%B %d, %Y') %></em><%= link_to('Read more', controller: 'events', action: 'show', id: event.id) %><i class="ion-ios-arrow-thin-right"></i></span>
-      </div><!--post-->
-    </div><!--post col end-->
+        <div class="col-sm-4 col-md-4 col-lg-4 margin-bottom-30">
+          <div class="post">
+            <div class="">
+              <%= link_to event do %>
+                  <%= cl_image_tag event.photo, :crop => "fill", :width => 350, :height => 260 %>
+              <% end %>
+            </div><!--post image-->
+            <h3 class="post-title"><%= link_to(event.name, controller: 'events', action: 'show', id: event.id) %></h3>
+            <div id="text-wrapper" class="text-wrapper">
+              <p>
+                <%= simple_format event.description %>
+              </p>
+            </div>
+            <span class="read-more"><em>On <%= event.date.strftime('%B %d, %Y') %></em><%= link_to('Read more', controller: 'events', action: 'show', id: event.id) %>
+              <i class="ion-ios-arrow-thin-right"></i></span>
+          </div><!--post-->
+        </div><!--post col end-->
     <% end %>
-
-
   </div>
   <div class="divided-70"></div>
   <div class="row">
@@ -33,7 +32,7 @@
   </div>
 </div>
 <script type="text/javascript">
-  $(function(){
-      $("#text-wrapper").dotdotdot();
+  $(function () {
+    $("#text-wrapper").dotdotdot();
   });
 </script>

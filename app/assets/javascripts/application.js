@@ -22,7 +22,9 @@
 //= require wow.min
 //= require ga
 //=require jquery.ellipsis.min
+//=require jquery.dotdotdot
 //=require lightgallery-all.min
+//=re
 
 
 // Copyright 2014-2015 Twitter, Inc.

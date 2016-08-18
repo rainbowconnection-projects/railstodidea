@@ -1,0 +1,7 @@
+<%= simple_form_for([:admin ,@project_gallery])  do |f| %>
+    <%= f.input :name, label: 'Name' %>
+    <%= f.association :project, label: 'Project' %>
+    <%= f.button :submit, @project_gallery.new_record? ? 'Add Gallery' : 'Update Gallery', class: 'btn btn-success btn-block btn-medium' %>
+<% end %>
+
+<div class="divided-20"></div>

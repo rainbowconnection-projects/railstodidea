@@ -35,6 +35,6 @@ namespace :admin do
   resources :articles, :products, :events,
             :projects, :testimonials, :tags,
             :categories, :teams, :people, :galleries,
-            :photos, :event_galleries, :event_photos, :founders, :stories
+            :photos, :event_galleries, :event_photos, :founders, :stories, :project_photos, :project_galleries
 end
 end

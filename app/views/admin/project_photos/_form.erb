@@ -1,0 +1,8 @@
+<%= simple_form_for([:admin ,@photo])  do |f| %>
+    <%= f.association :project_gallery, label: 'Gallery' %>
+    <%= f.input :caption, label: 'Caption' %>
+    <label>Photo</label>
+    <%= f.input_field :photo, label: 'Photo', as: :file %>
+    <%= f.button :submit, @photo.new_record? ? 'Add Photo' : 'Update Photo', class: 'btn btn-success btn-block btn-medium' %>
+<% end %>
+<div class="divided-20"></div>

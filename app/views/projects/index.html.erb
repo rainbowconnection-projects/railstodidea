@@ -1,39 +1,25 @@
-<div class="page-title project-header" data-stellar-background-ratio="0.2" style="background-position: 0% 8px;">
-  <div class="container">
-    <div class="row">
-      <div class="col-sm-6">
-        <h1>Latest Projects</h1>
-      </div>
-      <div class="col-sm-6">
-        <ol class="breadcrumb">
-          <li><a href="#"><i class="ion-home"></i></a></li>
-          <li class="active">Projects</li>
-        </ol>
-      </div>
-    </div>
-  </div>
-</div>
-<div class="divided-30"></div>
+<div class="divided-20"></div>
 <div class="container">
   <div class="row">
     <% @projects.each do |project| %>
-        <div class="col-sm-4 margin-bottom-30">
+        <div class="col-sm-4 col-md-4 col-lg-4 margin-bottom-30">
           <div class="post">
-            <div class="post-thumbnail">
-              <a href="#">
-                <%= cl_image_tag(project.photo, class: 'img-responsive', alt: 'post-image') %>
-              </a>
+            <div class="">
+              <%= link_to project do %>
+                  <%= cl_image_tag project.photo, :crop => "fill", :width => 350, :height => 260 %>
+              <% end %>
             </div><!--post image-->
-            <h3 class="post-title"><%= link_to(project.name, controller: 'projects', action: 'show', id: project.id) %></h3>
-            <p id="text-wrapper" class="text-wrapper">
-              <%= project.description %>
-            </p>
-            <span class="read-more"><em>On <%= project.created_at.strftime('%B %d, %Y') %></em><%= link_to('Read more', controller: 'projects', action: 'show', id: project.id) %><i class="ion-ios-arrow-thin-right"></i></span>
+            <h3 class="post-title"><%= link_to(project.name, controller: 'events', action: 'show', id: project.id) %></h3>
+            <div id="text-wrapper" class="text-wrapper">
+              <p>
+                <%= simple_format project.description %>
+              </p>
+            </div>
+            <span class="read-more"><em>On <%= project.date.strftime('%B %d, %Y') %></em><%= link_to('Read more', controller: 'projects', action: 'show', id: project.id) %>
+              <i class="ion-ios-arrow-thin-right"></i></span>
           </div><!--post-->
         </div><!--post col end-->
     <% end %>
-
-
   </div>
   <div class="divided-70"></div>
   <div class="row">
@@ -45,3 +31,8 @@
     </div>
   </div>
 </div>
+<script type="text/javascript">
+  $(function () {
+    $("#text-wrapper").dotdotdot();
+  });
+</script>

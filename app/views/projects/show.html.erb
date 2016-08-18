@@ -1,23 +1,91 @@
-<div class="container">
-  <div class="row">
-    <div class="col-md-12">
-      <!-- First Blog Post -->
+<% title @project.name %>
+<% og_title @project.name %>
+<% og_image @project.photo %>
+<% og_description @project.description %>
+<% og_url request.original_url %>
 
-      <%= cl_image_tag(@project.photo, class: 'img-responsive', height: '300px') %>
-      <h2>
-        <a href="#"><%= @project.name %></a>
-      </h2>
+<article class="blog-post-3">
+  <section>
+    <div class="container">
+      <div class="row">
+        <div class="col-xs-12 col-sm-3 col-md-3 text-center blog-post-image">
+          <%= cl_image_tag @project.photo, class: 'img-responsive' %>
+        </div>
 
-      <p class="lead">
+        <div class="col-xs-12 col-sm-9 col-md-9 text-light">
+          <h3 class="blog-post-title"><%= @project.name %></h3>
 
-      </p>
+          <p class="text-xs-small blog-post-date text-light">
+            <em><%= @project.date.to_formatted_s(:long_ordinal) %></em></p>
 
-      <p>Date <i class="ion ion-calendar"></i> <%= @project.date.strftime('%B %d, %Y') %></p>
+          <div class="text-light blog-post-content">
+            <%= simple_format @project.description %>
+            <div class="divided-20"></div>
+            <% if @gallery %>
+                <h3 class="center-heading">Gallery</h3>
 
-      <hr>
-      <p><%= simple_format @project.description %></p>
+                <div id="animated-thumbnails">
+                  <% @proj.each do |photo| %>
+                      <a href="<%= photo.photo %>" data-sub-html="<%= simple_format(photo.caption).html_safe %>">
+                        <img src="<%= photo.photo %>" width="250px"/>
+                      </a>
+                  <% end %>
+                </div>
+            <% end %>
 
-      <hr>
+          </div>
+        </div>
+      </div>
     </div>
-  </div>
-</div>
+  </section>
+
+  <section class="blog-post-social">
+    <div class="container">
+      <div class="row">
+        <!--<div class="col-xs-12 col-sm-9 col-sm-offset-3 col-md-9 col-md-offset-3">
+          <span class='st_sharethis_large' displayText='ShareThis'></span>
+          <span class='st_facebook_large' displayText='Facebook'></span>
+          <span class='st_twitter_large' displayText='Tweet'></span>
+          <span class='st_linkedin_large' displayText='LinkedIn'></span>
+          <span class='st_pinterest_large' displayText='Pinterest'></span>
+          <span class='st_email_large' displayText='Email'></span>
+        </div>-->
+      </div>
+    </div>
+  </section>
+
+  <section class="disqus">
+    <div class="container">
+      <div class="row">
+        <div class="col-xs-12 col-sm-9 col-sm-offset-3 col-md-9 col-md-offset-3">
+          <div id="disqus_thread"></div>
+          <script>
+            /**
+             *  RECOMMENDED CONFIGURATION VARIABLES: EDIT AND UNCOMMENT THE SECTION BELOW TO INSERT DYNAMIC VALUES FROM YOUR PLATFORM OR CMS.
+             *  LEARN WHY DEFINING THESE VARIABLES IS IMPORTANT: https://disqus.com/admin/universalcode/#configuration-variables
+             */
+
+            var disqus_config = function () {
+              this.page.url = '<%= request.original_url %>';  // Replace PAGE_URL with your page's canonical URL variable
+              //this.page.identifier = PAGE_IDENTIFIER; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
+            };
+
+            (function () {  // DON'T EDIT BELOW THIS LINE
+              var d = document, s = d.createElement('script');
+
+              s.src = '//todidea.disqus.com/embed.js';
+
+              s.setAttribute('data-timestamp', +new Date());
+              (d.head || d.body).appendChild(s);
+            })();
+          </script>
+          <noscript>Please enable JavaScript to view the
+            <a href="https://disqus.com/?ref_noscript" rel="nofollow">comments powered by Disqus.</a></noscript>
+        </div>
+      </div>
+    </div>
+  </section>
+</article>
+<!-- Go to www.addthis.com/dashboard to customize your tools -->
+<script type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-56a1dcdb37750258" async="async"></script>
+
